@@ -1,0 +1,28 @@
+
+@media(min-width:300px) and (max-width:549px){
+    body{
+        background: green;
+    }
+}
+
+
+@media(min-width:550px) and (max-width:759px){
+    body{
+        background:hotpink;
+    }
+}
+
+
+@media(min-width:760px) and (max-width:959px){
+    body{
+        background:greenyellow;
+    }
+}
+
+
+
+@media print,(min-width:960px){
+    body{
+        background: red;
+    }
+}

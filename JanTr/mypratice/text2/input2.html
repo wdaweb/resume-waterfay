@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,select{
+            margin:5px;
+            width:350px;
+        }
+        input[type=radio]+label{
+            color:blue;
+        }
+        input[type=radio]:checked+label{
+            color:blue;
+        }
+        input[type=button]:hover{
+        background-color:orange;
+        }
+    </style>
+    <script>
+        function getData(){
+        var result="";
+        result += document.getElementsByName('textarea')[0].value + "<br>";
+        var gender = document.getElementsByName('gander');
+        result += gender[0].value + "" + gender[0].checked +"";
+        result += gender[1].value + "" + gender[1].checked +"";
+        result += gender[2].value + "" + gender[2].checked +"";
+        result += "<br>";
+        var drink = document.getElementsByName('deink');
+        result += drink[0].value + "" + drink[0].checked +"";
+        result += drink[1].value + "" + drink[1].checked +"";
+        result += drink[2].value + "" + drink[2].checked +"";
+        result += "<br>";
+        var sport = document.getElementsByName('num1')[0].value + "<br>";
+        result += sport[0].value + "" + sport[0].checked +"";
+        result += sport[1].value + "" + sport[1].checked +"";
+        result += sport[2].value + "" + sport[2].checked +"";
+        result += "<br>";
+        document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <textarea name="message" rows="10" cols="50" >請在此輸入訊息</textarea><br>
+        <fieldset>
+        <legend>性別</legend>
+        <input type="radio" name="gender" value="male">男<br>
+        <input type="radio" name="gender" value="female">女<br>
+        <input type="radio" name="gender" value="other">其他<br>
+        </fieldset>
+        <fieldset>
+            <legend>飲料</legend>
+            <input type="radio" name="drink" id="coffee" value="coffee">
+            <label for="coffee">咖啡</label><br>
+            <input type="radio" name="drink" id="coffee" value="coffee">
+            <label for="tea">茶</label><br>
+        </fieldset>
+        訂購個數(1-5)
+        <select name="num4">
+        <option value="1">1</option>
+        <option value="2" selected>2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select><br>
+    <fieldset>
+        <legend>喜歡的運動</legend>
+        <input type="checkbox" name="sport" value="baseball">棒球
+        <input type="checkbox" name="sport" value="basketball">藍球
+        <input type="checkbox" name="sport" value="football">足球
+    </fieldset>
+    </form>
+    <input type="submit" value="送出">
+    <input type="reset" value="清空表單">
+</body>
+</html>

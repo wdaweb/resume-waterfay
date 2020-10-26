@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0 auto;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            background:rgb(255, 248, 206);
+        }
+        .content{
+            height:1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* .circle1{
+            width:150px;
+            height:150px;
+            background:#ff8800;
+            border-radius:50%;
+        }
+        .circle2{
+          left:49%;
+          top:49%;
+            position: absolute;
+            width:100px;
+            height:100px;
+            background:#ff8800;
+            border-radius:50%;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-fill-mode: forwards;
+            animation-play-state: running;
+            animation-name: circle2;
+        } */
+        .tri{
+            width:150px;
+            height:150px;
+            background:#ff8800;
+            clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+            animation: tri 10s linear infinite normal;
+        }
+        span{
+            display: block;
+            position: relative;
+            top: 215px;
+            left: -158px;
+            text-align: center;
+            font-family: 'Jockey One', sans-serif;
+            font-size: 50px;
+            color: #ff8800;
+        }
+            @keyframes tri{
+            0%,100%{
+                clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+                background:#ffbe74;
+            }
+            5%,95%{
+                clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 68% 100%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+                background:#ffef92;
+            }
+            10%,90%{
+                clip-path: polygon(70% 0%, 100% 33%, 100% 66%, 70% 100%, 70% 100%, 30% 100%, 0% 66%, 0% 33%, 30% 0%);
+                background:#fbff20;
+            }
+            15%,85%{
+                clip-path: polygon(70% 0%, 100% 33%, 70% 100%, 70% 100%, 70% 100%, 30% 100%, 0% 66%, 0% 33%, 30% 0%);
+                background:#e8fd2c;
+            }
+            20%,80%{
+                clip-path: polygon(94% 43%, 100% 78%, 70% 100%, 70% 100%, 70% 100%, 30% 100%, 0% 78%, 6% 43%, 50% 0%);
+                background:#9ffd23;
+            }
+            25%,75%{
+                clip-path: polygon(100% 50%, 70% 100%, 70% 100%, 70% 100%, 70% 100%, 30% 100%, 0% 50%, 30% 0%, 70% 0%);
+                background:#88bd26;
+            }
+            30%,70%{
+                clip-path: polygon(70% 100%, 70% 100%, 70% 100%, 70% 100%, 70% 100%, 30% 100%, 0% 50%, 30% 0%, 70% 0%);
+                background:#1fc585;
+            }
+            35%,65%{
+                clip-path: polygon(80% 100%, 80% 100%, 80% 100%, 80% 100%, 80% 100%, 20% 100%, 0% 43%, 50% 0%, 100% 43%);
+                background:hsl(177, 81%, 51%);
+            }
+            40%,60%{
+                clip-path: polygon(90% 100%, 90% 100%, 90% 100%, 90% 100%, 90% 100%, 10% 100%, 10% 0%, 90% 0%, 90% 100%);
+                background:#8fb8e7;
+            }
+            45%,55%{
+                clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 0% 100%, 0% 0%, 100% 0%, 100% 100%);
+                background:#549eff;
+            }
+            50%{
+                clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 0% 100%, 50% 0%, 100% 100%, 100% 100%);
+                background:#6d6bff;
+            }
+        } 
+    </style>
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css2?family=Jockey+One&display=swap" rel="stylesheet">
+    <div class="content">
+    <!-- <div class="circle1"></div>
+    <div class="circle2"></div> -->
+    <div class="tri"></div>
+    <span>Loading</span>
+    </div>
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="圖層_1" x="0px" y="0px" width="141.73px" height="141.73px" viewBox="0 0 141.73 141.73" enable-background="new 0 0 141.73 141.73" xml:space="preserve">
+        <path fill="#F29518" d="M119.242,50.691c0-17.613-14.386-31.891-32.132-31.891c-17.367,0-31.507,13.677-32.104,30.77  c-0.009,0-0.019,0-0.028,0c-23.277,0-42.147,18.296-42.147,40.866c0,22.569,18.87,40.865,42.147,40.865s42.147-18.296,42.147-40.865  c0-3.135-0.376-6.184-1.065-9.116C109.449,77.471,119.242,65.22,119.242,50.691z"/>
+        </svg>
+        </svg> -->
+</body>
+</html>

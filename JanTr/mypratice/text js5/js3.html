@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:400px;
+            border:1px red soild;
+            margin:10px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="var1"></div>
+    <div id="var2"></div>
+    <div id="var3"></div>
+    <div id="var4"></div>
+</body>
+<script>
+    var a,b,c;
+    a=1,b=2;
+    c=a+b;
+    document.getElementById("var1").innerHTML = c;
+    var hello="你好",name="王大寶";
+    document.getElementById("var2").innerHTML = name+hello;
+    var a="3"+2+1;
+    document.getElementById("var3").innerHTML = a;
+    var a=1+2+"3";
+    document.getElementById("var4").innerHTML = a;
+</script>
+</html>

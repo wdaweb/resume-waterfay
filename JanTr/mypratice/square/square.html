@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0 auto;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+        }
+        .content{
+            height: 1000px;
+            display: flex;
+            position: relative;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .content1{
+            z-index: 100;
+        }
+        .content2{
+            z-index: 99;
+        }
+        .content3{
+            z-index: 98;
+        }
+        .content4{
+            z-index: 97;
+        }
+        .content5{
+            z-index: 96;
+        }
+        .content6{
+            z-index: 95;
+        }
+        .top{
+            margin: -60px;
+            height: 100px;
+            width: 120px;
+            background: linear-gradient(302deg, rgba(0,0,0,1) 0%, rgba(106,106,106,1) 24%, rgba(42,42,42,1) 51%, rgb(71 70 70 / 96%) 71%, rgb(63 61 61) 83%, rgba(69,69,69,1) 100%);
+            box-shadow:-38px 155px 11px #adadad;
+            transform:  rotate(-40deg) skew(10deg,40deg);
+            z-index: 10;
+        }
+
+        .right{
+            /* position: fixed; */
+            background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgb(88 88 88) 65%, rgba(42,42,42,1) 100%);
+            margin: 1px;
+            height: 35px;
+            width: 156px;
+            transform: translate(-25%,124%);
+        }
+
+        .left{
+        position: absolute;
+        left: -12.5%;
+        top: 48.1%;
+        height: 35px;
+        width: 78px;
+        background: linear-gradient(3deg, rgba(112,112,112,1) 0%, rgb(80 80 80) 51%, rgba(61,61,61,1) 100%);
+        transform: rotate(-2deg) skew(-2deg,42deg);
+        
+        }
+        .content1:hover>.top{
+        background:  linear-gradient(302deg, rgba(153,38,38,1) 0%, rgba(190,80,80,1) 51%, rgba(217,138,138,1) 70%, rgba(189,58,58,1) 100%);
+        transition: all linear 0.57s;
+        box-shadow:-100px 270px 11px #adadad;
+        transform: translate(0px,-60px) rotate(-40deg) skew(10deg,40deg);
+        }
+        .content1::after{
+            content: "";
+            position: absolute;
+            left: -12.5%;
+            top: 50.6%;
+            height: 1px;
+            width: 78px;
+            background: linear-gradient(3deg, rgb(177, 104, 104)51%, rgb(165, 78, 78) 100%);
+            transform:rotate(-2deg) skew(-2deg,42deg) ;
+
+        }
+        .content1:hover::after{
+            transform:rotate(-2deg) skew(-2deg,42deg) scale(1,99);
+            transform-origin:90% 60%;
+            transition: all cubic-bezier(0.3, 0.31, 1, 1) 0.55s;
+        }
+        .content1:hover >.right{
+            background: linear-gradient(180deg, rgba(182,77,77,1) 0%, rgba(190,80,80,1) 34%, rgba(217,138,138,1) 70%, rgba(190,64,64,1) 100%);
+            transition: all cubic-bezier(0.15, 0.51, 0.49, 0.82) 0.65s;
+            transform: translate(-26%,38%) scale(1,2.8);
+        
+        }
+        .content1:hover >.left{
+            display:none;
+        }
+        .content2:hover>.top{
+        background: linear-gradient(302deg, rgba(153,38,38,1) 0%, rgba(190,80,80,1) 51%, rgba(217,138,138,1) 70%, rgba(189,58,58,1) 100%);
+        }
+        .content2:hover >.right{
+        background: linear-gradient(180deg, rgba(182,77,77,1) 0%, rgba(190,80,80,1) 34%, rgba(217,138,138,1) 70%, rgba(190,64,64,1) 100%);
+        } 
+        .content2:hover>.top{
+        background: linear-gradient(302deg, rgba(153,38,38,1) 0%, rgba(190,80,80,1) 51%, rgba(217,138,138,1) 70%, rgba(189,58,58,1) 100%);
+        }
+        .content3:hover >.right{
+        background: linear-gradient(180deg, rgba(182,77,77,1) 0%, rgba(190,80,80,1) 34%, rgba(217,138,138,1) 70%, rgba(190,64,64,1) 100%);
+        } 
+        .content3:hover>.top{
+        background: linear-gradient(302deg, rgba(153,38,38,1) 0%, rgba(190,80,80,1) 51%, rgba(217,138,138,1) 70%, rgba(189,58,58,1) 100%);
+        }
+        .content4:hover >.right{
+        background: linear-gradient(180deg, rgba(182,77,77,1) 0%, rgba(190,80,80,1) 34%, rgba(217,138,138,1) 70%, rgba(190,64,64,1) 100%);
+        } 
+        .content4:hover>.top{
+        background: linear-gradient(302deg, rgba(153,38,38,1) 0%, rgba(190,80,80,1) 51%, rgba(217,138,138,1) 70%, rgba(189,58,58,1) 100%);
+        }
+        .content5:hover >.right{
+        background: linear-gradient(180deg, rgba(182,77,77,1) 0%, rgba(190,80,80,1) 34%, rgba(217,138,138,1) 70%, rgba(190,64,64,1) 100%);
+        } 
+        .content5:hover>.top{
+        background: linear-gradient(302deg, rgba(153,38,38,1) 0%, rgba(190,80,80,1) 51%, rgba(217,138,138,1) 70%, rgba(189,58,58,1) 100%);
+        }
+        .content6:hover >.right{
+        background: linear-gradient(180deg, rgba(182,77,77,1) 0%, rgba(190,80,80,1) 34%, rgba(217,138,138,1) 70%, rgba(190,64,64,1) 100%);
+        } 
+        .content6:hover>.top{
+        background: linear-gradient(302deg, rgba(153,38,38,1) 0%, rgba(190,80,80,1) 51%, rgba(217,138,138,1) 70%, rgba(189,58,58,1) 100%);
+        } 
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="content1">
+    <div class="top"></div>
+    <div class="right"></div>
+    <div class="left"></div>
+    </div>
+    <div class="content2">
+    <div class="top"></div>
+    <div class="right"></div>
+    </div>
+    <div class="content3">
+    <div class="top"></div>
+    <div class="right"></div>
+    </div>
+    <div class="content4">
+    <div class="top"></div>
+    <div class="right"></div>
+    </div>
+    <div class="content5">
+    <div class="top"></div>
+    <div class="right"></div>
+    </div>
+    <div class="content6">
+    <div class="top"></div>
+    <div class="right"></div>
+    </div>
+
+<!-- <div class="content2"> -->
+
+</div>
+<!-- </div> -->
+</body>
+</html>

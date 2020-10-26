@@ -1,0 +1,17 @@
+@media screen{
+    body{
+        background: black;
+    }
+    h1{
+        color:red;
+    }
+}
+
+@media print{
+    body{
+        background: green;
+    }
+    h1{
+        color:purple;
+    }
+}

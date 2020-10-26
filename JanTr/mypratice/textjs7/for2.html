@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:500px;
+            border:1px red solid;
+            margin:10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="loop1"></div>
+    <script>
+        var i,j,r1="";
+        for(i=1;i<10;i++){
+                for(j=1;j<10;j++){
+                    r1+=i+"*"+j+"="+i*j+"";
+                }
+                r1+="<br>"
+            }
+            document.getElementById("loop1").innerHTML =r1;
+    </script>
+</body>
+</html>

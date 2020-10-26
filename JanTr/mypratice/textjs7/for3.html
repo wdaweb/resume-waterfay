@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:200px;
+            border:1px red solid;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="loop1"></div>
+    <div id="loop2"></div>
+    <script>
+        var i,r1="";
+        for(i=1;i<10;i++){
+            r1=r1+i+"";
+            if(i==3)break;
+        }
+        document.getElementById("loop1").innerHTML=r1;
+        var i,r2="";
+        for(i=1;i<10;i++){
+            if(i==3)continue;
+            r2=r2+i+"";
+
+        }
+        document.getElementById("loop2").innerHTML=r2;
+
+    </script>
+</body>
+</html>

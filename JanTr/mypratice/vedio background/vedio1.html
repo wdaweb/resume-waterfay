@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin:-4px;
+        }
+        .a{
+            position: absolute;
+            height:30vw;
+            width:45vw;
+            left:15%; 
+            top:25%; 
+            background-color:#f9efee;
+            border-radius:15px;
+            background-attachment: local;
+            z-index:4;
+
+        }
+        #b{
+            height: 1080px;
+            background-position:center;
+            object-fit: cover;
+            z-index:1;
+
+        }
+        figure {
+            display: block;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-inline-start: 0;
+            margin-inline-end: 0;
+}
+        .figure1{
+            width:25vh;
+            height: 30vh;
+            position: absolute;
+            left:48%; 
+            top:65%; 
+            z-index:6;
+        }
+        .figure2{
+            width:60vh;
+            height: 30vh;
+            position: absolute;
+            left:15%; 
+            top:-5%; 
+            z-index:6;
+        }
+        .figure4{
+            width:18vh;
+            height: 18vh;
+            z-index:6;
+        }
+        .figure5{
+            width:35vh;
+            height: 10vh;
+            position: absolute;
+            left:35%; 
+            top:78%; 
+            z-index:5;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            left:59%; 
+            top:27%; 
+            z-index:3;
+            }
+
+        li{
+            width:17vh;
+            height:10vh;
+            background: rgb(160, 134, 122);
+            display: block;
+            border-radius:6px;
+        }
+
+        a {
+        padding: 1.5vw;
+        font-size: 1.5vw;
+        color: white;
+        text-align:right;
+        text-decoration: none;
+        display: block;
+    }
+        a:hover{
+            width:14vh;
+            height:5vh;
+            background:rgb(58, 43, 34);
+            border-radius:6px;
+            transform:scale(1);
+            }
+        table{
+            width:43vw;
+            height:60vh;
+            left:16%; 
+            top:27%; 
+            border: 3px;
+            color:#613030;
+            border-collapse: collapse;
+            position: absolute;
+            z-index:6;
+
+        }
+        td{
+            border: 5px;
+            font-size: 1.5vh;
+        }
+        td:hover{
+            background:rgb(255, 186, 96,0.5)
+            }
+        
+
+
+        /* .background{
+
+            
+            /* 可設定px大小,是否要覆蓋cover contain */
+            /* background-color:#c4c4f3; */
+            /* background-image: url("https://fakeimg.pl/300x200"); */
+            /* image畫面預設填滿,image效果優先,單引號.雙引號.不寫皆可 */
+            /* background-repeat:no-repeat no-repeat; */
+            /* 水平:垂直:不重複 x軸在前,y軸在後 space(填滿不讓圖片變形),round(強制填滿)*/
+            /* background-position:left bottom ; */
+            /* x軸在前,y軸在後,可用方向名稱, %,px操作 */
+            /* background-attachment:scroll;
+            z-index:5; */
+            /* scorll/fixed/local/local + scroll */
+            /* background-origin */
+            /* background-clip */
+            /* heigh width */
+        /* } */ 
+
+    </style>
+    <!-- <script>
+
+var Oli= document.querySelectorAll('#item1.li');  //取到所有的li标签
+var liList=[];                   //定义一个数组
+for( var i=0 ;i<Oli.length;i++){	
+    Oli[i].onclick=function(){
+		this.classList.toggle('table');     //添加一个classNmae，并在css中设置样式
+		console.log(this.className);      //打印出当前点击li标签的所有className
+		var str=this.className.split(" ")[2];	// 取出添加的className					
+		if(str=='table'){
+			liList.push(this.innerText);		
+		}else{
+			liList.pop(this.innerText);
+		}
+		
+    }		}
+
+    </script> -->
+</head>
+<body>
+    <div class="a"> </div>
+    <ul>
+        <li id="item1"><a href="vedio.html" target="_top">米分布</a></li>
+        <li id="item2"><a href="#">米家族</a></li>
+    </ul>
+    
+    <main class="b">
+        <video id="video_bg" preload="auto" autoplay="true" loop="loop" muted="muted" style="width: 100%;">
+            <source src="MP4/Pexels Videos 1620050.mp4" type="video/mp4"></video>
+    </main>
+        <img class="figure1" src="img/Scarecrow hand drawn.png" alt="">
+        <img class="figure2" src="img/mark.png" alt="">
+        <img class="figure5" src="img/grass.png" alt="">
+    <table>
+        <tr>
+            <td><img class="figure4" src="img/mi1.png"></td>
+            <td>白米的主要成分為澱粉，即醣類，佔75%，也含有膳食纖維、維生素B群、維生素E、鈣、磷、鉀等營養素。由於白米的精緻程度高，營養成分損失較多，因此比起其他米食，營養價值相對少了一些，所以有許多營養師建議白米可以搭配糙米一起食用。</td>
+            <td>生白米熱量每100克為354大卡；煮熟的白米飯每100公克為158卡，大約是半碗飯的份量。</td>
+        </tr>
+        <tr>
+            <td><img class="figure4" src="img/mi2.png"></td>
+            <td>糙米由92%胚乳組成，再加上5%表皮以及3%胚芽。主要營養成分集中在米糠的表皮和胚芽上，因此膳食纖維、維生素B群、維生素E、及其他微量營養素都遠比白米多了許多倍。</td>
+            <td>糙米每100克約為340大卡。</td>
+        </tr>
+        <tr>
+            <td><img class="figure4" src="img/mi3.png"></td>
+            <td>主要出產於花蓮的紫米，若以品種來做區分為糯米的一種，而以精緻程度來做區別則屬於糙米，因此有些包裝標示為黑糯糙米，其實就是紫米。紫米富含膳食纖維和微量元素，包含鐵、鈣、鋅、硒、鉀、磷還有維生素B群。</td>
+            <td>紫米含有人體所需的四種胺基酸，蛋白質含量也比一般白米來得高，且富含膳食纖維。</td>
+        </tr>
+    </table>
+
+
+</body>
+</html>

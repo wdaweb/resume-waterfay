@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color:#c4c4f3;
+            background-size:800px 600px;
+        }
+        .background{
+
+            background-size:cover;
+            /* 可設定px大小,是否要覆蓋cover contain */
+            background-color:#c4c4f3;
+            /* background-image: url("https://fakeimg.pl/300x200"); */
+            /* image畫面預設填滿,image效果優先,單引號.雙引號.不寫皆可 */
+            background-repeat:no-repeat no-repeat;
+            /* 水平:垂直:不重複 x軸在前,y軸在後 space(填滿不讓圖片變形),round(強制填滿)*/
+            background-position:left bottom ;
+            /* x軸在前,y軸在後,可用方向名稱, %,px操作 */
+            background-attachment:scroll;
+            z-index:5;
+            /* scorll/fixed/local/local + scroll */
+            /* background-origin */
+            /* background-clip */
+            /* heigh width */
+        }
+        p{
+            z-index:1;
+        }
+    </style>
+</head>
+<body>
+    <div class=background>這是個有橘色邊框的 HTML div
+        <video id="video_bg" preload="auto" autoplay="true" loop="loop" muted="muted">
+            <source src="MP4/Pexels Videos 1620050.mp4" type="video/mp4">
+        
+    </div>
+    <main>
+
+    </main>
+</body>
+</html>

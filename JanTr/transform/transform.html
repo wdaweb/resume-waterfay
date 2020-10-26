@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background:darkcyan;
+            line-height: 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+
+        }
+        .box::after{
+            content: "transform";
+            background: red;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            /* transform: translateX(100%,-50px);  */
+            /* transform: scale(5) ; */
+            /* transform: translate(100%,0) scale(2) rotateX(45deg) skew(20deg,45deg); */
+            /* transform: rotate(50deg);
+            transform-origin: 50% 30% ;  */
+            transform: rotateX(30deg) translateZ(20px);
+            opacity: 0.5;
+            left:0;
+            top:0;
+            /* z-index: -9;  */
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="box red">Demo</div> -->
+    <div class="box">Demo</div>
+</body>
+</html>
