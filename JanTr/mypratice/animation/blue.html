@@ -14,11 +14,16 @@
             background:url("images/blue.jpg");
             background-size: 100%;
         }
-        .container{
-            height:1000px;
+        .wrap {
+            height: 1000px;
+            width: 800px;
             display: flex;
             justify-content: center;
             align-items: center;
+            animation: rotate 2s infinite ease-in-out;
+        }
+        .container{
+            position: relative;
             filter: url(#goo);
         }
         .circle1{
@@ -26,6 +31,7 @@
             height:200px;
             background:#000000;
             border-radius:50%;
+            animation: circle1 1.5s infinite ease;
         }
         .circle2{
             left:49%;
@@ -35,6 +41,7 @@
             height:150px;
             background:#000000;
             border-radius:50%;
+            animation: circle2 1.5s infinite ease;
         
         }
         .circle3{
@@ -45,6 +52,7 @@
             height: 120px;
             background: #000000;
             border-radius: 50%;
+            animation: circle3 1.5s infinite ease;
         
         }
         span{
@@ -57,13 +65,65 @@
             font-size: 50px;
             color: #000000;
         }
+        @keyframes circle {
+            0% {
+                left: 50px;
+            }
+
+            50% {
+                left: 110px;
+            }
+
+            100% {
+                left: 50px;
+            }
+        }
+
+        @keyframes circle {
+            0% {
+                left: 50px;
+            }
+
+            50% {
+                left: 110px;
+            }
+
+            100% {
+                left: 50px;
+            }
+        }
+
+        @keyframes circle {
+            0% {
+                top: 300px;
+            }
+
+            50% {
+                top: 350px;
+            }
+
+            100% {
+                top: 400px;
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotateZ(0turn);
+            }
+
+            100% {
+                transform: rotateZ(1turn);
+            }
+        } 
 </style>
 <body>
+    <div class="wrap">
     <div class="container">
     <div class="circle1"></div>
     <div class="circle2"></div>
     <div class="circle3"></div>
-
+    </div>
     </div>
 <span>Loading</span>
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
