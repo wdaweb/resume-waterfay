@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head> 
+<style>
+        body{
+            margin: 0 auto;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            background:url("images/blue.jpg");
+            background-size: 100%;
+        }
+        .container{
+            height:1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: url(#goo);
+        }
+        .circle1{
+            width:200px;
+            height:200px;
+            background:#000000;
+            border-radius:50%;
+        }
+        .circle2{
+            left:49%;
+            top:49%;
+            position: absolute;
+            width:150px;
+            height:150px;
+            background:#000000;
+            border-radius:50%;
+        
+        }
+        .circle3{
+            left: -35%;
+            top: 49%;
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: #000000;
+            border-radius: 50%;
+        
+        }
+        span{
+            display: block;
+            position: relative;
+            top: 215px;
+            left: -158px;
+            text-align: center;
+            font-family: 'Jockey One', sans-serif;
+            font-size: 50px;
+            color: #000000;
+        }
+</style>
+<body>
+    <div class="container">
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <div class="circle3"></div>
+
+    </div>
+<span>Loading</span>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <filter id="goo">
+        <fegaussianblur in="SourceGraphic" stddeviation="10"/>
+        <fecolormatrix in="blur" mode="matrix"  values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"/>
+    </filter>
+</svg>
+</body>
+</html>
