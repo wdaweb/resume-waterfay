@@ -23,7 +23,7 @@ echo in_array("C",$a);
 if(in_array('C',$a)){
     echo 'C有在陣列$a中';
 }else{
-    echo'C不在陣列$a中';
+    echo 'C不在陣列$a中';
 }
 
 ?>
