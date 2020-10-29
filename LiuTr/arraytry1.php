@@ -60,3 +60,15 @@ echo PHP_EOL;
 list(1 => $second, 3 => $fourth) = [1, 2, 3, 4];
 echo "$second, $fourth\n";
 ?>
+<hr>
+<?php
+$a = array(0, "str1", "str2", "str3");
+echo "
+str1 = ".array_search("str1", $a).",
+str2 = ".array_search("str2", $a).",
+str3 = ".array_search("str3", $a).",
+
+str1 strict = ".array_search("str1", $a, true).",
+str2 strict = ".array_search("str2", $a, true).",
+str3 strict = ".array_search("str3", $a, true);
+?>
