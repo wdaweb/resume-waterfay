@@ -28,7 +28,7 @@
 <body>
 <h3>月曆製作</h3>
 <table>
-    <tr>
+<tr>
         <td>日</td>
         <td>一</td>
         <td>二</td>
@@ -36,7 +36,7 @@
         <td>四</td>
         <td>五</td>
         <td>六</td>
-    </tr>
+</tr>
 <?php
 
 $thisMonth=date("m");
