@@ -49,13 +49,14 @@ foreach ($a as $key) {
 ?>
 
 <?php
-
-$TGDZ = array (array ('甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸' ),
-array ('子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥' ) );
 $Year = 2014;
-$Year_JiSuan = $Year - 1900 + 36;
-$TianGanDiZhi = $TGDZ[0][$Year_JiSuan % 10] . $TGDZ[1][$Year_JiSuan % 12];
-echo $Year."年為農曆[".$TianGanDiZhi."]年";
+$TGDZ = array (array ('庚', '辛','壬', '癸','甲', '乙', '丙', '丁','戊', '己'),
+array ('申','酉' ,'戌' ,'亥','子','丑' ,'寅' ,'卯','辰' ,'巳' ,'午' ,'未' ) );
+for($Year=1900;$Year<=2099;$Year++){
+$TianGanDiZhi = $TGDZ[0][$Year% 10] . $TGDZ[1][$Year% 12];
+echo $Year."年為農曆[".$TianGanDiZhi."]年<br>";
+}
+
 ?>
 
 <?php
