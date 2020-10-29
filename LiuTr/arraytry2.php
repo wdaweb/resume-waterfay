@@ -34,22 +34,34 @@ foreach ($a as $key) {
 }
 ?>
 <hr>
+<h1>陣列元素序數相反</h1>
 <?php
-// $year=1202;
+$a=[2,4,6,1,8];
+echo "原本的陣列";
+echo "<pre>";
+print_r($a);
+echo "</pre>";
+for($i=0;$i<ceil(count($a)/2);$i++){
+    $tmp=$a[$i];
+    $a[$i]=$a[count($a)-1-$i];
+    $a[count($a)-1-$i]=$tmp;
 
-// $a=[['庚', '辛','壬', '癸','甲', '乙', '丙', '丁','戊', '己']];
-// $b=['酉' ,'戌' ,'亥','子','丑' ,'寅' ,'卯','辰' ,'巳' ,'午' ,'未' ,'申'];
+}
+echo"反序後的陣列:";
+echo"<pre>";
+print_r($a);
+echo"</pre>";
 
-// $yeartimeword=
-// echo $year[$yeartime%10] . $year[$yeartime%12];
 
-// print_r($a);
+
+?>
+<hr>
+<?php
 
 
 ?>
 
 <?php
-$Year = 2014;
 $TGDZ = array (array ('庚', '辛','壬', '癸','甲', '乙', '丙', '丁','戊', '己'),
 array ('申','酉' ,'戌' ,'亥','子','丑' ,'寅' ,'卯','辰' ,'巳' ,'午' ,'未' ) );
 for($Year=1900;$Year<=2099;$Year++){
@@ -59,21 +71,3 @@ echo $Year."年為農曆[".$TianGanDiZhi."]年<br>";
 
 ?>
 
-<?php
-
-$sky=['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸' ];
-$land=['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];
-$match=[];
-foreach($sky as $i=> $s){
-    foreach($land as $j=>$i){
-        $match[1024+($i*10+$j)]=$s.$l;
-    }
-}
-
-?>
-
-// $yeartime=array(array('庚', '辛','壬', '癸','甲', '乙', '丙', '丁','戊', '己')
-// .array('酉' ,'戌' ,'亥','子','丑' ,'寅' ,'卯','辰' ,'巳' ,'午' ,'未' ,'申'));
-
-// .array_search($a,$b),
-// print_r($yeartimeword);
