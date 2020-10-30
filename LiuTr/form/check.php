@@ -20,10 +20,10 @@ if(!empty($_POST['acc']) && !empty($_POST['pw'])){
         if($chk['pw']==$pw){
             switch($chk['type']){
             case 'vip';
-                header("location:vip.php?name{$chk['acc']}");
+                header("location:vip.php?name={$chk['acc']}");
             break;
             case 'mem':
-                header("location:mem.php?name{$chk['acc']}");
+                header("location:mem.php?name={$chk['acc']}");
             break;
             }
         }else{
