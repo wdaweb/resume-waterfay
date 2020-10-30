@@ -54,9 +54,9 @@ echo "<br>";
 for($i=0;$i<6;$i++){
     echo"<tr>";
     for($j=0;$j<7;$j++){
-        if((($i*7) + ($j+1) - $starDayWeek)>$monthDays){
-        break;
-        }
+        // if((($i*7) + ($j+1) - $starDayWeek)>$monthDays){
+        // break;
+        // }
         echo"<td>";
         if($i==0 && $j<4){
             echo "&nbsp;";
