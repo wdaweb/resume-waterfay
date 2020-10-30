@@ -31,6 +31,7 @@
 ?>
     <h5>你的BMI為</h5>
     <div style="background:skyblue;width:200px;height:30px"><?=round($result,2);?></div>
+    <a href='student.php?num=<?=$_GET['num']; ?>'>回學生查詢頁</a><br>
     <a href="form.php">重新計算</a>
 <?php
     }
