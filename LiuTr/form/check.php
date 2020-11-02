@@ -27,10 +27,10 @@ if(!empty($_POST['acc']) && !empty($_POST['pw'])){
             break;
             }
         }else{
-            header("location:error.php");
+            header("location:error.php?e=2");
         }
     }else{
-        header("location:error.php?eid=1");
+        header("location:error.php?e=1");
     }
 
 }else{

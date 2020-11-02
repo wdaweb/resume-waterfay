@@ -19,6 +19,6 @@
         }
         ?>
     </h1>
-    <h5><a href="login.html"></a></h5>
+    <h5><a href="login.html">重新登入</a></h5>
 </body>
 </html>
