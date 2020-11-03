@@ -35,11 +35,28 @@
 <div class="col-12 float-right border bg-light" style="height: 600px;box-shadow:1px 1px 10px #185761 ;">
 <h3>月曆製作</h3>
 
+
+
+
 <?php
 date_default_timezone_set("Asia/Taipei");
-$year=$_GET['y'];
-$year=date("Y-m");
-echo "這個月=>".$year;
+$year=date("Y");
+echo "今年=>".$year;
+echo"<br>";
+$nextyear=$year+1;
+echo "下一年=>".$nextyear;
+echo"<br>";
+$preyear=$year-1;
+echo "上一年=>".$preyear;
+echo"<br>";
+$month=date("m");
+echo "這個月=>".$month;
+echo"<br>";
+$nextmonth=$month+1;
+echo "下個月=>".$nextmonth;
+echo"<br>";
+$premonth=$month-1;
+echo "上個月=>".$premonth;
 echo"<br>";
 $monthDays=date("t");
 echo "這個月天數=>".$monthDays;
@@ -82,11 +99,31 @@ for($i=1-$starDayWeek; $i<=$monthDays;$i++)
     }
 echo "</table>";
 ?>
+
+<?php
+if(!empty($_GET['preyear'])){
+$nextyear=$year;
+$nextmonth=$month+1;
+if(!empty($_GET['nextyear'])){
+     $nextyear=$year+1;
+     $nextmonth=1;
+ }
+ 
+ $preyear=$year;
+ $premonth=$month-1;
+if($premonth<1){
+    $preyear=$year-1;
+    $premonth=12;
+}
+}
+?>
 <br>
 <div class="row justify-content-center">
-<div class="col-6 justify-content-center"> 
-        <input type="button" class="btn btn-outline-secondary btn-lg" value="上個月">
-        <input type="button" class="btn btn-outline-secondary btn-lg" value="下個月">
+<div class="col-6 justify-content-center">
+<form action="calenderwork.php" method="get">
+        <input type="button" class="btn btn-outline-secondary btn-lg" name="prevyear" value="上個月">
+        <input type="button" class="btn btn-outline-secondary btn-lg" method="nextyear" value="下個月">
+        </form>        
         </div>
         </div>
 </div>

@@ -1,21 +1,27 @@
-<?php
-$i=0;
-for($i>0;$i<=10;){
-echo $i;
-$i++;
-}
-?>
 
 <?php
-$i=0;
-for($i>0;$i<=10;){
-echo $i++;
-}
-?>
+date_default_timezone_set("Asia/Taipei");
+$month=$_GET['m']?$_GET['m']:date('m');
 
-<?php
-$i=0;
-for($i>0;$i<=10;$i++){
-echo $i;
+
+if($month==1){
+    $premonth = 12;
+
+}else{
+    $premonth = $month-1;
+
 }
+
+if($month==12){
+    $nextmonth = 1;
+
+}else{
+    $nextmonth = $month + 1;
+}
+
+
+
+echo "<a href='try.php?m={$premonth}'>上個月</a>";
+echo "<a href='try.php?m={$nextmonth}'>下個月</a>";
+
 ?>
