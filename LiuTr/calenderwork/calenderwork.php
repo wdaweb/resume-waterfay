@@ -39,32 +39,47 @@
 
 
 <?php
+if(isset($_GET["m"] )&& isset($_GET["Y"])){
+    $month=$_GET["m"];
+    $year=$_GET["Y"];
+    }else{
+        $month=date("m");
+        $year=date("Y");
+    }
+
+if($month==1)
+    {
+        $preyear=$year-1;
+        $prevmonth=12;
+    }
+    else
+    {
+        $preyear=$year;
+        $premonth=$month-1;
+    }
+    
+
+    if($month==12)
+    {
+        $nextyear=$year+1;
+        $nextmonth=1;
+    }
+    else
+    { 
+        $nextyear=$year;
+        $nextmonth=$month+1;
+    }
+
 date_default_timezone_set("Asia/Taipei");
-$year=date("Y");
-echo "今年=>".$year;
-echo"<br>";
-$nextyear=$year+1;
-echo "下一年=>".$nextyear;
-echo"<br>";
-$preyear=$year-1;
-echo "上一年=>".$preyear;
-echo"<br>";
-$month=date("m");
-echo "這個月=>".$month;
-echo"<br>";
-$nextmonth=$month+1;
-echo "下個月=>".$nextmonth;
-echo"<br>";
-$premonth=$month-1;
-echo "上個月=>".$premonth;
-echo"<br>";
-$monthDays=date("t");
-echo "這個月天數=>".$monthDays;
-echo"<br>";
-$firstDate=strtotime(date("Y-m-").'1');
+$firstDate=strtotime("{$year}-{$month}-1");
 echo $firstDate;
 echo"<br>";
 $starDayWeek=date('w',$firstDate);
+$monthDays=date("t",$firstDate);
+echo "這個月天數=>".$monthDays;
+echo"<br>";
+
+
 echo "第一天星期=>" .$starDayWeek;
 echo "<br>";
 
@@ -80,7 +95,7 @@ echo "<th>六</th>";
 echo "</tr>";
 
 //铺表格
-for($i=1-$starDayWeek; $i<=$monthDays;$i++)
+for($i=1-$starDayWeek; $i<=$monthDays;)
      { 
         echo "<tr>";
         for ($j=0; $j<7; $j++)
@@ -91,41 +106,20 @@ for($i=1-$starDayWeek; $i<=$monthDays;$i++)
             }
             else
             {
-                    echo "<td>".($i++)."</td>";
+                    echo "<td>".$i."</td>";
                     
             }
+            
+            $i++;
         }
         echo "</tr>";
     }
 echo "</table>";
 ?>
 
-<?php
-if(!empty($_GET['preyear'])){
-$nextyear=$year;
-$nextmonth=$month+1;
-if(!empty($_GET['nextyear'])){
-     $nextyear=$year+1;
-     $nextmonth=1;
- }
- 
- $preyear=$year;
- $premonth=$month-1;
-if($premonth<1){
-    $preyear=$year-1;
-    $premonth=12;
-}
-}
-?>
-<br>
-<div class="row justify-content-center">
-<div class="col-6 justify-content-center">
-<form action="calenderwork.php" method="get">
-        <input type="button" class="btn btn-outline-secondary btn-lg" name="prevyear" value="上個月">
-        <input type="button" class="btn btn-outline-secondary btn-lg" method="nextyear" value="下個月">
-        </form>        
-        </div>
-        </div>
-</div>
+
+<a href='calenderwork.php?Y=<?=$preyear?>&m=<?=$premonth?>'>上個月</a><br>
+<a href='calenderwork.php?Y=<?=$nextyear?>&m=<?=$nextmonth?>'>下個月</a><br>
+
 </body>
 </html>
