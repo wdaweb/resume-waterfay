@@ -1,0 +1,34 @@
+body{
+  margin:0;
+  text-align: center;
+}
+table{
+margin: 1rem;
+display: inline-block;
+}
+table,tr,td{
+  border:1px solid black;
+}
+td{
+  width:200px;height:200px;padding:0;
+}
+.a{
+  background-color: red;
+}
+.b{
+  background:url("https://picsum.photos/50/50/?random=1") no-repeat 100% ;
+}
+.c{
+  background:url("https://picsum.photos/50/50/?random=1") repeat-x ;
+}
+.d{
+  background:url("https://picsum.photos/50/50/?random=1") repeat-y ;
+
+}
+.e{
+  background:url("https://picsum.photos/50/50/?random=1") no-repeat 50%;
+
+}
+.f{
+  
+}
