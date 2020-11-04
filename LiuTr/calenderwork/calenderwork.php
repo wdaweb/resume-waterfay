@@ -72,16 +72,8 @@ if($month==1)
 
 date_default_timezone_set("Asia/Taipei");
 $firstDate=strtotime("{$year}-{$month}-1");
-echo $firstDate;
-echo"<br>";
 $starDayWeek=date('w',$firstDate);
 $monthDays=date("t",$firstDate);
-echo "這個月天數=>".$monthDays;
-echo"<br>";
-
-
-echo "第一天星期=>" .$starDayWeek;
-echo "<br>";
 
 echo "<table width='700px' border='1px'>";
 echo "<tr>";
