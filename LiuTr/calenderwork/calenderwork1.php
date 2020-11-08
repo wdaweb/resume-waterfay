@@ -11,7 +11,7 @@
     <script src="https://kit.fontawesome.com/1b66a8f9ef.js" crossorigin="anonymous"></script>
     
     <style>
-        html {
+        html body {
             height: 100%;
         }
 
@@ -24,7 +24,7 @@
     position: relative;
     min-width: 100%;
     height: 100vh;
-    background-color: #225ca3;
+    background-color:	#374376;
     overflow: hidden;
     }
 
@@ -36,7 +36,7 @@
     min-width: 160%;
     height: 350%;
     border-radius: 100%;
-    background-color:  rgb(213, 229, 239);
+    background-color: #D3EFFD;
     animation: rotate 8s linear infinite;
     }
 
@@ -94,7 +94,7 @@
   top:0;
   left:0;
   width:100%;
-  height:100%;
+  height:95%;
   z-index:0;
   overflow:hidden;
   transform:translateZ(0);
