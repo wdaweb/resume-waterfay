@@ -34,8 +34,6 @@ $pdo=new PDO($dsn,'root','');
     .selector form select{
         font-size:1.5rem;
         padding:5px;
-
-
     }
     </style>
 </head>
