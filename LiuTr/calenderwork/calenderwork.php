@@ -20,7 +20,7 @@
         }
         table td{
             border-collapse: collapse; 
-            border:1px solid #ccc;
+            border:px solid #ccc;
             text-align:center;
             padding:10px 0;
         }
@@ -50,7 +50,7 @@ if(isset($_GET["m"] )&& isset($_GET["Y"])){
 if($month==1)
     {
         $preyear=$year-1;
-        $prevmonth=12;
+        $premonth=12;
     }
     else
     {
