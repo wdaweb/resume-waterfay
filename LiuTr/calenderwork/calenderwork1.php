@@ -8,6 +8,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>   <!--不一定會用到-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/1b66a8f9ef.js" crossorigin="anonymous"></script>
+    
     <style>
         html {
             height: 100%;
@@ -18,52 +20,57 @@
             padding-left: 0px;
         }
 
-.wave {
-position: relative;
-width: 100%;
-height: 100vh;
-background-color: #225ca3;
-overflow: hidden;
-}
+    .wave {
+    position: relative;
+    min-width: 100%;
+    height: 100vh;
+    background-color: #225ca3;
+    overflow: hidden;
+    }
 
-.wave::before,.wave::after{
-content: "";
-position: absolute;
-left: 50%;
-bottom: 15%;
-width: 160%;
-height: 350%;
-border-radius: 100%;
-background-color:  rgb(213, 229, 239);
-animation: rotate 8s linear infinite;
-}
+    .wave::before,.wave::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 15%;
+    min-width: 160%;
+    height: 350%;
+    border-radius: 100%;
+    background-color:  rgb(213, 229, 239);
+    animation: rotate 8s linear infinite;
+    }
 
-.wave::before {
-bottom: 10%;
-opacity:0.3;
-border-radius: 47%;
-}
+    .wave::before {
+    bottom: 10%;
+    opacity:0.5;
+    border-radius: 47%;
+    }
 
-@keyframes rotate {
-from {
-transform: translateX(-50%) rotateZ(0deg);
-}
-to {
-transform: translateX(-50%) rotateZ(360deg);
-}
-}
+    @keyframes rotate {
+    from {
+    transform: translateX(-50%) rotateZ(0deg);
+    }
+    to {
+    transform: translateX(-50%) rotateZ(360deg);
+    }
+    }
 
-
+    h1{
+      font-family: 'Indie Flower', cursive;
+      left:40%;
+      top:10%;
+      position:absolute;
+      color:	#3A006F;
+    }
         table{
             font-family: 'Indie Flower', cursive;
             font-size:25px;
+            color:	#3A006F;
             bottom:20%;
             width:400px;
             margin:auto;
             border:0px;
             border-radius:20%;
-            position:relative;
-            z-index:99;
 
         }
         table td{
@@ -77,21 +84,97 @@ transform: translateX(-50%) rotateZ(360deg);
         table td:hover{
             background:lightyellow;
         }
+        a{
+            top:20%;
+            left:50%;
+        }
+
+  .bubble{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:0;
+  overflow:hidden;
+  transform:translateZ(0);
+}
+
+.bubble li{
+  position:absolute;
+  list-style:none;
+  display:block;
+  background:rgba(255,255,255,0.2);
+  /*make bubble on page bottom*/
+   bottom:-100px; 
+  animation:bubble-ani 20s linear infinite;
+  border-radius:100%;
+}
+
+/* glow of the bubbles*/
+.bubble li:before {
+    position: absolute;
+    left: 20%;
+    top: 21%;
+    width: 25%;
+    content: '';
+    background: rgba(255,255,255,0.2);
+    display: block;
+    height: 25%;
+    border-radius: 100%;
+}
+
+.bubble li:nth-child(1){
+  width:20px;
+  height:20px;
+  left:15%;
+}
+
+.bubble li:nth-child(2){
+  width:40px;
+  height:40px;
+  left:40%;
+  animation-duration:13s;
+  animation-delay:2s;
+}
+
+.bubble li:nth-child(3){
+  width:25px;
+  height:25px;
+  left:30%;
+  animation-duration:18s;
+  animation-delay:3.5s;
+}
+
+.bubble li:nth-child(4){
+  width:60px;
+  height:60px;
+  left:55%;
+  animation-duration:23s;
+  animation-delay:1.5s;
+}
+
+.bubble li:nth-child(5){
+  width:20px;
+  height:20px;
+  left:35%;
+  animation-duration:16s;
+  animation-delay:2s;
+}
+
+@keyframes bubble-ani {
+  0%{
+    -webkit-transform:translateY(0);
+    transform:translateY(0);
+  }
+  100%{
+    -webkit-transform:translateY(-1080px);
+    transform:translateY(-1080px);
+  }
+}
     </style>
 </head>
 <body>
-<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Indie+Flower&display=swap" rel="stylesheet">
-<div class="container-fluid justify-content-center position-relative" style="z-index:-999;">
-<div class="wave">
-<h3>月曆製作</h3>
-<div class="container d-flex justify-content-center align-items-center position-relative" style="width:600px;height: 600px;box-shadow:1px 1px 10px #185761; border-radius:50%;z-index:1;">
-<div class="col-7 d-flex justify-content-center align-items-center bg-transparent">
-
-
-
-
-
-
 <?php
 if(isset($_GET["m"] )&& isset($_GET["Y"])){
     $month=$_GET["m"];
@@ -129,15 +212,49 @@ $firstDate=strtotime("{$year}-{$month}-1");
 $starDayWeek=date('w',$firstDate);
 $monthDays=date("t",$firstDate);
 
-echo "<table width='1200px'>";
-echo "<tr>";
-echo "<th>&emsp;SUN</th>";
-echo "<th>&emsp;MON</th>";
-echo "<th>&emsp;TUS</th>";
-echo "<th>&emsp;WEN</th>";
-echo "<th>&emsp;THS</th>";
-echo "<th>&emsp;FRI</th>";
-echo "<th>&emsp;SAT</th>";
+?>
+
+<ul class="bubble" style="z-index:2;">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<div class="carousel-control-prev" href="#carouselExampleControls" style="z-index:3;">
+<a style="font-size: 5rem;opacity:0.5;margin-left:15px;" href='calenderwork1.php?Y=<?=$preyear?>&m=<?=$premonth?>'>
+<i class="fas fa-water"></i>
+</a>
+</div>
+<div class="carousel-control-next" href="#carouselExampleControls" style="z-index:3;">
+<a style="font-size: 5rem;opacity:0.5;margin-left:15px;" href='calenderwork1.php?Y=<?=$preyear?>&m=<?=$premonth?>'>
+<i class="fas fa-water"></i>
+</a>
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Indie+Flower&display=swap" rel="stylesheet">
+</div>
+
+<div class="container-fluid justify-content-center position-relative overflow-hidden" style="z-index:1; border-radi">
+<div class="wave">
+
+<div class="container my-5 d-flex justify-content-center align-items-center position-relative" style="width:600px;height: 600px;box-shadow:1px 1px 10px #185761; border-radius:50%;z-index:1;">
+<h1 style="z-index:4"><?=$year?>-<?=$month?></h1>
+<div class="d-flex justify-content-center align-items-center bg-transparent">
+
+
+
+
+
+<?php
+
+echo "<table  position='absolute'>";
+echo "<td>&emsp;SUN</td>";
+echo "<td>&emsp;MON</td>";
+echo "<td>&emsp;TUS</th>";
+echo "<td>&emsp;WEN</td>";
+echo "<td>&emsp;THS</td>";
+echo "<td>&emsp;FRI</td>";
+echo "<td>&emsp;SAT</td>";
 echo "</tr>";
 
 
@@ -162,13 +279,20 @@ for($i=1-$starDayWeek; $i<=$monthDays;)
     }
 echo "</table>";
 ?>
-<a href='calenderwork1.php?Y=<?=$preyear?>&m=<?=$premonth?>'>上個月</a><br>
-<a href='calenderwork1.php?Y=<?=$nextyear?>&m=<?=$nextmonth?>'>下個月</a><br>
+<div id="carouselExampleControls" class="carousel slide carousel-fade position-absolute" style="z-index:-10000;border-radius: 100%;" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://picsum.photos/700/700/?random=1" style="z-index:-10000;border-radius: 100%; opacity:0.4;"  class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://picsum.photos/700/700/?random=1" style="z-index:-10000;border-radius: 100%; opacity:0.4;"   class="d-block w-100" alt="...">
+    </div>
+  </div>
+
 
 
 </div>
 </div>
 </div>
-
 </body>
 </html>
