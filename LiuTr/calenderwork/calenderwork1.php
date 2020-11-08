@@ -55,19 +55,24 @@ transform: translateX(-50%) rotateZ(360deg);
 
 
         table{
+            font-family: 'Indie Flower', cursive;
+            font-size:25px;
             bottom:20%;
             width:400px;
             margin:auto;
             border:0px;
             border-radius:20%;
-            position:absolute
-            border-collapse: collapse;
+            position:relative;
+            z-index:99;
+
         }
         table td{
+            font-family: 'Indie Flower', cursive;
+            font-size:25px;
             border-collapse: collapse; 
             border:0px;
             text-align:center;
-            padding:10px 0;
+            padding:5px 0;
         }
         table td:hover{
             background:lightyellow;
@@ -75,14 +80,13 @@ transform: translateX(-50%) rotateZ(360deg);
     </style>
 </head>
 <body>
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Indie+Flower&display=swap" rel="stylesheet">
 <div class="container-fluid justify-content-center position-relative" style="z-index:-999;">
-    <div class="wave">
-
-
-<div class="container d-flex justify-content-center  mt-1 position-relative" style="z-index:1;">
-<div class="row  border justify-content-center align-items-center"  style="width:600px;height: 600px;box-shadow:1px 1px 10px #185761; border-radius:50%;">
-<div class="col-7 bg-transparent overflow-hidden">
+<div class="wave">
 <h3>月曆製作</h3>
+<div class="container d-flex justify-content-center align-items-center position-relative" style="width:600px;height: 600px;box-shadow:1px 1px 10px #185761; border-radius:50%;z-index:1;">
+<div class="col-7 d-flex justify-content-center align-items-center bg-transparent">
+
 
 
 
@@ -125,20 +129,20 @@ $firstDate=strtotime("{$year}-{$month}-1");
 $starDayWeek=date('w',$firstDate);
 $monthDays=date("t",$firstDate);
 
-echo "<table width='1200px' border='0px'>";
+echo "<table width='1200px'>";
 echo "<tr>";
-echo "<th>&emsp;日</th>";
-echo "<th>&emsp;一</th>";
-echo "<th>&emsp;二</th>";
-echo "<th>&emsp;三</th>";
-echo "<th>&emsp;四</th>";
-echo "<th>&emsp;五</th>";
-echo "<th>&emsp;六</th>";
+echo "<th>&emsp;SUN</th>";
+echo "<th>&emsp;MON</th>";
+echo "<th>&emsp;TUS</th>";
+echo "<th>&emsp;WEN</th>";
+echo "<th>&emsp;THS</th>";
+echo "<th>&emsp;FRI</th>";
+echo "<th>&emsp;SAT</th>";
 echo "</tr>";
 
-//铺表格
+
 for($i=1-$starDayWeek; $i<=$monthDays;)
-     { 
+        { 
         echo "<tr>";
         for ($j=0; $j<7; $j++)
         { 
@@ -158,14 +162,13 @@ for($i=1-$starDayWeek; $i<=$monthDays;)
     }
 echo "</table>";
 ?>
+<a href='calenderwork1.php?Y=<?=$preyear?>&m=<?=$premonth?>'>上個月</a><br>
+<a href='calenderwork1.php?Y=<?=$nextyear?>&m=<?=$nextmonth?>'>下個月</a><br>
 
 
 </div>
-<a class="position-absolute" style="z-index:99;" href='calenderwork1.php?Y=<?=$preyear?>&m=<?=$premonth?>'>上個月</a><br>
-<a class="position-absolute" style="z-index:99;" href='calenderwork1.php?Y=<?=$nextyear?>&m=<?=$nextmonth?>'>下個月</a><br>
 </div>
 </div>
-<br>
 
 </body>
 </html>
