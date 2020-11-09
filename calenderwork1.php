@@ -279,16 +279,21 @@ for($i=1-$starDayWeek; $i<=$monthDays;)
     }
 echo "</table>";
 ?>
-<div id="carouselExampleControls" class="carousel slide carousel-fade position-absolute" style="border-radius: 100%;" data-ride="carousel">
+<div id="carouselExampleControls" class="carousel slide carousel-fade position-absolute" style="z-index:-10000;border-radius: 100%;" data-ride="carousel">
+<ol class="carousel-indicators">
+    <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleControls" data-slide-to="1"></li>
+    <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+  </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="img\subtle-cinematics-VHt_sWcj70I-unsplash.jpg" style="border-radius: 100%; opacity:0.4;"  class="d-block w-100" alt="...">
+      <img src="https://picsum.photos/700/700/?random=1" style="z-index:-10000;border-radius: 100%; opacity:0.3;"  class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="img\shifaaz-shamoon-O0xQcGATOw4-unsplash.jpg" style="border-radius: 100%; opacity:0.4;"   class="d-block w-100" alt="...">
+      <img src="https://picsum.photos/700/700/?random=2" style="z-index:-10000;border-radius: 100%; opacity:0.3;"   class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="img\johny-goerend-XWWKKdG4Arg-unsplash.jpg" style="border-radius: 100%; opacity:0.4;"   class="d-block w-100" alt="...">
+      <img src="https://picsum.photos/700/700/?random=3" style="z-index:-10000;border-radius: 100%; opacity:0.3;"   class="d-block w-100" alt="...">
     </div>
   </div>
 
