@@ -66,7 +66,7 @@ $pdo=new PDO($dsn,'root','');
 </div>
 
 <?php
-$dsn="mysql:host=locagilhost;dbname=students;cherset=utf8";
+$dsn="mysql:host=localhost;dbname=students;charset=utf8";
 $pdo=new PDO($dsn,'root','');
 $sql="select
     `students`.`school_num` AS '學號',
