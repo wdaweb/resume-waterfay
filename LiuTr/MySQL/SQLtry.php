@@ -36,13 +36,3 @@ echo"<hr>";
 
 ?>
 
-<?php
-function move()
-    {
-        echo '跑';
-    }
-    echo move();
-    echo"<hr>";
-?>
-
-
