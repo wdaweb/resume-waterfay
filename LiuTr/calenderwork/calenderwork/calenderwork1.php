@@ -211,6 +211,11 @@ date_default_timezone_set("Asia/Taipei");
 $firstDate=strtotime("{$year}-{$month}-1");
 $starDayWeek=date('w',$firstDate);
 $monthDays=date("t",$firstDate);
+$date=date("j");
+$month1=date("n");
+$year1=date("o");
+$today=strtotime("{$year1}-{$month1}-{$date}");
+
 
 ?>
 
@@ -247,6 +252,7 @@ $monthDays=date("t",$firstDate);
 
 <?php
 
+
 echo "<table  position='absolute'>";
 echo "<td>&emsp;SUN</td>";
 echo "<td>&emsp;MON</td>";
@@ -269,8 +275,12 @@ for($i=1-$starDayWeek; $i<=$monthDays;)
             }
             else
             {
-                    echo "<td>".$i."</td>";
-                    
+              if(strtotime("{$year}-{$month}-{$date}")==strtotime("{$year1}-{$month1}-{$date}") && $i==$date ){
+                echo '<td style="color:	#FF5151;">'.$i."</td>";
+              }else{
+                echo '<td>'.$i."</td>";
+              }
+              
             }
             
             $i++;
