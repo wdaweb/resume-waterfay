@@ -1,8 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    table{
+        margin:auto;
+        border-collapse:collapse;
+        box-shadow: 0 0 5px #999999;
+        border:5px double blue;
+        padding:10px;
+    }
+    table td{
+        padding:5px 5px;
+        text-align:center;
+        border:1px solid #cccccc;
+    }
+    .selector{
+        width:50%;
+        margin:auto;
+        padding:10px 5px;
+        display:flex;
+        justify-content:space-around;
+    }
+    .selector form select{
+        font-size:1.5rem;
+        padding:5px;
+    }
+</style>
+</head>
+<body>
 <?php
-
-$dsn="mysql:host=localhost;dbname:students_step3;charset=utf8;"
+$dsn="mysql:host=localhost;dbname=students;charset=utf8";
 $pdo=new PDO($dsn,'root','');
-$sql="`select
+$sql="select
         `students`.`school_num` AS '學號',
         `students`.`name` AS '姓名',
         `students`.`uni_id` AS '身分證字號',
@@ -20,6 +52,7 @@ $sql="`select
 
         $rows=$pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
         ?>
+        
         <table>
         <tr>
             <td>學號</td>
@@ -33,10 +66,14 @@ $sql="`select
         foreach($rows as $row){
             echo"<tr>";
             echo "<td>{$row['學號']}</td>";
-            echo "<td>{$row['學號']}</td>";
-            echo "<td>{$row['學號']}</td>";
-            echo "<td>{$row['學號']}</td>";
-            echo "<td>{$row['學號']}</td>";
-            echo "<td>{$row['學號']}</td>";
+            echo "<td>{$row['姓名']}</td>";
+            echo "<td>{$row['身分證字號']}</td>";
+            echo "<td>{$row['生日']}</td>";
+            echo "<td>{$row['科系']}</td>";
+            echo "<td>{$row['畢業國中']}</td>";
         }
+        ?>
         </table>
+
+</body>
+</html>
