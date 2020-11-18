@@ -37,7 +37,15 @@ foreach($awards as $aw){
 }
 
 ?>
+<div class='row justify-content-around' style="list-style-type:none;paddin:0">
+    <li><a href="">1,2月</a></li>
+    <li><a href="">3,4月</a></li>
+    <li><a href="">5,6月</a></li>
+    <li><a href="">7,8月</a></li>
+    <li><a href="">9,10月</a></li>
+    <li><a href="">11,12月</a></li>
 
+</div>
 <table class="table table-bordered table-sm" summary="統一發票中獎號碼單"> 
    <tbody>
     <tr> 
@@ -51,7 +59,7 @@ foreach($awards as $aw){
                 3=>"05 ~ 06",
                 4=>"07 ~ 08",
                 5=>"09 ~ 10",
-                6=>"11 ~ 12",
+                6=>"11 ~ 12"
             ];
             echo $month[$period];
         ?>月 
