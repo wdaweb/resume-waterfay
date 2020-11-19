@@ -1,5 +1,5 @@
 <?php
-$dsn="mysql:host=localhost;dbname=students;charset=utf8";
+$dsn="mysql:host=localhost;dbname=students_step3;charset=utf8";
 $pdo=new PDO($dsn,'root','');
 
 
@@ -68,21 +68,68 @@ echo group::$a;
 $text=new group();
 echo $text->b;
 
+
+
 class text1 extends group{
     function __construct(){
         echo $this->d;
     }
-    // function try(){
-    //     return $this->d;
-    // }
+    function try(){
+        return $this->b;
+    }
 }
-$text1= new text1;
-// echo $text1->try();
+$text1=new text1();
 
-
-
-
-
-
+$text2=new group();
+echo $text2->getprivate();
+echo "<br>;"
 
 ?>
+
+<?php
+class MyClass
+{
+    public $prop1 = "I'm a class property!";
+
+    public function __construct()          //物件被建立時呼叫訊息。
+    {
+        echo 'The class "' . __CLASS__ . '" was initiated!<br />';
+    }
+
+    public function __destruct()           //物件被結束時呼叫訊息。
+    {
+        echo 'The class "' . __CLASS__ . '" was destroyed.<br />';
+    }
+
+    public function __toString()           //將物件轉換為字串。
+    {
+        echo "Using the toString method: ";
+        return $this->getProperty();
+    }
+
+    public function setProperty($newval)
+    {
+        $this->prop1 = $newval;
+    }
+
+    public function getProperty()
+    {
+        return $this->prop1 . "<br />";
+    }
+}
+
+class MyNewClass extends MyClass
+{
+    public function newMethod()           //在新類別裡宣告一個屬性與方法。
+    {
+        echo 'From a new method in "' . __CLASS__ . '".<br />';
+    }
+}
+
+
+$obj = new MyNewClass;                    //建立`MyNewClass`的新物件。
+
+echo $obj->newMethod();                   //呼叫物件到新類別的`newMethod()`。
+
+echo $obj->getProperty();                 //呼叫繼承父類別的`getProperty()`。
+

@@ -1,6 +1,6 @@
 <?php
 
-$dsn="mysql:host=localhost;dbname=students;cherset=utf8";
+$dsn="mysql:host=localhost;dbname=students_step3;charset=utf8";
 $pdo=new PDO($dsn,'root','');
 
 ?>
@@ -45,7 +45,7 @@ $pdo=new PDO($dsn,'root','');
         $sql="select *from dept";
         $depts=$pdo->query($sql)->fetchAll();
         foreach($depts as $dept){
-            echo "<option value='{$dept['id']}'>{$dept['name']}</option>";
+            echo "<option value={$dept['id']}>{$dept['name']}</option>";
         }
     ?>
     </select>
@@ -66,7 +66,7 @@ $pdo=new PDO($dsn,'root','');
 </div>
 
 <?php
-$dsn="mysql:host=localhost;dbname=students;charset=utf8";
+$dsn="mysql:host=localhost;dbname=students_step3;charset=utf8";
 $pdo=new PDO($dsn,'root','');
 $sql="select
     `students`.`school_num` AS '學號',

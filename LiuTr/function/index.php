@@ -9,7 +9,7 @@ echo $len+10;
 
 function myphone($a,$b){
 
-    return  $a+$b;
+    echo  $a+$b;
 
 }
 
