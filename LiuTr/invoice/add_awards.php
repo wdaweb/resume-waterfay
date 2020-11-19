@@ -1,81 +1,127 @@
-<form action="api/add_award_number.php" method="post">
-<table class="table table-bordered table-sm" summary="統一發票中獎號碼單"> 
-   <tbody>
-    <tr> 
-     <th id="months">年月份</th> 
-     <td headers="months" class="title">
-        <input type="number" name="year" min="<?=date("Y")-1;?>" max="<?=date("Y")+1;?>" step="1" value="<?=date("Y");?>">年
-        <select name="period">
-            <option value="1">01 ~ 02</option>
-            <option value="2">03 ~ 04</option>
-            <option value="3">05 ~ 06</option>
-            <option value="4">07 ~ 08</option>
-            <option value="5">09 ~ 10</option>
-            <option value="6">11 ~ 12</option>
-        </select>月 
-    </td> 
-    </tr> 
-    <tr> 
-     <th id="specialPrize" rowspan="2">特別獎</th> 
-     <td headers="specialPrize" class="number"> 
-       <input type="number" name="special_prize" min="00000001" max="99999999"> 
-    </td> 
-    </tr> 
-    <tr> 
-     <td headers="specialPrize"> 同期統一發票收執聯8位數號碼與特別獎號碼相同者獎金1,000萬元 </td> 
-    </tr> 
-    <tr> 
-     <th id="grandPrize" rowspan="2">特獎</th> 
-     <td headers="grandPrize" class="number"> 
-     <input type="number" name="grand_prize" min="00000001" max="99999999"> 
-      </td> 
-    </tr> 
-    <tr> 
-     <td headers="grandPrize"> 同期統一發票收執聯8位數號碼與特獎號碼相同者獎金200萬元 </td> 
-    </tr> 
-    <tr> 
-     <th id="firstPrize" rowspan="2">頭獎</th> 
-     <td headers="firstPrize" class="number">
-        <input type="number" name="first_prize[]" min="00000001" max="99999999"> 
-        <input type="number" name="first_prize[]" min="00000001" max="99999999"> 
-        <input type="number" name="first_prize[]" min="00000001" max="99999999"> 
-      </td> 
-    </tr> 
-    <tr> 
-     <td headers="firstPrize"> 同期統一發票收執聯8位數號碼與頭獎號碼相同者獎金20萬元 </td> 
-    </tr> 
-    <tr hidden> 
-     <th id="twoPrize">二獎</th> 
-     <td headers="twoPrize"> 同期統一發票收執聯末7 位數號碼與頭獎中獎號碼末7 位相同者各得獎金4萬元 </td> 
-    </tr> 
-    <tr hidden> 
-     <th id="threePrize">三獎</th> 
-     <td headers="threeAwards"> 同期統一發票收執聯末6 位數號碼與頭獎中獎號碼末6 位相同者各得獎金1萬元 </td> 
-    </tr> 
-    <tr hidden> 
-     <th id="fourPrize">四獎</th> 
-     <td headers="fourPrizes"> 同期統一發票收執聯末5 位數號碼與頭獎中獎號碼末5 位相同者各得獎金4千元 </td> 
-    </tr> 
-    <tr hidden> 
-     <th id="fivePrize">五獎</th> 
-     <td headers="fivePrize"> 同期統一發票收執聯末4 位數號碼與頭獎中獎號碼末4 位相同者各得獎金1千元 </td> 
-    </tr> 
-    <tr hidden> 
-     <th id="sixPrize">六獎</th> 
-     <td headers="sixPrize"> 同期統一發票收執聯末3 位數號碼與 頭獎中獎號碼末3 位相同者各得獎金2百元 </td> 
-    </tr> 
-    <tr> 
-     <th id="addSixPrize">增開六獎</th> 
-     <td headers="addSixPrize" class="number"> 
-        <input type="number" name="add_six_prize[]" min="001" max="999"> 
-        <input type="number" name="add_six_prize[]" min="001" max="999"> 
-        <input type="number" name="add_six_prize[]" min="001" max="999"> 
-    </td> 
-    </tr>  
-   </tbody>
-</table>
-  <div class="text-center">
-    <input type="submit" value="儲存" class="mx-2 btn btn-primary">
-    <input type="reset" value="清空" class="mx-2 btn btn-warning">
-  </div>
-  </form>
+<?php
+include_once "base.php";
+$period_str=[
+    1=>'1,2月',
+    2=>'3,4月',
+    3=>'5,6月',
+    4=>'7,8月',
+    5=>'9,10月',
+    6=>'11,12月'
+];
+
+echo "你要對的發票是".$_GET['year']."年";
+echo $period_str[$_GET['period']]."的發票";
+
+//撈出該期的發票
+
+$sql="select * from invoices where period='{$_GET['period']}' && left(date,4)='{$_GET['year']}' Order by date desc";
+//echo $sql;
+$invoices=$pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+//echo count($invoices);
+
+//撈出該期的開獎獎號
+$sql="select * from award_numbers where year='{$_GET['year']}' && period='{$_GET['period']}'";
+$award_numbers=$pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+
+/* echo "<pre>";
+print_r($award_numbers);
+echo "</pre>";  */
+
+/* echo "<pre>";
+print_r($invoices);
+echo "</pre>"; */
+
+//開始對獎
+$all_res=-1;
+foreach($invoices as $inv){
+    
+    //對獎程式
+    $number=$inv['number'];
+    /* echo "<pre>";
+    print_r($invoice);
+    echo "</pre>"; */
+    
+    //找出獎號
+    /**
+     * 1.確認期數->目前的發票的日期做分析
+     * 2.得到期數的資料後->撈出該期的開獎獎號
+     * 
+     */
+    $date=$inv['date'];
+    //explode('-',$date)取得日期資料的陣列,陣列的第二個元素就是月
+    //月份就可以推算期數,有了期數及年份就可以找到開獎的號碼
+    // $array=explode('-',$date)
+    // $month=$array[1]
+    // $period=ceil($month/2)
+    $year=explode('-',$date)[0];
+    $period=ceil(explode('-',$date)[1]/2);
+    //echo "select * from award_numbers where year='$year' && period='$period'";
+    //$awards=$pdo->query("select * from award_numbers where year='$year' && period='$period'")->fetchALL();
+    
+    /* 
+    echo "<pre>";
+    print_r($awards);
+    echo "</pre>"; */
+    
+  
+    
+    foreach($award_numbers as $award){
+        switch($award['type']){
+            case 1:
+                //特別號=我的發票號碼
+                
+                
+                if($award['number']==$number){
+                    echo "<br>號碼=".$number."<br>";
+                    echo "<br>中了特別獎<br>";
+                    $all_res=1;
+                }
+            break;
+            case 2:
+                
+                if($award['number']==$number){
+                    echo "<br>號碼=".$number."<br>";
+                    echo "中了特獎<br>";
+                    $all_res=1;
+                }
+    
+            break;
+            case 3:
+                $res=-1;
+                for($i=5;$i>=0;$i--){
+                    $target=mb_substr($award['number'],$i,(8-$i),'utf8');
+                    $mynumber=mb_substr($number,$i,(8-$i),'utf8');
+    
+                    if($target==$mynumber){
+                        
+                        $res=$i;
+                    }else{
+                        break;
+                        //continue
+                    }
+                }
+                //判斷最後中的獎項
+                if($res!=-1){
+                    echo "<br>號碼=".$number."<br>";
+                    echo "中了{$awardStr[$res]}獎<br>";
+                    $all_res=1;
+                }
+            break;
+            case 4:
+                if($award['number']==mb_substr($number,5,3,'utf8')){
+                    echo "<br>號碼=".$number."<br>";
+                    $all_res=1;
+                    echo "中了增開六獎";
+                }
+            break;
+        }
+    }
+    
+
+
+}
+    if($all_res==-1){
+        echo "很可惜，都沒有中";
+    }
+
+?>
