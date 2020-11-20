@@ -1,3 +1,4 @@
+  
 <?php
 
 $dsn="mysql:host=localhost;dbname=invoice;charset=utf8";
@@ -41,5 +42,3 @@ function errFeedBack($field){
     }
 }
 
-
-?>
