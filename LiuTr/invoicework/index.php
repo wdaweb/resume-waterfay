@@ -1,3 +1,21 @@
+<?php 
+session_start();
+
+// function errFeedBack($field){
+//     if(empty($_SESSION['err'][$field])){
+//         foreach($_SESSION['err'][$field] as $err){
+//             echo "<div style='font-size:12px;color:red'>";
+//             echo $err;
+//             echo "</div>";
+//         }
+//     }
+// }
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,15 +34,20 @@
         }
         .login{
         }
+
     </style>
 </head>
 <body>
     <div class="login">
-    <form action="check.php">
-        <p><img src="images/idnumber.png"><br><input type="text" name="id" style="background:url('images/logintext.png') no-repeat;width:200px;height:50px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "></p>
+    <form action="check.php" method="post">    
+        <p><img src="images/idnumber.png" style="width:100;"><br><input type="text" name="Idcard" style="background:url('images/logintext.png') no-repeat;width:200px;height:50px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "  maxlength="10" minlength="10">
+    </p>
+        <p><img src="images/loginpw.png" ><br><input type="text" name="pw" style="background:url('images/logintext.png') no-repeat;width:200px;height:50px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "  maxlength="8" minlength="4">
+    </p>
         <p><input type="submit" value="" style="background:url('images/loginsubmit.png') no-repeat;width:200px;height:40px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "></p>
     </form>
     </div>
+
     <link rel="stylesheet" type="text/css" media="screen" href="rwd.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
