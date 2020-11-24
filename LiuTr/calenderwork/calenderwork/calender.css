@@ -1,0 +1,24 @@
+@media (min-width: 400px){
+    .wave::before,.wave::after{
+        width: 150%;
+        height: 150%;
+    }
+    .container{
+        width:500px;
+        height: 500px;
+        overflow: hidden;
+    }
+
+@media (min-width: 600px){
+    .wave::before,.wave::after{
+        width: 200%;
+        height: 200%;
+    }
+}
+@media (min-width: 900px){
+    .wave::before,.wave::after{
+        width: 150%;
+        height: 250%;
+    }
+}
+}

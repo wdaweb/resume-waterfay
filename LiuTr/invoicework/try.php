@@ -1,4 +1,8 @@
 <?php
+session_start();
+echo $_SESSION['number'];
+$_SESSION['number']=10;
+
 
 
 $a='A123456';
@@ -13,9 +17,4 @@ $Idname=['A','B','C','D','E','F','G','H','I','J','K','L','M','N',
     }else{
         echo "第一個字不是英文";
     }
-?>
-<?php
-
-
-
 ?>

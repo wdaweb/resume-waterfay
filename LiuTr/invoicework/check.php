@@ -2,21 +2,39 @@
 
 session_start();
 
-$_SESSION['ㄕㄛ']=[];
-$Idcard=$_POST['Idcard'];
-$pw=$_POST['pw'];
+$dsn="mysql:host=localhost;dbname=invoice;charset=utf8";
+$pdo=new PDO($dsn,'root','');
+$_SESSION['login_session']=[];
 $Idname=['A','B','C','D','E','F','G','H','I','J','K','L','M','N',
 'O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
-if(!empty($_POST['Idcard'])){
-    if(in_array(substr($_POST['Idcard'],0,1),$Idname)){
-        echo "第一個字是英文";
+verification('Idcard','身份證字號第一個字必為英文');
+accept('pw','密碼必為4-8個字');
+
+
+function verification($field,$meg){
+    global $Idname;
+    if(!empty($_POST[$field]) && in_array(substr($_POST[$field],0,1),$Idname==false)){
+        $_SESSION['login_session'][$field]=$meg;
     }else{
-        echo "第一個字不是英文";
+        header("location:check.php");
     }
+
 }
 
+function accept($field,$meg){
+    if(!empty($_POST[$field])){
+        $_SESSION['login_session'][$field]=$meg;
+    }
 
+}
+
+if(!empty($_SESSION['login_session'])){
+    $Idcard=$pdo->query("select * from `login` where Idcard='{$_POST['Idcard']}' && pw='{$_POST['pw']}'")->fetch();
+    $_SESSION['login_session'] =true;
+    }else{
+        echo "沒有該帳號";
+    }
 
 // function accept($field,$meg){
 

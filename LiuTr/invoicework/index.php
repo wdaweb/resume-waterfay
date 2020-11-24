@@ -1,15 +1,18 @@
 <?php 
 session_start();
 
-// function errFeedBack($field){
-//     if(empty($_SESSION['err'][$field])){
-//         foreach($_SESSION['err'][$field] as $err){
-//             echo "<div style='font-size:12px;color:red'>";
-//             echo $err;
-//             echo "</div>";
-//         }
-//     }
-// }
+
+
+
+function errFeedBack($field){
+    if(!empty($_SESSION['login_session'][$field])){
+        foreach($_SESSION['login_session'][$field] as $err){
+            echo "<div style='font-size:100px;color:red'>";
+            echo $err;
+            echo "</div>";
+        }
+    }
+}
 
 
 
@@ -41,9 +44,9 @@ session_start();
     <div class="login">
     <form action="check.php" method="post">    
         <p><img src="images/idnumber.png" style="width:100;"><br><input type="text" name="Idcard" style="background:url('images/logintext.png') no-repeat;width:200px;height:50px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "  maxlength="10" minlength="10">
-    </p>
-        <p><img src="images/loginpw.png" ><br><input type="text" name="pw" style="background:url('images/logintext.png') no-repeat;width:200px;height:50px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "  maxlength="8" minlength="4">
-    </p>
+        <?php errFeedBack('Idcard');  ?></p>
+        <p><img src="images/loginpw.png" ><br><input type="password" name="pw" style="background:url('images/logintext.png') no-repeat;width:200px;height:50px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "  maxlength="8" minlength="4">
+        <?php errFeedBack('pw');  ?></p>
         <p><input type="submit" value="" style="background:url('images/loginsubmit.png') no-repeat;width:200px;height:40px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "></p>
     </form>
     </div>
