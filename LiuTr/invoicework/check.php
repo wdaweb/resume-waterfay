@@ -17,7 +17,7 @@ function verification($field,$meg){
     if(!empty($_POST[$field]) && in_array(substr($_POST[$field],0,1),$Idname==false)){
         $_SESSION['login_session'][$field]=$meg;
     }else{
-        header("location:check.php");
+        header("location:index.php");
     }
 
 }
@@ -36,7 +36,6 @@ if(!empty($_SESSION['login_session'])){
         echo "沒有該帳號";
     }
 
-// function accept($field,$meg){
 
 
 
