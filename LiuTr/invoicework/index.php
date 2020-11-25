@@ -5,16 +5,14 @@ session_start();
 
 
 function err($field){
-    if(!empty($_SESSION['login_session'][$field])){
-        foreach($_SESSION['login_session'][$field] as $err){
-            echo "<div style='font-size:100px;color:red'>";
+    if(!empty($_SESSION['err'][$field])){
+        foreach($_SESSION['err'][$field] as $err){
+            echo "<div style='font-size:20px;color:red'>";
             echo $err;
             echo "</div>";
         }
     }
 }
-
-
 
 
 ?>
@@ -41,7 +39,7 @@ function err($field){
     </style>
 </head>
 <body>
-    <?php print_r($_SESSION);?>
+    <?php print_r($_SESSION['err']);?>
     <div class="login">
     <form action="check.php" method="post">    
         <p><img src="images/idnumber.png" style="width:100;"><br><input type="text" name="Idcard" style="background:url('images/logintext.png') no-repeat;width:200px;height:50px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "  maxlength="10" minlength="10">
