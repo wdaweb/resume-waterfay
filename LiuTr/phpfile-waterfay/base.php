@@ -1,12 +1,12 @@
 <?php
 
-$dsn="mysql:host=localhost;dbname=invoice;charset=utf8";
+$dsn="mysql:host=localhost;dbname=file;charset=utf8";
 $pdo=new PDO($dsn,'root','');
 
 date_default_timezone_set("Asia/Taipei");
-session_start();
+//session_start();
 
-$awardStr=['頭','二','三','四','五','六'];
+
 
 
 function accept($field,$meg='此欄位不得為空'){
@@ -41,6 +41,8 @@ function errFeedBack($field){
     }
 }
 
+
+//請背一背
 function find($table,$id){
     global $pdo;
     $sql="select * from $table where ";
