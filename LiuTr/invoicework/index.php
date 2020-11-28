@@ -18,9 +18,23 @@ session_start();
             align-items:center;
             justify-content:center;
         }
-        .login{
+        body{
+            background:url("images/loginbg.png") no-repeat center;
+            display:flex;
+            margin:0 auto;
+            height:100vh;
+            weight:100%;
+            align-items:center;
+            justify-content:center;
         }
-
+        .require{
+            color:darkred;
+            margin:65px;
+        }
+        .require:hover{ 
+            color:pink;
+            text-decoration:none;
+        }
     </style>
 </head>
 <body>
@@ -37,8 +51,8 @@ session_start();
         
         }
         ?></p>
-        <button id="myBtn"  onclick="require.php">我要註冊</button>
         <p><img src="images/loginpw.png" ><br><input type="password" name='pw' style="background:url('images/logintext.png') no-repeat;width:200px;height:50px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "  maxlength="8" minlength="4"></p>
+        <a href="require.php" class="require">我想加入</a> 
         <p><input type="submit" value="" style="background:url('images/loginsubmit.png') no-repeat;width:200px;height:40px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "></p>
     </form>
     </div>

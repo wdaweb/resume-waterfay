@@ -3,6 +3,15 @@
 <head>
 <script src="https://kit.fontawesome.com/1b66a8f9ef.js" crossorigin="anonymous"></script>
 <style>
+    body{
+            background:url("images/loginbg.png") no-repeat center;
+            display:flex;
+            margin:0 auto;
+            height:100vh;
+            weight:100%;
+            align-items:center;
+            justify-content:center;
+        }
 .modal {
     display: none; 
     position: fixed; 
@@ -50,7 +59,7 @@
 </head>
 <body>
 
-
+<button id="myBtn" style="border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "><img src="images/requirebtn.png" ></button>
 <div id="myModal" class="modal">
   <div class="modal-content">
     <span class="close"><i class="fas fa-grip-lines"></i></span>
@@ -65,7 +74,6 @@
       <input type="reset" value="" style="background:url('images/loginsubmit2.png') no-repeat;width:100px;height:40px;float:right;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); ">
     </form>
   </div>
-
   </div>
 
 
