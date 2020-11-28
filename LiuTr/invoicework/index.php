@@ -37,6 +37,7 @@ session_start();
         
         }
         ?></p>
+        <button id="myBtn">我要註冊</button>
         <p><img src="images/loginpw.png" ><br><input type="password" name='pw' style="background:url('images/logintext.png') no-repeat;width:200px;height:50px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "  maxlength="8" minlength="4"></p>
         <p><input type="submit" value="" style="background:url('images/loginsubmit.png') no-repeat;width:200px;height:40px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "></p>
     </form>
@@ -46,5 +47,6 @@ session_start();
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>   <!--不一定會用到-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    
 </body>
 </html>
