@@ -7,8 +7,11 @@ include_once "base.php";
 <head>
 <script src="https://kit.fontawesome.com/1b66a8f9ef.js" crossorigin="anonymous"></script>
 <style>
+    html{
+        background: rgba(167,102,40,0.5);
+    }
     body{
-            background:url("images/loginbg.png") no-repeat center;
+            background: url("images/loginbg.png") no-repeat center;
             display:flex;
             margin:0 auto;
             height:100vh;
@@ -17,7 +20,6 @@ include_once "base.php";
             justify-content:center;
         }
 .modal {
-    display: none; 
     position: fixed; 
     z-index: 1; 
     padding-top: 100px;
@@ -26,7 +28,6 @@ include_once "base.php";
     width: 100%; 
     height: 100%; 
     overflow: auto;
-    background-color: rgba(167,102,40,0.5);
 }
 .modal-content {
     background-color:rgba(139,58,58,1);
@@ -34,7 +35,7 @@ include_once "base.php";
     padding: 20px;
     max-width:350px;
     border: 1px solid #888;
-    height:55vh;
+    height:60vh;
     z-index:1;
     position:relative;
 }
@@ -108,20 +109,6 @@ include_once "base.php";
     </form>
   </div>
   </div>
-
-
-<script>
-var modal = document.getElementById('myModal');
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-</script>
 
 </body>
 </html>
