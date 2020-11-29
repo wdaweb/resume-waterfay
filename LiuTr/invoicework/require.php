@@ -1,15 +1,5 @@
 <?php
 include_once "base.php";
-function errFeedBack($field){
-    if(!empty($_SESSION['err1'][$field])){
-
-        foreach($_SESSION['err1'][$field] as $err){
-            echo "<div style='font-size:12px;color:red'>";
-            echo $err;
-            echo "</div>";
-        }
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -80,24 +70,31 @@ function errFeedBack($field){
     <form action="check1.php" method="post" class="require">   
       <p id="inputtext"><img src="images/idnumber1.png" style="width:100;"><br><input type="text" name='Idcard' style="background:url('images/logintext1.png') no-repeat;width:200px;height:40px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "  maxlength="10" minlength="10">
       <?php
-        if(!empty($_SESSION['err1'])){
+        if(!empty($_SESSION['err1']['a'])){
         echo "<div style='font-size:12px;color:red'>";
-        print_r ($_SESSION['err1']);
+        print_r ($_SESSION['err1']['a']);
         echo "</div>";
         }else{
         
         }
+        if(!empty($_SESSION['err1']['b'])){
+            echo "<div style='font-size:12px;color:red'>";
+            print_r ($_SESSION['err1']['b']);
+            echo "</div>";
+            }else{
+            
+            }
         ?>
       </p>
       <p id="inputtext"><img src="images/loginpw1.png" ><br><input type="password" name='pw' style="background:url('images/logintext1.png') no-repeat;width:200px;height:40px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "  maxlength="8" minlength="4">
       <?php
-        if(!empty($_SESSION['err2'])){
-        echo "<div style='font-size:12px;color:red'>";
-        print_r ($_SESSION['err2']);
-        echo "</div>";
-        }else{
-        
-        }
+        if(!empty($_SESSION['err1']['c'])){
+            echo "<div style='font-size:12px;color:red'>";
+            print_r ($_SESSION['err1']['c']);
+            echo "</div>";
+            }else{
+            
+            }
         ?>
       </p>
       <p id="inputtext"><img src="images/logindate.png" style="width:100;"><br><input type="date" name='birthday' style="background:url('images/logintext1.png') no-repeat;width:200px;height:40px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "  maxlength="10" minlength="10"></p>
