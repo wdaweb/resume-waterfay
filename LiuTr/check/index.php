@@ -26,7 +26,7 @@ function errFeedBack($field){
         <ul class="list-group col-md-6 mx-auto">
         <li class="list-group-item">
             *帳號:<input type="text" name='acc'>
-                <?php errFeedBack('acc');  ?>
+            <?php errFeedBack('acc');  ?>
         </li>
         <li class="list-group-item">*密碼:<input type="password" name='pw'><br>
                  <?php errFeedBack('pw');  ?>

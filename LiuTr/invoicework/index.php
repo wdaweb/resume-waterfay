@@ -44,7 +44,7 @@ include_once "base.php";
         <p><img src="images/idnumber.png" style="width:100;"><br><input type="text" name='Idcard' style="background:url('images/logintext.png') no-repeat;width:200px;height:50px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "  maxlength="10" minlength="10">
         <?php
         if(!empty($_SESSION['err'])){
-            echo "<div style='font-size:12px;color:red'>";
+        echo "<div style='font-size:12px;color:red'>";
         print_r ($_SESSION['err']);
         echo "</div>";
         }else{
