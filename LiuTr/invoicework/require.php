@@ -1,3 +1,7 @@
+<?php
+include_once "base.php";
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,15 +67,21 @@
 <div id="myModal" class="modal">
   <div class="modal-content">
     <span class="close"><i class="fas fa-grip-lines"></i></span>
-    <form action="require.php" method="post" class="require">   
-      <p id="inputtext" ><img src="images/idnumber1.png" style="width:100;"><br><input type="text" name='Idcard' style="background:url('images/logintext1.png') no-repeat;width:200px;height:40px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "  maxlength="10" minlength="10">
-      <p id="inputtext" ><img src="images/loginpw1.png" ><br><input type="password" name='pw' style="background:url('images/logintext1.png') no-repeat;width:200px;height:40px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "  maxlength="8" minlength="4"></p>
-      <p id="inputtext" ><img src="images/logindate.png" style="width:100;"><br><input type="date" name='birthday' style="background:url('images/logintext1.png') no-repeat;width:200px;height:40px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "  maxlength="10" minlength="10">
-      <p id="inputtext" ><img src="images/loginemail.png" style="width:100;"><br><input type="email" name='email' pattern=".+@globex.com" required style="background:url('images/logintext1.png') no-repeat;width:200px;height:40px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "  maxlength="10" minlength="10">
+    <form action="check1.php" method="post" class="require">   
+      <p id="inputtext"><img src="images/idnumber1.png" style="width:100;"><br><input type="text" name='Idcard' style="background:url('images/logintext1.png') no-repeat;width:200px;height:40px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "  maxlength="10" minlength="10">
+
+      </p>
+      <p id="inputtext"><img src="images/loginpw1.png" ><br><input type="password" name='pw' style="background:url('images/logintext1.png') no-repeat;width:200px;height:40px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "  maxlength="8" minlength="4">
+
+      </p>
+      <p id="inputtext"><img src="images/logindate.png" style="width:100;"><br><input type="date" name='birthday' style="background:url('images/logintext1.png') no-repeat;width:200px;height:40px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "  maxlength="10" minlength="10"></p>
+      <p id="inputtext"><img src="images/loginemail.png" style="width:100;"><br><input type="email" name='email'  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" required style="background:url('images/logintext1.png') no-repeat;width:200px;height:40px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "></p>
+      <input type="hidden" name="time" value="">
       <br>
-      <br>
-      <input type="submit" value="" style="background:url('images/loginsubmit1.png') no-repeat;width:100px;height:40px;float:left;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); ">
-      <input type="reset" value="" style="background:url('images/loginsubmit2.png') no-repeat;width:100px;height:40px;float:right;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); ">
+      <div style="float:left;">
+      <input type="submit" value="" style="background:url('images/loginsubmit1.png') no-repeat;width:100px;height:40px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); ">
+      <input type="reset" value="" style="background:url('images/loginsubmit2.png') no-repeat;width:100px;height:40px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); ">
+      </div>
     </form>
   </div>
   </div>

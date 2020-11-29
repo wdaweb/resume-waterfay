@@ -1,14 +1,11 @@
 <?php 
-session_start();
-
-$dsn="mysql:host=localhost;dbname=invoice;charset=utf8";
-$pdo=new PDO($dsn,'root','');
+include_once "base.php";
 $_SESSION['login_session']=[];
 $_SESSION['err']=[];
 $Idname=['A','B','C','D','E','F','G','H','I','J','K','L','M','N',
 'O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
-if(!empty($_POST['Idcard']) && (in_array(substr($_POST['Idcard'],0,1),$Idname))==0){
+if(!empty($_POST['Idcard']) && (in_array(ucfirst(substr($_POST['Idcard'],0,1)),$Idname))==0){
     $_SESSION['err']='身分證字號第一個字必為英文字';
 }
 
