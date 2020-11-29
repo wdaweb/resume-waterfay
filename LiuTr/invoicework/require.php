@@ -78,7 +78,7 @@ include_once "base.php";
         
         }
         if(!empty($_SESSION['err1']['b'])){
-            echo "<div style='font-size:12px;color:red'>";
+            echo "<div style='font-size:12px;color:white'>";
             print_r ($_SESSION['err1']['b']);
             echo "</div>";
             }else{
@@ -89,7 +89,7 @@ include_once "base.php";
       <p id="inputtext"><img src="images/loginpw1.png" ><br><input type="password" name='pw' style="background:url('images/logintext1.png') no-repeat;width:200px;height:40px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "  maxlength="8" minlength="4">
       <?php
         if(!empty($_SESSION['err1']['c'])){
-            echo "<div style='font-size:12px;color:red'>";
+            echo "<div style='font-size:12px;color:white'>";
             print_r ($_SESSION['err1']['c']);
             echo "</div>";
             }else{
