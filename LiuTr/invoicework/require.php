@@ -76,7 +76,7 @@ include_once "base.php";
       </p>
       <p id="inputtext"><img src="images/logindate.png" style="width:100;"><br><input type="date" name='birthday' style="background:url('images/logintext1.png') no-repeat;width:200px;height:40px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "  maxlength="10" minlength="10"></p>
       <p id="inputtext"><img src="images/loginemail.png" style="width:100;"><br><input type="email" name='email'  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" required style="background:url('images/logintext1.png') no-repeat;width:200px;height:40px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); "></p>
-      <input type="hidden" name="time" value="">
+      <!-- <input type="hidden" name="time" value="time"> -->
       <br>
       <div style="float:left;">
       <input type="submit" value="" style="background:url('images/loginsubmit1.png') no-repeat;width:100px;height:40px;border-width:0;outline: none;background-color: rgba(0, 0, 0, 0); ">

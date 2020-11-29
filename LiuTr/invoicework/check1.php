@@ -1,9 +1,9 @@
 <?php 
 include_once "base.php";
-$Idcard=($_POST['Idcard']);
-$pw=($_POST['pw']);
-$birthday=($_POST['birthday']);
-$email=($_POST['email']);
+echo $Idcard=($_POST['Idcard']);
+echo $pw=($_POST['pw']);
+echo $birthday=($_POST['birthday']);
+echo $email=($_POST['email']);
 $sum=0;
 $Idnames=['A'=>10,'I'=>34,'O'=>35,'B'=>11,'C'=>12,'D'=>13,
 'E'=>14,'F'=>15,'G'=>16,'H'=>17,'J'=>18,'K'=>82,
@@ -12,9 +12,11 @@ $Idnames=['A'=>10,'I'=>34,'O'=>35,'B'=>11,'C'=>12,'D'=>13,
 'Y'=>31,'Z'=>33];
 $require=$pdo->
     query("insert into login  
-    (Idcard, pw, birthday, email,time) 
+    (insert into login  
+    (Idcard, pw,email,birthday) 
     values 
-    (Idcard='{$_POST['Idcard']}' , pw='{$_POST['pw']}' , email='{$_POST['email']}' , birthday='{$_POST['birthday']}' , time='{$_POST['time']}')")->fetch();
+    ('{$_POST['Idcard']}' , '{$_POST['pw']}' , '{$_POST['email']}' , '{$_POST['birthday']}' )")->fetch();
+
 
 // if(empty($_SESSION['err'])){
 //     $require=$pdo->
