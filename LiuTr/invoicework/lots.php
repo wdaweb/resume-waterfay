@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="rwd.css">
     <style>
     body{
             background:url("images/templebg.jpg") no-repeat center;
@@ -24,13 +25,13 @@
     .temple{
         height:500px;
         width:800px;
-        background:red;
+        background:white;
     }
     .login{
         top:100%;
         width:100%;
         height:100px;
-        background:blue;
+        background:#3B3B3B;
         position: absolute;
     }
     </style>
@@ -41,6 +42,6 @@
     <div class="invoice"></div>
     <div class="temple"></div>
     </div>
-    <div class="login"><img src="images/logo.png" style="float:left;" alt=""></div>
+    <div class="login"><img src="images/logo1.png" style="width:200px;" alt=""></div>
 </body>
 </html>

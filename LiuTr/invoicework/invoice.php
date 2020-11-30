@@ -22,15 +22,15 @@
         z-index:100;
     }
     .invoice{
-        height:500px;
-        width:800px;
+        /* height:500px;
+        width:800px; */
         background:white;
     }
     .login{
         top:100%;
         width:100%;
         height:100px;
-        background:blue;
+        background:#ffdfb3;
         position: absolute;
     }
     </style>
@@ -41,6 +41,6 @@
     <div class="invoice"></div>
     <div class="temple"></div>
     </div>
-    <div class="login"><img src="images/logo.png" style="float:left;" alt=""></div>
+    <div class="login"><img src="images/logo.png" style="width:200px;" alt=""></div>
 </body>
 </html>
