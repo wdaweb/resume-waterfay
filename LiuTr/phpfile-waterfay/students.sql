@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2020-11-05 04:18:36
+-- 產生時間： 2020-11-30 04:16:42
 -- 伺服器版本： 10.4.14-MariaDB
 -- PHP 版本： 7.4.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 資料庫： `students`
+-- 資料庫： `file`
 --
 
 -- --------------------------------------------------------
@@ -27,15 +27,23 @@ SET time_zone = "+00:00";
 -- 資料表結構 `students`
 --
 
+CREATE TABLE `students` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `name` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `age` tinyint(3) UNSIGNED NOT NULL,
+  `birthday` date NOT NULL,
+  `addr` varchar(8) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 傾印資料表的資料 `students`
 --
 
-INSERT INTO `students` (`id`, `name`, `national_id`, `seat_num`, `classes`, `gender`, `birthday`, `student_ID`, `tel`, `addr`) VALUES
-(null, '關羽', 'K54267645', 1, '一年一班', 1, '1992-11-12', '1234564564', '0912247326', '花蓮市不知道什麼區'),
-(null, '劉備', 'J232323223', 2, '一年三班', 1, '1996-05-12', '00142534', '0912247326', '新北市三重區仁華街118巷47號6樓'),
-(null, '趙雲', 'O56456432', 3, '一年五班', 2, '2020-05-22', '054645', '458165446', '桃園市不知道什麼區');
+INSERT INTO `students` (`id`, `name`, `age`, `birthday`, `addr`) VALUES
+(1, '小明', 20, '1990-10-12', '台北市\r\n'),
+(2, '小華', 20, '1989-10-12', '台中市\r\n'),
+(3, '小芳', 20, '1985-10-12', '台南市\r\n'),
+(4, '小美', 20, '1991-10-12', '高雄市');
 
 --
 -- 已傾印資料表的索引
@@ -55,7 +63,7 @@ ALTER TABLE `students`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '序號', AUTO_INCREMENT=4;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

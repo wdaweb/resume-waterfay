@@ -1,3 +1,4 @@
+  
 <?php
 /****
  * 1.建立資料庫及資料表
@@ -8,7 +9,6 @@
  * 6.寫入資料庫
  * 7.結束檔案
  */
-
 include_once "base.php";
 
 if(!empty($_FILES['txt']['tmp_name'])){
@@ -18,20 +18,26 @@ if(!empty($_FILES['txt']['tmp_name'])){
     $file=fopen("./upload/".$_FILES['txt']['name'],'r');
     $num=0;
     while(!feof($file)){
-    $line=fgets($file);
-    if($num!=0){
-    $line=explode(",",$line);
-    $data=[
-        'name'=>$line[1],
-        'age'=>$line[2],
-        'birthday'=>$line[3],
-        'addr'=>$line[4]
-    ];
-    save('students',$data);
+        $line=fgets($file);
+        if($num!=0){
+            $line=explode(",",$line);
+            $data=[
+                'name'=>$line[1],
+                'age'=>$line[2],
+                'birthday'=>$line[3],
+                'addr'=>$line[4],
+            ];
+            save('students',$data);
+        }
+        $num++;
     }
-    $num++;
-    }
+
+    fclose($file);
+
 }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,12 +50,11 @@ if(!empty($_FILES['txt']['tmp_name'])){
 </head>
 <body>
 <h1 class="header">文字檔案匯入練習</h1>
+<!---建立檔案上傳機制--->
 <form action="?" method="post" enctype="multipart/form-data" style="width:300px;margin:auto">
-    <input type="file" name="txt">
+    <input type="file" name="txt" >
     <input type="submit" value="上傳">
 </form>
-<!---建立檔案上傳機制--->
-
 
 
 <!----讀出匯入完成的資料----->
