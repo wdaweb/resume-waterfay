@@ -21,16 +21,16 @@
         justify-content:center;
         z-index:100;
     }
-    .invoice{
-        /* height:500px;
-        width:800px; */
+    .contain{
+        height:600px;
+        width:900px;
         background:white;
     }
     .login{
         top:100%;
         width:100%;
         height:100px;
-        background:#ffdfb3;
+        background:#3B3B3B;
         position: absolute;
     }
     </style>
@@ -41,6 +41,6 @@
     <div class="invoice"></div>
     <div class="temple"></div>
     </div>
-    <div class="login"><img src="images/logo.png" style="width:200px;" alt=""></div>
+    <div class="login"><img src="images/logo1.png" style="width:200px;" alt=""></div>
 </body>
 </html>

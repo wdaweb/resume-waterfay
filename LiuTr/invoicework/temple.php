@@ -27,25 +27,25 @@
         background:white;
     }
     .temple{
-        /* height:500px;
-        width:400px; */
+        height:500px;
+        width:400px;
         background:red;
     }
     .login{
         top:100%;
         width:100%;
         height:100px;
-        background:#ffdfb3;
+        background:#3B3B3B;
         position: absolute;
     }
     </style>
-
+<link rel="stylesheet" type="text/css" media="screen" href="rwd.css">
 </head>
 <body>
     <div class="box">
     <div class="invoice"></div>
     <div class="temple"></div>
     </div>
-    <div class="login"><img src="images/logo.png" style="width:200px;" alt=""></div>
+  <div class="login"><img src="images/logo1.png" style="width:200px;" alt=""></div>
 </body>
 </html>

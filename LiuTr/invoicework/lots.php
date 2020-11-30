@@ -22,9 +22,9 @@
         justify-content:center;
         z-index:100;
     }
-    .temple{
-        height:500px;
-        width:800px;
+    .contain{
+        height:600px;
+        width:900px;
         background:white;
     }
     .login{

@@ -1,5 +1,5 @@
 @media (min-width:400px){
-    .temple {
+    .contain{
         height : 450px;
         width  : 300px;
         display: block;
@@ -7,7 +7,7 @@
 }
 
 @media (min-width:576px )  {
-    .temple {
+    .contain {
         height : 450px;
         width  : 400px;
         display: block;
@@ -15,7 +15,7 @@
 }
 
 @media (min-width:768px) {
-    .temple {
+    .contain {
         height: 450px;
         width : 700px;
         display: block;
@@ -23,7 +23,7 @@
 }
 
 @media (min-width:992px) {
-    .temple {
+    .contain {
         height: 500px;
         width : 800px;
         display: block;
@@ -31,9 +31,9 @@
 }
 
 @media (min-width:1200px) {
-    .temple{
-        height:500px;
-        width :800px;
+    .contain{
+        height:600px;
+        width :900px;
         display: block;
     }
 
