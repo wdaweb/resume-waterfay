@@ -35,15 +35,17 @@ foreach($awards as $aw){
         break;
     }
 }
+// if($period==1){
+//     $period-1==6;
+// }else{
+//     $period=$preiod-1;
+// }
 
 ?>
 <div class='row justify-content-around' style="list-style-type:none;paddin:0">
-    <li><a href="?do=award_numbers&pd=2020-1">1,2月</a></li>
-    <li><a href="?do=award_numbers&pd=2020-2">3,4月</a></li>
-    <li><a href="?do=award_numbers&pd=2020-3">5,6月</a></li>
-    <li><a href="?do=award_numbers&pd=2020-4">7,8月</a></li>
-    <li><a href="?do=award_numbers&pd=2020-5">9,10月</a></li>
-    <li><a href="?do=award_numbers&pd=2020-6 ">11,12月</a></li>
+    <li><a href="?do=award_numbers&pd=<?=$year?>-<?=$period-2?>"><?=$year?>-<?=($period-2)*2?></a></li>
+    <li><a href="?do=award_numbers&pd=<?=$year?>-<?=$period-1?>"><?=$year?>-<?=($period-1)*2?></a></li>
+    <li><a href="?do=award_numbers&pd=<?=$year?>-<?=$period?>"><?=$year?>-<?=($period)*2?></a></li>
 
 </div>
 <table class="table table-bordered table-sm" summary="統一發票中獎號碼單"> 
