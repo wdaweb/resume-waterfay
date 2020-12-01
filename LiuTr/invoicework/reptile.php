@@ -7,9 +7,7 @@
 </head>
 <body>
 <table>
-<caption>統一發票</caption>
-        <tr>獎別</tr>
-        <tr>中獎號碼</tr>
+<tbody>
     <?php
     $url="https://invoice.etax.nat.gov.tw/";
     $html=file_get_contents($url);
@@ -28,24 +26,27 @@
         $count++;
         switch($i){
             case 1:
+                echo "<tr>";
                 echo "<td>" . $td->nodeValue . "</td>";
             break;
             case 2:
                 echo "<td>" . $td->nodeValue . "</td>";
+                echo "</tr>";
             break;
             default:break;
         }
-        if($i%2==0){
+        if($i%1==0){
             $i=0;
             $count++;
         }
     }
-    if($count==8){
+    if($count==20){
         break;
     }
     }
     
     ?>
+    </tbody>
 </table>
 </body>
 </html>

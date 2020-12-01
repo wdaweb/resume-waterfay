@@ -9,12 +9,12 @@
                 <option value="6">11,12</option>
             </select>
             <div>發票號碼:
-                <input type="text" name="code" style="width:50px">
-                <input type="number" name="number" style="width:150px">
+                <input type="text" name="code" style="width:50px" pattern="/^([A-Z]\D)$/" required maxlength="2" minlength="2">
+                <input type="number" name="number" style="width:150px" pattern="/^\d{8}$/" maxlength="8" minlength="8">
                 <?php errFeedBack('number');?>
             </div>
             <div>
-                發票金額:<input type="number" name="payment">
+                發票金額:<input type="number" name="payment" pattern="/^[0-9]*$/">
             </div>
             <div class="text-center">
                 <input type="submit" value="送出">

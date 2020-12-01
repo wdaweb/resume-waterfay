@@ -3,18 +3,32 @@ include_once "base.php";
 
 $period=ceil(date("m")/2);
 
-$sql="select * from `invoices` where period='6' order by date desc";
+$sql="select * from `invoices` where period='$period' order by date desc";
 
 $rows=$pdo->query($sql)->fetchAll();
 
-$sql="select * from `invoices` where period='5' order by date desc";
-
-$rows2=$pdo->query($sql)->fetchAll();
-
-$sql="select * from `invoices` where period='4' order by date desc";
-
-$rows3=$pdo->query($sql)->fetchAll();
-ㄔㄛˉ
+$m=ceil(date("m")/2);
+if(isset($_GET['pd'])){
+    $year=date('Y');
+    $period=$m;
+    $sql="select * from `invoices` where period='$period' order by date desc";
+}else{
+    $get_news=$pdo->query("SELECT * FROM `award_numbers` order by year desc ,period desc limit 1")->fetch();
+    $year=$get_news['year'];
+    $period=$get_news['period'];
+    }
+    if(isset($_GET['pd1'])){
+        $year=date('Y');
+        $period=$m-1;
+        $sql="select * from `invoices` where period='$period' order by date desc";
+        $rows=$pdo->query($sql)->fetchAll();
+    }
+    if(isset($_GET['pd2'])){
+        $year=date('Y');
+        $period=$m-2;
+        $sql="select * from `invoices` where period='$period' order by date desc";
+        $rows=$pdo->query($sql)->fetchAll();
+    }
 ?>
 <div class='row justify-content-around' style="list-style-type:none;paddin:0">
     <li><a href="?do=invoice_list&pd2=<?=$year?>-<?=$period?>">上上期發票</a></li>
