@@ -38,8 +38,7 @@
 </head>
 <body>
     <div class="box">
-    <div class="invoice"></div>
-    <div class="temple"></div>
+    <div class="contain"></div>
     </div>
     <div class="login"><img src="images/logo1.png" style="width:200px;" alt=""></div>
 </body>

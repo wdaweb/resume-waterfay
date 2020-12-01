@@ -4,11 +4,32 @@ include_once "base.php";
 if(isset($_GET['pd'])){
     $year=explode("-",$_GET['pd'])[0];
     $period=explode("-",$_GET['pd'])[1];
+    $lastyear=(explode("-",$_GET['pd'])[0])-1;
+    $lastperiod=(explode("-",$_GET['pd'])[1])-1;
 }else{
     $get_news=$pdo->query("SELECT * FROM `award_numbers` order by year desc ,period desc limit 1")->fetch();
     $year=$get_news['year'];
     $period=$get_news['period'];
+    $lastyear=($get_news['year'])-1;
+    $lastperiod=($get_news['period'])-1;
     
+}
+switch($lastperiod){
+case 1: if($lastperiod==1)
+    {
+        $lastyear=$year-1;
+        $lastperiod=6;
+        break;
+    }
+    else
+    {
+        $lastyear=$year;
+        $lastperiod=$period-1;
+        break;
+    }
+case 2: if($lastperiod==$period-2){
+    break;
+}
 }
 /* echo "year=".$year;
 echo "<br>";
@@ -18,6 +39,7 @@ $special="";
 $grand="";
 $first=[];
 $six=[];
+
 
 foreach($awards as $aw){
     switch($aw['type']){
@@ -43,9 +65,9 @@ foreach($awards as $aw){
 
 ?>
 <div class='row justify-content-around' style="list-style-type:none;paddin:0">
-    <li><a href="?do=award_numbers&pd=<?=$year?>-<?=$period-2?>"><?=$year?>-<?=($period-2)*2?></a></li>
-    <li><a href="?do=award_numbers&pd=<?=$year?>-<?=$period-1?>"><?=$year?>-<?=($period-1)*2?></a></li>
-    <li><a href="?do=award_numbers&pd=<?=$year?>-<?=$period?>"><?=$year?>-<?=($period)*2?></a></li>
+    <li><a href="?do=award_numbers&pd=<?=$year?>-<?=$lastperiod?>"><?=$year?>-<?=$lastperiod-1?></a></li>
+    <li><a href="?do=award_numbers&pd=<?=$year?>-<?=$lastperiod?>"><?=$year?>-<?=$lastperiod?></a></li>
+    <li><a href="?do=award_numbers&pd=<?=$year?>-<?=$period?>"><?=$year?>-<?=$period?></a></li>
 
 </div>
 <table class="table table-bordered table-sm" summary="統一發票中獎號碼單"> 
