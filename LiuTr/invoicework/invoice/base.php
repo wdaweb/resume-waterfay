@@ -122,7 +122,6 @@ function insert($table,$array){
     global $pdo;
     $sql="insert into $table(`" . implode("`,`",array_keys($array)) . "`) values('".implode("','",$array)."')";
 
-
     $pdo->exec($sql);
 }
 

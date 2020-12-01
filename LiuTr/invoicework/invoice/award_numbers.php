@@ -9,7 +9,7 @@ include_once "base.php";
             6=>"11,12月",
         ];
 
-        $m=ceil(date("m")/2);
+$m=ceil(date("m")/2);
 if(isset($_GET['pd'])){
     $year=date('Y');
     $period=$m;

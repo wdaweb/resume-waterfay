@@ -41,15 +41,15 @@
             <a href="?do=award_numbers">當期發票兌獎</a>
         </div>
         <div class="text-center">
+            <a href="index.php">輸入消費發票</a>
+        </div>
+        <div class="text-center">
             <a href="?do=invoice_list">當期發票</a>
         </div>
-        <div class="text-center"><?=$month[$m];?></div>
         <div class="text-center">
             <a href="?do=add_awards">輸入獎號</a>
         </div>
-        <div class="text-center">
-            <a href="index.php">回首頁</a>
-        </div>
+
     </div>
 
     <div class="col-lg-8 col-md-12  d-flex flex-column p-3 mx-auto border">

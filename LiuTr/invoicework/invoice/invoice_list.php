@@ -3,15 +3,23 @@ include_once "base.php";
 
 $period=ceil(date("m")/2);
 
-$sql="select * from `invoices` where period='$period' order by date desc";
+$sql="select * from `invoices` where period='6' order by date desc";
 
 $rows=$pdo->query($sql)->fetchAll();
 
+$sql="select * from `invoices` where period='5' order by date desc";
+
+$rows2=$pdo->query($sql)->fetchAll();
+
+$sql="select * from `invoices` where period='4' order by date desc";
+
+$rows3=$pdo->query($sql)->fetchAll();
+ㄔㄛˉ
 ?>
 <div class='row justify-content-around' style="list-style-type:none;paddin:0">
-    <li><a href="">7,8月</a></li>
-    <li><a href="">9,10月</a></li>
-    <li><a href="">11,12月</a></li>
+    <li><a href="?do=invoice_list&pd2=<?=$year?>-<?=$period?>">上上期發票</a></li>
+    <li><a href="?do=invoice_list&pd1=<?=$year?>-<?=$period?>">上期發票</a></li>
+    <li><a href="?do=invoice_list&pd=<?=$year?>-<?=$period?>">當期發票</a></li>
 
 </div>
 <table class="table text-center">
