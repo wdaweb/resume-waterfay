@@ -1,36 +1,32 @@
 <?php
 include_once "base.php";
+        $month=[
+            1=>"1,2月",
+            2=>"3,4月",
+            3=>"5,6月",
+            4=>"7,8月",
+            5=>"9,10月",
+            6=>"11,12月",
+        ];
 
+        $m=ceil(date("m")/2);
 if(isset($_GET['pd'])){
-    $year=explode("-",$_GET['pd'])[0];
-    $period=explode("-",$_GET['pd'])[1];
-    $lastyear=(explode("-",$_GET['pd'])[0])-1;
-    $lastperiod=(explode("-",$_GET['pd'])[1])-1;
+    $year=date('Y');
+    $period=$m;
 }else{
     $get_news=$pdo->query("SELECT * FROM `award_numbers` order by year desc ,period desc limit 1")->fetch();
     $year=$get_news['year'];
     $period=$get_news['period'];
-    $lastyear=($get_news['year'])-1;
-    $lastperiod=($get_news['period'])-1;
-    
-}
-switch($lastperiod){
-case 1: if($lastperiod==1)
-    {
-        $lastyear=$year-1;
-        $lastperiod=6;
-        break;
     }
-    else
-    {
-        $lastyear=$year;
-        $lastperiod=$period-1;
-        break;
-    }
-case 2: if($lastperiod==$period-2){
-    break;
+if(isset($_GET['pd1'])){
+    $year=date('Y');
+    $period=$m-1;
 }
+if(isset($_GET['pd2'])){
+    $year=date('Y');
+    $period=$m-2;
 }
+
 /* echo "year=".$year;
 echo "<br>";
 echo "period=".$period; */
@@ -39,7 +35,6 @@ $special="";
 $grand="";
 $first=[];
 $six=[];
-
 
 foreach($awards as $aw){
     switch($aw['type']){
@@ -57,17 +52,12 @@ foreach($awards as $aw){
         break;
     }
 }
-// if($period==1){
-//     $period-1==6;
-// }else{
-//     $period=$preiod-1;
-// }
 
 ?>
 <div class='row justify-content-around' style="list-style-type:none;paddin:0">
-    <li><a href="?do=award_numbers&pd=<?=$year?>-<?=$lastperiod?>"><?=$year?>-<?=$lastperiod-1?></a></li>
-    <li><a href="?do=award_numbers&pd=<?=$year?>-<?=$lastperiod?>"><?=$year?>-<?=$lastperiod?></a></li>
-    <li><a href="?do=award_numbers&pd=<?=$year?>-<?=$period?>"><?=$year?>-<?=$period?></a></li>
+    <li><a href="?do=award_numbers&pd2=<?=$year?>-<?=$period?>">上上期發票</a></li>
+    <li><a href="?do=award_numbers&pd1=<?=$year?>-<?=$period?>">上期發票</a></li>
+    <li><a href="?do=award_numbers&pd=<?=$year?>-<?=$period?>">當期發票</a></li>
 
 </div>
 <table class="table table-bordered table-sm" summary="統一發票中獎號碼單"> 

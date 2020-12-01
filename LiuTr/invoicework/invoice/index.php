@@ -38,7 +38,7 @@
     ?>
 
      <div class="text-center">
-            <a href="?do=award_numbers">對獎</a>
+            <a href="?do=award_numbers">當期發票兌獎</a>
         </div>
         <div class="text-center">
             <a href="?do=invoice_list">當期發票</a>
