@@ -36,12 +36,21 @@
         console.log(`random is ${rdm2} between 77~99`);
 
         function rand(min,max){
-            const rdm=Math.ceil((Math.random()*((max-min)/0.99))+min);
+            const rdm=Math.ceil((Math.random()*((max-min)/0.99)-1)+min);
             return rdm;
             }
 
         const rand=(min,max)=>{
-            return Math.floor
+            return Math.floor(Math.random()*(max-min+1))+min;
+        }
+
+        const rand = (min,max,run=1) => {
+            let ary=new Array();
+            do{
+            ary.push(Math.ceil(Math.random()*(max-min +1))+min);
+            run--;
+            }while(run > 0);
+            return ary;
         }
     </script>
 </body>
