@@ -32,12 +32,34 @@ $period=ceil(date("m")/2);
 
 $ivname=$_POST['ivname'];
 $keyword=$_POST['keyword'];
-if(!empty($_POST['ivname']) || !empty($_POST['keyword'])){
+$page=$_GET['page'];
+
+if(!empty($ivname) || !empty($keyword)){
     $sql="SELECT * FROM `invoices` WHERE `code` LIKE '%{$ivname}%' && `number` LIKE '%{$keyword}%'";
     $rows=$pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-}else if($sql=NULL){
-    echo"沒有該發票號碼";
 }
+
+$count=ceil(COUNT($rows)/5);
+
+if(empty($_GET['page'])){
+		$page=1;
+	}
+else if(!empty($_GET['page'])){
+		$page=($_GET["page"]*5);
+	}
+
+
+for($i=0;$i<$count;$i++){
+    }
+ 
+    
+
+// 
+// echo COUNT($rows);
+// if(!empty($_GET['nextpag'])){
+//     $nextpage=$nextpage+5;
+// }else if(!empty($_GET['perpag']) && $prepage==0)
+// echo "搜尋數量:". COUNT(*);
 ?>
 <!-- <div class='row justify-content-around' style="list-style-type:none;paddin:0">
     <li><a href="?do=invoice_list&pd2=<?=$year?>-<?=$period?>">上上期發票</a></li>
@@ -76,6 +98,21 @@ if(!empty($_POST['ivname']) || !empty($_POST['keyword'])){
         </td>
     </tr>
     <?php
-    }
+           }
+
+
     ?>
 </table>
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="?do=invoice_list&prepage=<?=$page?>" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    <li class="page-item">
+      <a class="page-link" href="?do=invoice_list&nextpage=<?=$page?>" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
