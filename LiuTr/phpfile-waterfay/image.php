@@ -164,7 +164,7 @@ if($src_info['direction']=='橫向'){
     
 }else{
     $dst_height=($dst_info['height']-$padding*2-$border*2);
-    $dst_width=($dst_info['width']-$padding*2-$border*2)*(1/$src_info['rate']);
+    $dst_width=($dst_info['width'] -$padding*2-$border*2)*(1/$src_info['rate']);
     $dst_y=$padding+$border;
     $dst_x=($dst_info['width']-$dst_width)/2;
 

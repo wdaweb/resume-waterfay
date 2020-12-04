@@ -29,28 +29,23 @@ $period=ceil(date("m")/2);
 //         $sql="select * from `invoices` where period='$period' order by date desc";
 //         $rows=$pdo->query($sql)->fetchAll();
 //     }
-
-$ivname=$_POST['ivname'];
+?>
+<form action="?do=invoice_list" method="post">
+<input type="text" name="ivname"><input type="text" name="keyword"><input type="submit" name="submit">
+</form>
+<?php
 $keyword=$_POST['keyword'];
-$page=$_GET['page'];
-
-if(!empty($ivname) || !empty($keyword)){
-    $sql="SELECT * FROM `invoices` WHERE `code` LIKE '%{$ivname}%' && `number` LIKE '%{$keyword}%'";
+$ivname=$_POST['ivname'];
+// $count=ceil(COUNT($rows)/5);
+if(((!empty($_POST['ivname']) || !empty($_POST['keyword'])) && empty($_GET['page']))){
+    $sql="SELECT * FROM `invoices` WHERE `code` LIKE '%{$ivname}%' && `number` LIKE '%{$keyword}%' ";
     $rows=$pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 }
 
-$count=ceil(COUNT($rows)/5);
-
-if(empty($_GET['page'])){
-		$page=1;
-	}
-else if(!empty($_GET['page'])){
-		$page=($_GET["page"]*5);
-	}
 
 
-for($i=0;$i<$count;$i++){
-    }
+// for($i=0;$i<$count;$i++){
+//     }
  
     
 
@@ -65,11 +60,8 @@ for($i=0;$i<$count;$i++){
     <li><a href="?do=invoice_list&pd2=<?=$year?>-<?=$period?>">上上期發票</a></li>
     <li><a href="?do=invoice_list&pd1=<?=$year?>-<?=$period?>">上期發票</a></li>
     <li><a href="?do=invoice_list&pd=<?=$year?>-<?=$period?>">當期發票</a></li>
-
 </div> -->
-<form action="?do=invoice_list" method="post">
-<input type="text" name="ivname"><input type="text" name="keyword"><input type="submit" name="submit">
-</form>
+
 
 <table class="table text-center">
     <tr>
@@ -98,7 +90,7 @@ for($i=0;$i<$count;$i++){
         </td>
     </tr>
     <?php
-           }
+              }
 
 
     ?>
@@ -106,11 +98,11 @@ for($i=0;$i<$count;$i++){
 <nav aria-label="Page navigation example">
   <ul class="pagination">
     <li class="page-item">
-      <a class="page-link" href="?do=invoice_list&prepage=<?=$page?>" aria-label="Previous">
+      <a class="page-link" href="?do=invoice_list&page=<?=$pagestart?>" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
       </a>
     <li class="page-item">
-      <a class="page-link" href="?do=invoice_list&nextpage=<?=$page?>" aria-label="Next">
+      <a class="page-link" href="?do=invoice_list&page=<?=$pagesize?>" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
       </a>
     </li>
