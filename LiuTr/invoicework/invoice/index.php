@@ -44,7 +44,7 @@
             <a href="index.php">輸入消費發票</a>
         </div>
         <div class="text-center">
-            <a href="?do=invoice_list">當期發票</a>
+            <a href="?do=invoice_list">搜尋發票</a>
         </div>
         <div class="text-center">
             <a href="?do=add_awards">輸入獎號</a>

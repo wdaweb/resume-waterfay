@@ -30,55 +30,35 @@ $period=ceil(date("m")/2);
 //         $rows=$pdo->query($sql)->fetchAll();
 //     }
 ?>
-<form action="?do=invoice_list" method="post">
-<input type="text" name="ivname"><input type="text" name="keyword"><input type="submit" name="submit">
-</form>
+
 <?php
+
 $keyword=$_POST['keyword'];
 $ivname=$_POST['ivname'];
 // $count=ceil(COUNT($rows)/5);
-if(((!empty($_POST['ivname']) || !empty($_POST['keyword'])) && empty($_GET['page']))){
+if(((!empty($_POST['ivname']) && !empty($_POST['keyword'])) && empty($_GET['page']))){
     $sql="SELECT * FROM `invoices` WHERE `code` LIKE '%{$ivname}%' && `number` LIKE '%{$keyword}%' ";
     $rows=$pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 }
 
 
-
-// for($i=0;$i<$count;$i++){
-//     }
- 
-    
-
-// 
-// echo COUNT($rows);
-// if(!empty($_GET['nextpag'])){
-//     $nextpage=$nextpage+5;
-// }else if(!empty($_GET['perpag']) && $prepage==0)
-// echo "搜尋數量:". COUNT(*);
 ?>
-<!-- <div class='row justify-content-around' style="list-style-type:none;paddin:0">
-    <li><a href="?do=invoice_list&pd2=<?=$year?>-<?=$period?>">上上期發票</a></li>
-    <li><a href="?do=invoice_list&pd1=<?=$year?>-<?=$period?>">上期發票</a></li>
-    <li><a href="?do=invoice_list&pd=<?=$year?>-<?=$period?>">當期發票</a></li>
-</div> -->
-<<<<<<< HEAD
+<h4>搜尋發票：</h4>
 <form action="?do=invoice_list" method="post">
-<input type="text" name="ivname"><input type="text" name="keyword"><input type="submit" name="submit">
+<input type="text" name="ivname"  pattern="[A-Z]{2}$"><input type="text" name="keyword" pattern="[1-9]{8}$"><input type="submit" value="搜尋" name="submit" >
 </form>
-=======
-
->>>>>>> 1f71f145dd4751d4d1fe48285c02e3a1939626ab
 
 <table class="table text-center">
-    <tr>
+
+    <?php
+    foreach($rows as $row){
+    ?>
+        <tr>
         <td>發票號碼</td>
         <td>消費日期</td>
         <td>消費金額</td>
         <td>操作</td>
     </tr>
-    <?php
-    foreach($rows as $row){
-    ?>
     <tr>
         <td><?=$row['code'].$row['number'];?></td>
         <td><?=$row['date'];?></td>
@@ -97,6 +77,5 @@ if(((!empty($_POST['ivname']) || !empty($_POST['keyword'])) && empty($_GET['page
     </tr>
     <?php
            }
-
     ?>
 </table>
