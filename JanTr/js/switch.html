@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const theSwitch=true;
+        if(theSwitch){
+            console.log("這世界充滿美好");
+        }else{
+        console.log("這世界很殘暴,爆哥的爆");
+        }
+        const height=190,money=5000,face=true;
+
+        if((height>178)&&(money>10000)&&face) console.log("100分");
+        else console.log("0~99分");
+        if ((height > 178) || (money > 10000) || face) console.log("60~99分");
+        else console.log("不及格");
+
+        const aa=1,bb=6,cc=1;
+        if(aa==bb==cc==1) console.log("豹子");
+        else if((aa+bb+cc)>9) console.log("大");
+        else console.log("小");
+
+        const day=3;
+        const msg=day<6?"workday":"holiday";
+        console.log("today is"+msg);
+
+        console.log("------------------------------------");
+
+        const lang="tw";
+        switch(lang){
+            case "jp":
+                console.log("愛してる");
+            break;
+            case "en":
+                console.log("I love you");
+            break;
+            case "tw":
+                console.log("小姐姐我好喜歡你")
+            break;
+            case "korea":
+                console.log("사랑한다");
+            break;
+            default:
+            console.log("~~~~~~~~~~~~");
+            break;
+        }
+
+        const loveword=function(){
+        if (lang=="tw") console.log("小姐姐我好喜歡你");
+        else if (lang =="jp") console.log("愛してる");
+        else if (lang == "en") console.log("I love you");
+        else if (lang == "korea") console.log("사랑한다");
+        else console.log("~~~~~~~~~~~~");
+        };
+        console.log(loveword());
+
+        console.log(function () {
+            if (lang == "tw") return("小姐姐我好喜歡你");
+            else if (lang == "jp") return("愛してる");
+            else if (lang == "en") return("I love you");
+            else if (lang == "korea") return("사랑한다");
+            else return("~~~~~~~~~~~~");
+        }());        
+
+
+
+    </script>
+</body>
+</html>
