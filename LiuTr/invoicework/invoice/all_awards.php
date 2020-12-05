@@ -27,15 +27,9 @@ if(!isset($_GET['p'])){
     $rows=$pdo->query("select `invoices`.`date`,`invoices`.`number`,`invoices`.`period` from `invoices` where  period='{$_GET['period']}' && left(date,4)='{$_GET['year']}' order by date desc limit $num,5")->fetchAll();
 }
 
-// $rows=$pdo->query("select `invoices`.`date`,`invoices`.`number`,`invoices`.`period` from `invoices` where  period='{$_GET['period']}' && left(date,4)='{$_GET['year']}' order by date desc limit {$offset},{$num}")->fetchAll();
-// $count=$pdo->query("select count(*) from `invoices` where period='{$_GET['period']}' && left(date,4)='{$_GET['year']}' ")->fetchColumn();
-// $total=ceil(([$count][0])/$num);
-
-
-
-
-
-
+$count=$pdo->query("select count(*) from `invoices` where period='{$_GET['period']}' && left(date,4)='{$_GET['year']}' ")->fetchColumn();
+$counts=([$count][0]);
+$total=ceil($counts/5);
 
 ?>
 <table class="table text-center">
@@ -53,10 +47,12 @@ foreach($rows as $row){
     echo "<td>{$row['period']}</td>";
     echo "</tr>";
 }
-
-// if($page>=$total){
-//     $page=$total-1;
-// }
+if($page<=1){
+    $page=1;
+}
+if($page>=$total){
+    $page=$total;
+}
 
 ?>
 </table>
