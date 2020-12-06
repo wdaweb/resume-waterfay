@@ -2,6 +2,7 @@
 include_once "base.php";
 $_SESSION['login_session']=[];
 $_SESSION['err']=[];
+
 $Idname=['A','B','C','D','E','F','G','H','I','J','K','L','M','N',
 'O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 

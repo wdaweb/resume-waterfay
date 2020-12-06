@@ -8,9 +8,12 @@
     body{
             margin:0 auto;
         }
+    h5{
+        margin:10px;
+    }
     .bg{
             background:url("images/templebg.jpg") no-repeat center;
-            display:flex;
+            display:grid;
             min-height: 100vh;
             min-width : 100%;
             align-items:center;
@@ -26,18 +29,20 @@
     .contain{
         height:600px;
         width:900px;
-        background:white;
+        background:#fff4f0;
+        box-shadow: -5px -5px 5px #ceb9b9 inset;
     }
     .login{
         top:100%;
         width:100%;
-        height:15vh;
+        height:200px;
         background:#3B3B3B;
         position: absolute;
-        color:white;
-        /* display:flex;
+        color:#ADADAD;
+        display: grid;
         align-items:center;
-        justify-content:center; */
+        justify-content:center;
+
     }
     .logo{
         width:200px;
