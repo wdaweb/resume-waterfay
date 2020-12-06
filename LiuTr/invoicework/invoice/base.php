@@ -6,6 +6,10 @@ $pdo=new PDO($dsn,'root','');
 date_default_timezone_set("Asia/Taipei");
 session_start();
 
+session_start();
+$_SESSION['count']=[]; // 註冊Session變數Count 
+isset($PHPSESSID)?session_id($PHPSESSID):$PHPSESSID = session_id(); 
+
 $awardStr=['頭','二','三','四','五','六'];
 
 

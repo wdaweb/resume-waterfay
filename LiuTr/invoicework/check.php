@@ -13,7 +13,7 @@ if(!empty($_SESSION['login_session'])){
     $Idcard=$pdo->query("select * from `login` where Idcard='{$_POST['Idcard']}' && pw='{$_POST['pw']}'")->fetch();
     $_SESSION['login_session'] =true;
     }
-    header("location:index.php");
+    header("location:temple.php");
 
 ?>
 
