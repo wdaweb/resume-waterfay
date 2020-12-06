@@ -55,7 +55,7 @@ foreach($_POST['add_six_prize'] as $six){
 
 
 
-echo "新增完成";
-header("location:../index.php?do=award_numbers&pd=".$year."-".$period);
+// echo "新增完成";
+header("location:../invoice.php?do=award_numbers&pd=".$year."-".$period);
 
 ?>
