@@ -50,9 +50,16 @@ include_once "base.php";
     }
     .lots{
         position:absolute;
-        translate:(-50%,-50%);
+        translate:(-65%,-65%);
         top:30%;
         left:35%;
+    }
+    p{
+        position:absolute;
+        translate:(-50%,-50%);
+        top:70%;
+        left:47%;
+        color:#804040;
     }
     </style>
     <link rel="stylesheet" type="text/css" media="all" href="rwd.css">

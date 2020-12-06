@@ -11,8 +11,7 @@ include_once "base.php";
     <title>Document</title>
     <style>
         pre{
-        width:800px;
-        height:500px;
+        padding-top:10px;
         white-space: pre-wrap;
         word-wrap: break-word;
         color:#804040;
@@ -21,21 +20,6 @@ include_once "base.php";
 </head>
 <body>
 <?php
-
-
-// $lotto=[];
-// while(count($lotto)<6){
-    
-//     $t=rand(1,49);
-//     if(!in_array($t,$lotto)){
-//         $lotto[]=$t;
-//     }
-    
-// }
-
-// echo "<pre>";
-// print_r($lotto);
-// echo "</pre>";
 $lot=rand(1,60);
 
 $godtalk=$pdo->query("SELECT * FROM `lots` where `id`='{$lot}'")->fetch();
@@ -43,7 +27,7 @@ $godtalks=([$godtalk][0]['lot']);
 
 
 ?>
-<div class=" col-12">
+<div class="col col-12 col-lg-6">
 <pre>
 <?php
 echo $godtalks;

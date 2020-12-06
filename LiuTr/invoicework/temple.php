@@ -70,7 +70,7 @@
 </head>
 <body>
     <div class="bg">
-    <div class="box">
+    <div class="box1">
     <div class="invoice"><a href="invoice.php"><img src="images/invoicebg.png" alt=""></a></div>
     <div class="temple"><a href="lots.php"><img src="images/templebg.png" alt=""></a></div>
     </div>

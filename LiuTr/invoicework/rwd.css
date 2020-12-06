@@ -44,13 +44,23 @@
         font-size:small;
     }
     td{
-        padding: 5px !important;;
+        padding: 5px !important;
     }
     .lots{
-        top:30%;
-        left:25%;
+        top:22%;
+        left:30%;
         width:200px;
         height:200px;
+    }
+    .col-12{
+        height:370px !important;
+        width :320px !important;
+    }
+    pre{
+        height:370px;
+        width :320px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
     }
 }
 
@@ -93,10 +103,16 @@
         padding: 5px !important;
     }
     .lots{
-        top:30%;
-        left:25%;
+        top:22%;
+        left:30%;
         width:200px;
         height:200px;
+    }
+    pre{
+        height:370px;
+        width :320px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
     }
 
 }
@@ -126,6 +142,12 @@
     td{
         padding: 5px !important;;
     }
+    pre{
+        height:450px;
+        width :670px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
 
 }
 
@@ -151,6 +173,12 @@
     td{
         padding: 5px !important;;
     }
+    pre{
+        height:470px;
+        width :750px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
 
 }
 
@@ -173,6 +201,16 @@
     }
     td{
         padding: 5px !important;;
+    }
+    .col-12{
+        height:370px !important;
+        width :320px !important;
+    }
+    pre{
+        height:500px;
+        width :790px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
     }
 }
 
