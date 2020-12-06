@@ -36,6 +36,7 @@
         width:850px;
         background:#fff4f0;
         box-shadow: -5px -5px 5px #ceb9b9 inset;
+
     }
     .login{
         top:100%;
@@ -93,13 +94,12 @@
             <a class="nav-link text-secondary" style="background:#fff4f0;" href="?do=add_awards">輸入獎號</a>
         </div>
         <div class="nav-item">
-            <a class="nav-link text-secondary" style="background:#fff4f0;" href="login.php">我要登出</a>
+            <a class="nav-link text-secondary" style="background:#fff4f0;" href="lots.php">求籤專區</a>
         </div>
     </div>
     
     
     <div class="contain">
-    <div></div>
     <div class="col-10 d-flex flex-column p-4 mx-auto" >
     <?php
 
@@ -129,7 +129,7 @@
     </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
 </html>
