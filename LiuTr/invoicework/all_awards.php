@@ -10,6 +10,8 @@ $period_str=[
     6=>'11,12月'
 ];
 
+
+
 if(isset($_GET['period']) || isset($_GET['year'])){
     setrawcookie("period",$_GET['period'],time()+3600);
     setrawcookie("year",$_GET['year'],time()+3600);
