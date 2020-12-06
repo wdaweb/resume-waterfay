@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" media="all" href="rwd.css">
 <?php
 include_once "base.php";
         $month=[
@@ -54,13 +55,12 @@ foreach($awards as $aw){
 }
 
 ?>
-<div class='row justify-content-around' style="list-style-type:none;paddin:0">
-    <li><a href="?do=award_numbers&pd2=<?=$year?>-<?=$period?>">上上期發票</a></li>
-    <li><a href="?do=award_numbers&pd1=<?=$year?>-<?=$period?>">上期發票</a></li>
-    <li><a href="?do=award_numbers&pd=<?=$year?>-<?=$period?>">當期發票</a></li>
-
+<div class='row justify-content-around' style="list-style-type:none;font-size:15px;padding:5px;">
+    <li class="nav-item "><a class="nav-link text-secondary"style="color:#804040;" href="?do=award_numbers&pd2=<?=$year?>-<?=$period?>">上上期發票</a></li>
+    <li class="nav-item "><a class="nav-link text-secondary" href="?do=award_numbers&pd1=<?=$year?>-<?=$period?>">上期發票</a></li>
+    <li class="nav-item "><a class="nav-link text-secondary" href="?do=award_numbers&pd=<?=$year?>-<?=$period?>">當期發票</a></li>
 </div>
-<table class="table table-bordered table-sm" summary="統一發票中獎號碼單"> 
+<table class="table table-bordered "  summary="統一發票中獎號碼單"> 
    <tbody>
     <tr> 
      <th id="months">年月份</th> 
@@ -143,6 +143,7 @@ foreach($awards as $aw){
     </tr>  
    </tbody>
 </table>
-<button class="btn btn-primary mx-auto">
-        <a href="?do=all_awards&year=<?=$year;?>&period=<?=$period;?>" class="text-light">對獎</a>
+<link rel="stylesheet" type="text/css" media="screen" href="rwd.css">
+<button class="btn btn-danger mx-auto">
+        <a href="?do=all_awards&year=<?=$year;?>&period=<?=$period;?>" class="text-light "style="text-decoration:none;">對獎</a>
 </button>

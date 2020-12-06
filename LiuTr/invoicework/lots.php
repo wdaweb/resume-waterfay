@@ -27,10 +27,11 @@
         z-index:100;
     }
     .contain{
-        height:600px;
-        width:900px;
+        height:550px;
+        width:800px;
         background:#fff4f0;
         box-shadow: -5px -5px 5px #ceb9b9 inset;
+        border-radius:10px;
     }
     .login{
         top:100%;

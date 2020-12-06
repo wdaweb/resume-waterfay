@@ -27,8 +27,8 @@
         z-index:100;
     }
     .invoice{
-        height:600px;
-        width:450px;
+        height:550px;
+        width:400px;
         background:white;
         display:grid;
         align-items:center;
@@ -36,8 +36,8 @@
         border-radius:10px;
     }
     .temple{
-        height:600px;
-        width:450px;
+        height:550px;
+        width:400px;
         background:#fff4f0;
         display:grid;
         align-items:center;

@@ -57,7 +57,7 @@ if($page>=$total){
 ?>
 </table>
   <ul class="pagination">
-    <li class="page-item"><a class="page-link" href="?do=all_awards&year=<?=$_COOKIE['year']?>&period=<?=$_COOKIE['period']?>&p=<?=$page-1?>">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="?do=all_awards&year=<?=$_COOKIE['year']?>&period=<?=$_COOKIE['period']?>&p=<?=$page+1?>">Next</a></li>
+    <li class="page-item"><a class="page-link text-white bg-danger" href="?do=all_awards&year=<?=$_COOKIE['year']?>&period=<?=$_COOKIE['period']?>&p=<?=$page-1?>">Previous</a></li>
+    <li class="page-item"><a class="page-link text-white bg-danger" href="?do=all_awards&year=<?=$_COOKIE['year']?>&period=<?=$_COOKIE['period']?>&p=<?=$page+1?>">Next</a></li>
   </ul>
 

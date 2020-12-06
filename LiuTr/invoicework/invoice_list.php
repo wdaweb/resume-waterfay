@@ -43,7 +43,7 @@ if(((!empty($_POST['ivname']) && !empty($_POST['keyword'])) && empty($_GET['page
 
 
 ?>
-<h4>搜尋發票：</h4>
+<h5 style="color:#804040;">搜尋發票：</h5>
 <form action="?do=invoice_list" method="post">
 <input type="text" name="ivname"  pattern="[A-Z]{2}$"><input type="text" name="keyword" pattern="[1-9]{8}$"><input type="submit" value="搜尋" name="submit" >
 </form>
@@ -54,10 +54,10 @@ if(((!empty($_POST['ivname']) && !empty($_POST['keyword'])) && empty($_GET['page
     foreach($rows as $row){
     ?>
         <tr>
-        <td>發票號碼</td>
-        <td>消費日期</td>
-        <td>消費金額</td>
-        <td>操作</td>
+        <td style="color:#804040;">發票號碼</td>
+        <td style="color:#804040;">消費日期</td>
+        <td style="color:#804040;">消費金額</td>
+        <td style="color:#804040;">操作</td>
     </tr>
     <tr>
         <td><?=$row['code'].$row['number'];?></td>
