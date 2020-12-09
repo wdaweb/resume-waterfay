@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="demo1">HELLO WORLD</h1> <!-- node節點 -->
+    <h1 id="demo2">HELLO WORLD</h1> <!-- node節點 -->
+    <h1 id="demo3">HELLO WORLD</h1> <!-- node節點 -->
+    <h1 id="demo4">HELLO WORLD</h1> <!-- node節點 -->
+    <h1 id="demo5">HELLO WORLD</h1> <!-- node節點 -->
+    <div id="menu">
+    <ul id="total">
+        <li class="list">001</li>
+        <li class="list">002</li>
+        <li class="list">003</li>
+        <li class="list">004</li>
+        <li class="list">005</li>
+    </ul>
+    </div>
+    <script>
+        const de2=document.getElementById("demo2");
+        const mnu=document.getElementById("menu");
+        const tt = document.getElementById("total");
+        const mulAry = document.getElementsByClassName("list");
+        const mulAry2 = document.getElementsByTagName("li");
+        const demoB = document.querySelectorAll("list");
+
+        // tt.innerHTML=`<li>AAA</li><li>AAA</li><li>AAA</li>`;
+        // tt.innerContent = `<li>AAA</li><li>BBB</li><li>CCC</li>`;
+    </script>
+</body>
+</html>

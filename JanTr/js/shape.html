@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .shape{
+            width: 100px; height: 100px; background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="shape"></div>
+    <input type="button" value="square" onclick="square(this)">
+    <input type="button" value="circle" onclick="circle(this)">
+    <input type="button" value="triangle" onclick="triangle(this)">
+    <script>
+    function square() {
+        var square = document.createElement(
+                a.style.width = '100px',
+                a.style.height = '100px',
+                a.style.backgroundColor = 'red')
+        document.getElementsByClass("shape").replaceChild(square);
+    }
+function circle(a){
+                a.style.width = "100px";
+                a.style.height = "100px";
+                a.style.backgroundColor = "red";
+                a.style.borderRadius = "50px";
+            }
+function triangle(a){
+                a.style.width = "0";
+                a.style.height = "0";
+                a.style.borderStyle = "solid";
+                a.style.borderWidth = " 0 50px 100px 50px";
+                a.style.borderColor = "transparent transparent #ff0000 transparent;";
+            }
+    </script>
+</body>
+</html>
