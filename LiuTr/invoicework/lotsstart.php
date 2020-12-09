@@ -13,7 +13,7 @@ include_once "base.php";
         pre{
         padding-top:10px;
         white-space: pre-wrap;
-        word-break: break-all; 
+        word-wrap: break-word;
         color:#804040;
         }
     </style>
