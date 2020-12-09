@@ -54,6 +54,4 @@ echo $row['code'].$row['number']."<br>";
 
 $row=find('invoices',17);
 echo $row['code'].$row['number']."<br>";
-
-
 ?>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // console.log("1");
+    // console.log("2");
+    // alert("提示視窗");
+    // console.log("3");
+    // console.log("4");
+
+    // const ans=confirm("你的問題");
+    // alert(`You Select ${ans}`);
+
+    // const msg=prompt("你的問題","default value");
+    // if(msg)//null same as false
+    // alert(`Your Answer is ${msg}`);//取消的話是null
+
+    // let delay=function(){
+    //     console.log("BOOM!!!")
+    // }
+    // setTimeout(delay,5000);
+
+    // let s1=setTimeout(()=>{
+    //     console.log("BOOM!!")
+    // },20000);
+
+    // let s2=setTimeout(()=>{
+    //     console.log("BOOM!!")
+    // },20000);
+    // clearTimeout(s1);
+
+    let i=1;
+    let s3=setInterval(()=>{
+        console.log(i);
+        i++;
+        if(i==7) clearInterval(s3);
+        // i++;
+    },1000);
+//clearInterval(s3);
+    // let boom=function(){
+    //     setTimeout(() =>{
+    //         console.log(j);
+    //         j++;
+    //         boom();
+    //     },1000);
+    // }
+</script>
+</body>
+</html>
