@@ -6,36 +6,58 @@
     <title>Document</title>
     <style>
         .shape{
-            width: 100px; height: 100px; background-color:red;
+        width: 100px; height: 100px; background-color:red;
+        }
+        .shape1{
+        width: 100px; height: 100px; background-color:red;border-radius: 50px;
+        }
+        .shape2{
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 60px 100px 60px;
+            border-color: transparent transparent red transparent;
         }
     </style>
 </head>
 <body>
-    <div class="shape"></div>
+    <div id="color" ></div>
+    <br>
     <input type="button" value="square" onclick="square(this)">
     <input type="button" value="circle" onclick="circle(this)">
     <input type="button" value="triangle" onclick="triangle(this)">
+    <br>
+    color：<input type="text" onchange="toChange(this.value)">
     <script>
-    function square() {
-        var square = document.createElement(
-                a.style.width = '100px',
-                a.style.height = '100px',
-                a.style.backgroundColor = 'red')
-        document.getElementsByClass("shape").replaceChild(square);
-    }
-function circle(a){
-                a.style.width = "100px";
-                a.style.height = "100px";
-                a.style.backgroundColor = "red";
-                a.style.borderRadius = "50px";
+function square(){
+                let b=document.getElementsByTagName("div")[0];
+                let shape=document.createAttribute("class");
+                shape.value = "shape";
+                b.setAttributeNode(shape);
             }
-function triangle(a){
-                a.style.width = "0";
-                a.style.height = "0";
-                a.style.borderStyle = "solid";
-                a.style.borderWidth = " 0 50px 100px 50px";
-                a.style.borderColor = "transparent transparent #ff0000 transparent;";
+function circle(){
+                let b=document.getElementsByTagName("div")[0];
+                let shape1=document.createAttribute("class");
+                shape1.value = "shape1";
+                b.setAttributeNode(shape1);
             }
+function triangle(){
+                let b=document.getElementsByTagName("div")[0];
+                let shape2=document.createAttribute("class");
+                shape2.value = "shape2";
+                b.setAttributeNode(shape2);
+            }
+function  toChange(color){
+        if(document.getElementsByClassName("shape")){
+        odiv.style.background=color;
+        odiv.style.borderColor=null;
+        }
+        if(document.getElementsByClassName("shape2")){
+        odiv.style.borderColor="transparent transparent "+color+" transparent";
+        odiv.style.background="transparent";
+        }
+  }
+
     </script>
 </body>
 </html>
