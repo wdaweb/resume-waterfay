@@ -12,7 +12,34 @@
     body{
         background:#f5f4f3;
         width: 100%;
-        height: 1000vh;
+        height: 500vh;
+        clear: both;
+    }
+    header{
+        height: 835px;
+    }
+    article{
+        height: 800px;
+        background:rgb(226, 230, 221);
+        box-sizing:border-box;
+        padding:30px;
+    }
+    main{
+        height: 800px;
+        box-sizing:border-box;
+        padding:30px;
+    }
+    figure{
+        width:100%;
+        height: 1300px;
+        box-sizing:border-box;
+        padding:30px;
+        margin: 0;
+        background:url("img/flower2.jpg") no-repeat ;
+    }
+    footer{
+        height: 200px;
+        background:rgb(191, 202, 177);
     }
     .space{
         background:white;
@@ -110,9 +137,9 @@
               </form>
             </div>
           </nav>
-    </header>
+
     <div class="space">
-        <h3>關於我</h3><br>
+        <h3>Self-introduction</h3><br>
         <p>一個認為在美學之下，必然與行銷商業數據得以取得平衡的人。<br><br>
             擁有15年寫作經歷、10年繪圖經歷、8年攝影經歷，<br>
             具藝術史學及文學背景，熟知藝文界產業溝通語言。<br><br>
@@ -124,15 +151,90 @@
         <br>
        <div class="arrow"></div>
     </div>
-    <img src="./img/bamboo.jpg" style="float:right;width: 700px;height:780px;">
-    <img src="./img/flower.jpg" style="float:left;width:500px;height:630px;">
+    <img src="./img/bamboo.png" style="float:right;height:780px;">
+    <img src="./img/flower.jpg" style="position: absolute;z-index:-1;width:500px;height:630px;">
+</header>
+<article>
+<div class="container">
+    <h1 style="text-align:center;">Blog</h1>
+<div class="media">
+    <img src="https://picsum.photos/200/200" class="mr-3" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0">Media heading</h5>
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+  </div>
+  <div class="media">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">Media object</h5>
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+    <img src="https://picsum.photos/200/200" class="ml-3" alt="...">
+  </div>
+  <div class="media">
+    <img src="https://picsum.photos/200/200" class="align-self-end mr-3" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0">Bottom-aligned media</h5>
+      <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+      <p class="mb-0">Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+    </div>
+  </div>
+</div>
+<br>
+<hr>
+</article>
 
+<main>
+<div class="container">
+    <h1 style="text-align:center;">Draw and Design</h1>
+    <div class="card-deck ">
+        <div class="card bg-transparent">
+          <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+        <div class="card bg-transparent">
+          <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+        <div class="card bg-transparent">
+          <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+      </div>
+</div>
+</main>
+<figure>
+    <h1 style="text-align:center;">Web Design</h1>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</figure>
 
-
-
-
-
-    <!-- <footer class="bg-dark text-white text-center py-4">
-    </footer> -->
+    <footer>
+    </footer>
 </body>
 </html>
