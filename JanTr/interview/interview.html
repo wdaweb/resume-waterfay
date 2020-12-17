@@ -13,7 +13,6 @@
         background:#f5f4f3;
         width: 100%;
         height: 420vh;
-        clear: both;
     }
     header{
         height: 835px;
@@ -99,11 +98,21 @@
         50%{
         }
         }
+        .modal{
+          position: absolute;
+          display: none;
+          width:100%;
+          height:100vh;
+          opacity:85%;
+          background:rgb(236, 236, 236);
+          z-index: 1;
+        }
 </style>
 </head>
 <body>
+    <div class="modal"></div>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
             <a class="navbar-brand" href="#"><img src="" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -149,7 +158,7 @@
             提升用戶對網頁的體驗及美感視覺，也能夠創造最佳的客戶轉換率。<br>
         </p>
         <br>
-       <div class="arrow"></div>
+       <div class="arrow" onclick="op(this)"></div>
     </div>
     <img src="./img/bamboo.png" style="float:right;height:780px;">
     <img src="./img/flower.jpg" style="position: absolute;z-index:-1;width:500px;height:630px;">
@@ -240,5 +249,7 @@
 </html>
 
 <script>
-
+       function op() {
+          $(".modal").fadeToggle(1000)
+             };
 </script>

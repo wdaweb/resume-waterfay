@@ -12,15 +12,39 @@
             integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
             crossorigin="anonymous"></script>
     <title>Document</title>
+    <style>
+.body{
+    height:300vh;
+}
+        .navFixed {
+  z-index: 10;          
+  position: fixed;      
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  min-width: 100%;
+  opacity: 0.94;
+  transition: opacity .5s ease-out;   
+}
+    </style>
 </head>
 <body>
-    <h1>1234</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae rem odio architecto nobis ducimus voluptatibus tenetur ipsum officiis saepe, voluptatum reiciendis dignissimos molestias provident. Illo veniam molestiae amet recusandae voluptatibus.</p>
+
 </body>
 </html>
 <script>
-        $(document).ready(function(){
-                $('h1').click(function(event){
+        // $(document).ready(function(){
+        //         $('h1').click(function(event){
+        //     });
+        // });
+
+        $(function () {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 495) {          /* 要滑動到選單的距離 */
+                        $('.dropdowns').addClass('navFixed');   /* 幫選單加上固定效果 */
+                    } else {
+                        $('.dropdowns').removeClass('navFixed'); /* 移除選單固定效果 */
+                    }
+                });
             });
-        });
 </script>
