@@ -48,15 +48,14 @@ function triangle(){
                 b.setAttributeNode(shape2);
             }
 function  toChange(color){
-        if(document.getElementsByClassName("shape")){
+        var odiv = document.getElementById('color');
         odiv.style.background=color;
-        odiv.style.borderColor=null;
-        }
-        if(document.getElementsByClassName("shape2")){
-        odiv.style.borderColor="transparent transparent "+color+" transparent";
-        odiv.style.background="transparent";
-        }
-  }
+        
+        // if(document.getElementsByClassName("shape2")){
+        // odiv.style.borderColor="transparent transparent "+color+" transparent";
+        // odiv.style.background="transparent";
+        // }
+}
 
     </script>
 </body>
