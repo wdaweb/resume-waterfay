@@ -19,7 +19,8 @@
 
     <script src="jquery.easing.1.3.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/1b66a8f9ef.js" crossorigin="anonymous"></script>
-
+    
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" crossorigin="anonymous"></script> -->
   <style>
     body {
       background: #f5f4f3;
@@ -158,12 +159,28 @@
     .modal {
       position: absolute;
       display: none;
-      top: 7.5%;
+      top: 8.5%;
       width: 100%;
-      height: 109vh;
+      height: 117vh;
       opacity: 85%;
-      background: rgb(255, 255, 255);
+      
+      background: rgb(255, 255, 255) ;
       z-index: 1;
+    }
+    .vine{
+      top:7%;
+      left:27%;
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 110vh;
+      transform: scale(1.3,1.1);
+      transform-origin: bottom right;
+      z-index: 2;
+      /* display: grid; */
+      /* align-items: center; */
+      /* justify-content: right; */
+
     }
 
     .modalClose {
@@ -175,13 +192,13 @@
       width: 100px;
       height: 100px;
       background: transparent;
-      z-index: 2;
+      z-index: 100;
       transform: translate(-50%, -50%);
       border-radius: 50%;
     }
     
     .modalClose:hover{
-      border: 5px solid #d1eca1;
+      border: 5px solid#c9ebb2;
       animation: mdclose1 1s infinite alternate;
     }
     .modalClose:hover::before{
@@ -245,7 +262,12 @@
 
 <body>
   <div class="modal">
-    <div class="modalClose" onclick="Cl(this)"><i class="fas fas fa-leaf" id="modalClose" style="font-size:50px;color:#8f997e;transform: translate(30%, 35%);"></i></div>
+<object class="vine" type="image/svg+xml" data="img/vine.svg" ></object>
+
+
+
+    <div class="modalClose" onclick="Cl(this)">
+      <i class="fas fas fa-leaf" id="modalClose" style="font-size:50px;color:#8f997e;transform: translate(30%, 35%);"></i></div>
   </div>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark  py-auto" style="background-color: #5e5845;">
@@ -277,7 +299,7 @@
         <button class="btn  btn-outline-light" type="button">login</button>
       </div>
     </nav>
-    <div class="space">
+    <div class="space" id="Self-introduction">
       <h3>Self-introduction</h3><br>
       <p>一個認為在美學之下，必然與行銷商業數據得以取得平衡的人。<br><br>
         擁有15年寫作經歷、10年繪圖經歷、8年攝影經歷，<br>
@@ -401,6 +423,7 @@
 <script>
   function op() {
     $(".modal").slideToggle(1000)
+    $(".vine").delay(1200).fadeIn(2500)
   };
   function Cl() {
     $(".modal").slideToggle(1000)
