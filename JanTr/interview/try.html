@@ -16,7 +16,7 @@
 .body{
     height:300vh;
 }
-        .navFixed {
+        /* .navFixed {
   z-index: 10;          
   position: fixed;      
   top: 0;
@@ -25,10 +25,44 @@
   min-width: 100%;
   opacity: 0.94;
   transition: opacity .5s ease-out;   
+} */
+.wrap{
+  width: 100vw;
+  height: 30vh;
+  background: url("img/bamboo.jpg") no-repeat bottom center / cover;
+  text-align: left; 
+  line-height: 30vh;
+  font-size: 10rem;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
+/* text{
+    overflow: hidden;
+    position: absolute;
+}
+img{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+} */
     </style>
 </head>
 <body>
+    <!-- <img src="img\flower2.jpg" style="z-index: -1;">
+<xml version="1.0" standalone="no">
+<svg  viewBox="0 0 1000 200" viewport="0 0 1000 200" 
+     xmlns="http://www.w3.org/2000/svg" version="1.1">
+
+  <text x="100" y="180" stroke="black" font-size="80" fill="none" stroke-width="3" style="z-index: 1;">
+    Self-introduction
+  </text>
+
+</svg>
+</xml> -->
+
+<div class="wrap" style="font-size:100px;">Self-introduction</div>
+
 
 </body>
 </html>
@@ -38,13 +72,13 @@
         //     });
         // });
 
-        $(function () {
-                $(window).scroll(function () {
-                    if ($(this).scrollTop() > 495) {          /* 要滑動到選單的距離 */
-                        $('.dropdowns').addClass('navFixed');   /* 幫選單加上固定效果 */
-                    } else {
-                        $('.dropdowns').removeClass('navFixed'); /* 移除選單固定效果 */
-                    }
-                });
-            });
+        // $(function () {
+        //         $(window).scroll(function () {
+        //             if ($(this).scrollTop() > 495) {          /* 要滑動到選單的距離 */
+        //                 $('.dropdowns').addClass('navFixed');   /* 幫選單加上固定效果 */
+        //             } else {
+        //                 $('.dropdowns').removeClass('navFixed'); /* 移除選單固定效果 */
+        //             }
+        //         });
+        //     });
 </script>

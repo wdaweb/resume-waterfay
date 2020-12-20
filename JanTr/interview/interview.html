@@ -1,71 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>   <!--不一定會用到-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600&family=Prata&display=swap" rel="stylesheet">
 
-<style>
-    body{
-        background:#f5f4f3;
-        width: 100%;
-        height: 420vh;
-        font-family: 'Prata', serif,'Noto Serif TC', serif;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <!--不一定會用到-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600&family=Prata&display=swap"
+    rel="stylesheet">
+
+    <script src="jquery.easing.1.3.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1b66a8f9ef.js" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      background: #f5f4f3;
+      width: 100%;
+      height: 420vh;
+      font-family: 'Prata', serif, 'Noto Serif TC', serif;
+      overflow-x:hidden;
+      overflow-y:auto;
+      color:#5e5845;
     }
-    header{
-        height: 835px;
+
+    header { 
+      height: 835px;
     }
-    article{
-        height: 800px;
-        background:rgb(226, 230, 221);
-        box-sizing:border-box;
-        padding:30px;
+
+    article {
+      height: 800px;
+      background: rgb(226, 230, 221);
+      box-sizing: border-box;
+      padding: 30px;
     }
-    main{
-        height: 800px;
-        box-sizing:border-box;
-        padding:30px;
+
+    main {
+      height: 800px;
+      box-sizing: border-box;
+      padding: 30px;
     }
-    figure{
-        width:100%;
-        height: 1300px;
-        box-sizing:border-box;
-        padding:30px;
-        margin: 0;
-        background:url("img/flower2.jpg") no-repeat ;
-        background-attachment :fixed;
+
+    figure {
+      width: 100%;
+      height: 1300px;
+      box-sizing: border-box;
+      padding: 30px;
+      margin: 0;
+      background: url("img/flower2.jpg") no-repeat;
+      background-attachment: fixed;
     }
-    footer{
-        height: 200px;
-        background:rgb(191, 202, 177);
+
+    footer {
+      height: 200px;
+      background: rgb(191, 202, 177);
     }
-    .space{
-        background:white;
-        top:30vh;
-        left:20%;
-        width:600px;
-        height:400px;
-        opacity:90%;
-        position: absolute;
-        box-shadow: 1px 1px 1px 1px #0000002b;
-        box-sizing:border-box;
-        padding:30px;
+
+    .wrap {
+      top:95%;
+      width: 100vw;
+      height: 30vh;
+      background: url("img/bamboo.jpg") no-repeat bottom center / cover;
+      text-align: left; 
+      line-height: 30vh;
+      font-size: 10rem;
+      position: absolute;
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
     }
-    .arrow{
-        background:rgb(124, 118, 114);
-        width:300px;
-        height: 4px;
-        z-index: 1;
-        transform:translate(76%,0%);
-        box-shadow: 0px 0px 1px 1px #00000000;
-        animation:arrow 1s infinite alternate;
+    .space {
+      background: white;
+      top: 30vh;
+      left: 20%;
+      width: 600px;
+      height: 400px;
+      opacity: 90%;
+      position: absolute;
+      box-shadow: 1px 1px 1px 1px #0000002b;
+      box-sizing: border-box;
+      padding: 30px;
+      animation: spa 1s  infinite forwards;
+      animation-iteration-count:1;
     }
+    @keyframes spa {
+      0% {
+        left: 100%;
+        opacity: 0%;
+      }
+
+      100% {
+        left: 20%;
+        opacity: 90%;
+      }
+    }
+
+    .arrow {
+      background: rgb(124, 118, 114);
+      width: 300px;
+      height: 4px;
+      z-index: 1;
+      transform: translate(76%, 0%);
+      box-shadow: 0px 0px 1px 1px #00000000;
+      animation: arrow 1s infinite alternate;
+    }
+
     /* .arrow::after{
         content: "";
         display: block;
@@ -75,149 +121,226 @@
         box-shadow: 1px 1px 1px 1px black;
         transform:translate(0%,0%);
     } */
-    .arrow::before{
-        content: "";
-        display: block;
-        height: 4px;
-        width:30px;
-        background:rgb(124, 118, 114);
-        box-shadow: 0px 0px 1px 1px #00000000;
-        transform:translate(910%,-321.8%) rotate(49deg);
-        animation:arrow2 1s infinite alternate;
+    .arrow::before {
+      content: "";
+      display: block;
+      height: 4px;
+      width: 30px;
+      background: rgb(124, 118, 114);
+      box-shadow: 0px 0px 1px 1px #00000000;
+      transform: translate(910%, -321.8%) rotate(49deg);
+      animation: arrow2 1s infinite alternate;
     }
 
-    @keyframes arrow{
-        0%{
-        transform:translate(74%,0%);
+    @keyframes arrow {
+      0% {
+        transform: translate(74%, 0%);
         box-shadow: 5px -10px 3px 1px #00000024;
-        }
-        50%{
-        transform:translate(70%,0%);
-        }
-        }
-        @keyframes arrow2{
-        0%{
+      }
+
+      50% {
+        transform: translate(70%, 0%);
+      }
+    }
+
+    @keyframes arrow2 {
+      0% {
         box-shadow: 3px -13px 3px 1px #00000024;
-        }
-        50%{
-        }
-        }
-        .modal{
-          position: absolute;
-          display: none;
-          top:7.5%;
-          width:100%;
-          height:108.5vh;
-          opacity:85%;
-          background:rgb(255, 255, 255);
-          z-index: 1;
-        }
-        .modalClose{
-          position: absolute;
-          top:90vh;
-          left:50vw;
-          width:100px;
-          height:100px;
-          background:rgb(0, 0, 0);
-          z-index: 2;
-          transform: ;
+      }
 
-        }
-</style>
+      50% {}
+    }
+
+    #blog , #design{
+      display: none;
+    }
+    
+    .modal {
+      position: absolute;
+      display: none;
+      top: 7.5%;
+      width: 100%;
+      height: 109vh;
+      opacity: 85%;
+      background: rgb(255, 255, 255);
+      z-index: 1;
+    }
+
+    .modalClose {
+      border: 5px solid #8f997e;
+      box-shadow: 0px 2px 7px 0px rgba(71,77,69,0.5);
+      position: absolute;
+      top: 95vh;
+      left: 50vw;
+      width: 100px;
+      height: 100px;
+      background: transparent;
+      z-index: 2;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+    
+    .modalClose:hover{
+      border: 5px solid #d1eca1;
+      animation: mdclose1 1s infinite alternate;
+    }
+    .modalClose:hover::before{
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      transform-origin: -200px -200px;
+      transform: translate(-5%, -5%);
+      border: 5px solid #c9ebb2;
+      display: block;
+      animation: mdclose3 1s infinite alternate;
+
+    }
+    .modalClose:hover>.fas {
+      color: #c9ebb2 !important;
+      animation: mdclose2 1s infinite alternate;
+    }
+    @keyframes mdclose1 {
+      25% {
+        transform-origin: center;
+        width: 110px;
+        height: 110px;
+      }
+    }
+    @keyframes mdclose3 {
+      25% {
+        border: 1px solid #a1b67d;
+        transform: translate(-10%, -10%);
+        width: 125px;
+        height: 125px;
+        box-shadow: 0px 2px 13px 0px rgb(111, 119, 109);
+      }
+      75%{
+        border: 5px solid #a1b67d70;
+        transform: translate(-15%, -15%);
+        width: 130px;
+        height: 130px;
+        box-shadow: 0px 2px 13px 0px rgb(111, 119, 109);
+      }
+    }
+    @keyframes mdclose2 {
+      25% {
+        transform-origin: center;
+        font-size: 55px;
+      }
+    }
+
+    .lastpg{
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      padding:15px;
+      color:#5e5845;
+      text-align: center;
+    }
+  </style>
 </head>
-<body>
-    <div class="modal"><div class="modalClose"></div></div>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-            <a class="navbar-brand" href="#"><img src="" alt=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
-              </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
-            </div>
-          </nav>
-    <div class="space">
-        <h3>Self-introduction</h3><br>
-        <p>一個認為在美學之下，必然與行銷商業數據得以取得平衡的人。<br><br>
-            擁有15年寫作經歷、10年繪圖經歷、8年攝影經歷，<br>
-            具藝術史學及文學背景，熟知藝文界產業溝通語言。<br><br>
-            自4年前修習廣告學課程與自學程式設計。<br>
-            對前端網頁設計與點擊率、轉換率、ROSA的關聯深感興趣，<br>
-            期盼能夠成為出眾的UI/UX設計師、前端網頁設計師，
-            提升用戶對網頁的體驗及美感視覺，也能夠創造最佳的客戶轉換率。<br>
-        </p>
-        <br>
-       <div class="arrow" onclick="op(this)"></div>
-    </div>
-    <img src="./img/bamboo.png" style="float:right;height:780px;">
-    <img src="./img/flower.jpg" style="position: absolute;z-index:-1;width:500px;height:630px;">
-</header>
-<article>
-<div class="container">
-    <h1 style="text-align:center;">Blog</h1>
-<div class="media">
-    <img src="https://picsum.photos/200/200" class="mr-3" alt="...">
-    <div class="media-body">
-      <h5 class="mt-0">Media heading</h5>
-      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-    </div>
-  </div>
-  <div class="media">
-    <div class="media-body">
-      <h5 class="mt-0 mb-1">Media object</h5>
-      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-    </div>
-    <img src="https://picsum.photos/200/200" class="ml-3" alt="...">
-  </div>
-  <div class="media">
-    <img src="https://picsum.photos/200/200" class="align-self-end mr-3" alt="...">
-    <div class="media-body">
-      <h5 class="mt-0">Bottom-aligned media</h5>
-      <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-      <p class="mb-0">Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-    </div>
-  </div>
-</div>
-<br>
-<hr>
-</article>
 
-<main>
-<div class="container">
-    <h1 style="text-align:center;">Draw and Design</h1>
-    <div class="card-deck ">
+<body>
+  <div class="modal">
+    <div class="modalClose" onclick="Cl(this)"><i class="fas fas fa-leaf" id="modalClose" style="font-size:50px;color:#8f997e;transform: translate(30%, 35%);"></i></div>
+  </div>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark  py-auto" style="background-color: #5e5845;">
+      <a class="navbar-brand" href="#"><i class="fas fas fa-leaf" style="font-size:30px;color:#dcf3cb;"></i></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Self-introduction</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Draw and Design</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Web Design</a>
+          </li>
+
+          
+        </ul>
+        <button class="btn  btn-outline-light" type="button">login</button>
+      </div>
+    </nav>
+    <div class="space">
+      <h3>Self-introduction</h3><br>
+      <p>一個認為在美學之下，必然與行銷商業數據得以取得平衡的人。<br><br>
+        擁有15年寫作經歷、10年繪圖經歷、8年攝影經歷，<br>
+        具藝術史學及文學背景，熟知藝文界產業溝通語言。<br><br>
+        自4年前修習廣告學課程與自學程式設計。<br>
+        對前端網頁設計與點擊率、轉換率、ROSA的關聯深感興趣，<br>
+        期盼能夠成為出眾的UI/UX設計師、前端網頁設計師，
+        提升用戶對網頁的體驗及美感視覺，也能夠創造最佳的客戶轉換率。<br>
+      </p>
+      <br>
+      <div class="arrow" onclick="op(this)"></div>
+    </div>
+    <img src="./img/bamboo.jpg" style="float:right;height:780px;">
+    <img src="./img/flower.jpg" style="float:left;width:500px;height:630px;">
+    <div class="wrap" style="font-size:100px;">Self-introduction</div>
+  </header>
+  <article>
+    <div class="container" id="blog">
+      <h1 style="text-align:center;">Blog</h1>
+      <div class="media">
+        <img src="https://picsum.photos/200/200" class="mr-3" alt="...">
+        <div class="media-body">
+          <h5 class="mt-auto">Media heading</h5>
+          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
+          vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
+          lacinia congue felis in faucibus.
+        </div>
+      </div>
+      <div class="media">
+        <div class="media-body">
+          <h5 class="mt-3 mb-3">Media object</h5>
+          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
+          vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
+          lacinia congue felis in faucibus.
+        </div>
+        <img src="https://picsum.photos/200/200" class="ml-3" alt="...">
+      </div>
+      <div class="media" >
+        <img src="https://picsum.photos/200/200" class="align-self-end mr-3" alt="...">
+        <div class="media-body">
+          <h5 class="mt-1">Bottom-aligned media</h5>
+          <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
+            odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
+            Donec lacinia congue felis in faucibus.</p>
+          <p class="mb-3">Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque
+            penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <hr>
+  </article>
+
+  <main>
+    <div class="container" id="design">
+      <h1 style="text-align:center;">Draw and Design</h1>
+      <div class="card-deck ">
         <div class="card bg-transparent">
           <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
           </div>
           <div class="card-footer">
             <small class="text-muted">Last updated 3 mins ago</small>
@@ -237,35 +360,74 @@
           <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This card has even longer content than the first to show that equal height action.</p>
           </div>
           <div class="card-footer">
             <small class="text-muted">Last updated 3 mins ago</small>
           </div>
         </div>
       </div>
-</div>
-</main>
-<figure>
+    </div>
+  </main>
+  <figure>
     <h1 style="text-align:center;">Web Design</h1>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-</figure>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </figure>
 
-    <footer>
-    </footer>
+  <footer>
+    <div class="lastpg">
+    <i class="fas fas fa-leaf" style="font-size:50px;color:#334426;"></i>
+    <br>
+    <p style="font-size: 14px;">
+    copyright©WY chen Resume<br>
+        電話:0912-247-326<br>
+  Email:waterfay0.0@gmail.com<br>
+    </p>
+  </div>
+  </footer>
 </body>
+
 </html>
 
 <script>
-      function op() {
-          $(".modal").fadeToggle(1000)
-            };
+  function op() {
+    $(".modal").slideToggle(1000)
+  };
+  function Cl() {
+    $(".modal").slideToggle(1000)
+  };
+
+  $(window).scroll(function () {   //開始監聽滾動條
+    var top = $(document).scrollTop();  //滾動條距離頂部的高度
+    // console.log(top) //監聽滾動調高度
+    console.log(top)
+    if (top >= 260) {
+      $("#blog").show(3500,"swing");
+    }
+    if (top >= 1010) {
+      $("#design").fadeIn(2000,"easeInSine");
+    }
+    if (top >= 840) {
+      $(".modal").hide();
+    }
+  })
+
+  // $(window).scroll(function () {   //開始監聽滾動條
+  //   var top = $(document).scrollTop();  //滾動條距離頂部的高度
+  //   // console.log(top) //監聽滾動調高度
+  //   // if (top >= 250 ) {
+  //   //   clearInterval(top);
+  //   //   $(window).unbind("scroll");
+  //   // }
+  // })
+
 </script>
