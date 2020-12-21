@@ -9,9 +9,14 @@
 			<rect id="SVGID_1_" x="5" y="5" transform="matrix(1 0.0015 -0.0015 1 0.3694 -0.3691)" width="500.001" height="500.369"/>
 	</defs>
 	<clipPath id="SVGID_2_">
+
 		<use xlink:href="#SVGID_1_"  overflow="visible"/>
 	</clipPath>
+	
 	<g clip-path="url(#SVGID_2_)">
+		<!-- <rect width="20" height="10" x="0" y="-10" fill="#09c">
+
+   </rect>  -->
 		<g>
 			<path fill="#0C9EBB" d="M79.209,436.726c1.411,0.618,2.936,1.343,4.506,1.34c1.676,0.002,3.099-0.641,4.666-1.041l0.1,0.032
 				c0.074,0.022,0.201,0.031,0.31,0.002c1.482,0.628,2.933,1.039,4.571,0.534c1.842-0.569,2.132-2.532,1.892-4.19
