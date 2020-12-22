@@ -65,7 +65,7 @@
     }
 
     .wrap {
-      top:95%;
+      top:105%;
       width: 100vw;
       height: 30vh;
       background: url("img/bamboo.jpg") no-repeat bottom center / cover;
@@ -159,22 +159,24 @@
     .modal {
       position: absolute;
       display: none;
-      top: 8.5%;
+      top: 9%;
       width: 100%;
-      height: 108vh;
+      height: 118vh;
       opacity: 85%;
-      background: rgb(255, 255, 255) ;
+      background: rgb(25, 96, 109) ;
       z-index: 1;
     }
     .modalcontain{
       display: grid;
       grid-template-columns: 1fr 1fr;
+      color:#b5f3ff;
     }
     .modalcontain1{
       margin-left:50px;
       top: 0%;
       width: 50%;
       height: 109vh;
+      display: none;
       box-sizing: border-box; 
       padding:10px;
       z-index: 10;
@@ -184,6 +186,7 @@
       top: 0%;
       width: 50%;
       height: 109vh;
+      display: none;
       box-sizing: border-box; 
       padding:10px;
       z-index: 10;
@@ -215,7 +218,7 @@
       border: 5px solid #8f997e;
       box-shadow: 0px 2px 7px 0px rgba(71,77,69,0.5);
       position: absolute;
-      top: 95vh;
+      top: 100vh;
       left: 50vw;
       width: 100px;
       height: 100px;
@@ -419,7 +422,7 @@
       </ul>
     </ul>
     <ul>
-      <h4>其他技能</h4>
+      <h4>其他經歷</h4>
         <ul>
           <li>久久點九整合行銷－接案小編</li>
           <li>《鴻飛射馬干－東大散文選》－合作出版著作</li>
@@ -471,7 +474,7 @@
       <h1 style="text-align:center;">Draw and Design</h1>
       <div class="card-deck ">
         <div class="card bg-transparent">
-          <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
+          <img src="img/draw1.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
@@ -539,13 +542,16 @@
 
   <footer>
     <div class="lastpg">
-    <i class="fas fas fa-leaf" style="font-size:50px;color:#334426;"></i>
+    <i class="fas fas fa-leaf" style="font-size:45px;color:#334426;"></i>
     <br>
-    <p style="font-size: 14px;">
+    <p style="font-size: 14px;margin:0;">
     copyright©WY chen Resume<br>
         電話:0912-247-326<br>
   Email:waterfay0.0@gmail.com<br>
     </p>
+    <div>
+    <img src="img\iconsfacebook.png"  alt=""><img src="img\iconsinstagram.png"  alt="">
+  </div>
   </div>
   </footer>
 </body>
@@ -556,6 +562,8 @@
   function op() {
     $(".modal").slideToggle(1000)
     $(".vine").delay(1200).fadeIn(2500)
+    $(".modalcontain1").delay(1700).fadeIn(2000);
+    $(".modalcontain2").delay(2200).fadeIn(2000);
   };
   function Cl() {
     $(".modal").slideToggle(1000)
