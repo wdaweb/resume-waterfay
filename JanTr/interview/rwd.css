@@ -3,9 +3,10 @@ body {
     color      : #5e5845;
     background : #f5f4f3;
     width      : 100%;
-    height     : 400vh;
+    height     : 420vh;
     overflow-x : hidden;
     overflow-y : auto;
+    line-height: 1.3;
 }
 
 @media (min-width:0px) and (max-width:400px) {
@@ -15,20 +16,31 @@ body {
     }
 
     article {
-        height: 1000px;
+        height: 2500px;
     }
 
     main {
-        height: 1000px;
+        height: 1500px;
+    } */
+        .webDesign {
+        width : 150px;
+        height: 150px;
     }
 
     .leafArrow {
         left: 35%;
     }
-
+    .card{
+        width: 100px;
+        height: 100px;
+    }
     /* figure {
             height: 100px;
     }            */
+    .card{
+        display: none !important;
+    }
+
 }
 
 
@@ -38,20 +50,20 @@ body {
         display: none;
     }
 
-    article {
+    /* article {
         height: 1000px;
     }
 
     main {
         height: 1000px;
-    }
+    } */
 
     .leafArrow {
         left: 35%;
     }
     .webDesign {
-            width : 200px;
-            height: 200px;
+            width : 150px;
+            height: 150px;
     }
 }
 
@@ -61,13 +73,13 @@ body {
         display: none;
     }
 
-    article {
+    /* article {
         height: 1000px;
     }
 
     main {
         height: 1000px;
-    }
+    } */
 
     .leafArrow {
         left: 35%;
@@ -96,6 +108,9 @@ body {
         width : 300px;
         height: 300px;
     }
+        .container {
+        padding-top: 50px;
+    }
 }
 
 @media (max-width:1500px) {
@@ -108,6 +123,9 @@ body {
     .webDesign {
         width : 350px;
         height: 350px;
+    }
+    .container{
+        padding-top:50px;
     }
 }
 
