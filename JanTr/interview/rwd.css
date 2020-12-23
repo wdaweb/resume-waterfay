@@ -11,12 +11,12 @@ body {
 @media (min-width:0px) and (max-width:400px) {
     .space {
         background: white;
-        top: 30vh;
+        top: 0vh;
         left: 0%;
-        width: 575px;
-        height: 375px;
+        width: 380px;
+        height: 500px;
         opacity: 90%;
-        position: r;
+        position: relative;
         box-shadow: 1px 1px 1px 1px #0000002b;
         box-sizing: border-box;
         padding: 30px;
@@ -45,7 +45,7 @@ body {
     }
 
     main {
-        height: 1000000px;
+        height: 2000px !important;
     }
 
     .webDesign {
@@ -73,12 +73,12 @@ body {
 @media (min-width:401px) and (max-width:576px) {
     .space {
         background: white;
-        top: 30vh;
+        top: 0vh;
         left: 0%;
-        width: 575px;
-        height: 375px;
+        width: 530px;
+        height: 450px;
         opacity: 90%;
-        position: absolute;
+        position: relative;
         box-shadow: 1px 1px 1px 1px #0000002b;
         box-sizing: border-box;
         padding: 30px;
@@ -103,11 +103,11 @@ body {
     }
 
     article {
-        height: 1200px;
+        height: 1500px;
     }
 
     main {
-        height: 1400px;
+        height: 1500px;
     }
 
     .leafArrow {
