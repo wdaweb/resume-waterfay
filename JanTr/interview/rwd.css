@@ -151,7 +151,7 @@ body {
         z-index: 1;
       }
 }
-@media (min-width:490px) and (max-width:576px) {
+@media (min-width:490px) and (max-width:559px) {
     .space {
         background: white;
         top: 0vh!important;
@@ -178,6 +178,9 @@ body {
             opacity: 90%;
         }
     }
+    .media>img{
+        display: none;
+    }
     .arrow{
         display: none;
     }
@@ -186,7 +189,7 @@ body {
     }
 
     article {
-        height: 1600px;
+        height: 1500px;
     }
 
     main {
@@ -206,7 +209,7 @@ body {
         display: none;
     }
     .modalcontain1{
-        padding: 0px!important;git
+        padding: 0px!important;
         margin-left: 0px;
         font-size: 12px;
     }
@@ -222,7 +225,7 @@ body {
       }
 }
 
-@media (min-width:577px) and (max-width:768px) {
+@media (min-width:560px) and (max-width:768px) {
     .flower {
         display: none;
     }
