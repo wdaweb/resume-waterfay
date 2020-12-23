@@ -189,15 +189,15 @@ body {
     }
 
     article {
-        height: 1500px;
+        height: 1300px!important;;
     }
 
     main {
-        height: 1500px;
+        height: 1500px!important;;
     }
 
     .leafArrow {
-        left: 0%;
+        left: 35%;
     }
 
     .webDesign {
