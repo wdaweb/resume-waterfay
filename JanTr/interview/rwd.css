@@ -1,94 +1,181 @@
 body {
     font-family: 'Prata', serif, 'Noto Serif TC', serif;
-    color      : #5e5845;
-    background : #f5f4f3;
-    width      : 100%;
-    overflow-x : hidden;
-    overflow-y : auto;
-    line-height: 1.3;
+    color: #5e5845;
+    background: #f5f4f3;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    line-height: 1.5;
 }
 
 @media (min-width:0px) and (max-width:400px) {
+    .space {
+        background: white;
+        top: 30vh;
+        left: 0%;
+        width: 575px;
+        height: 375px;
+        opacity: 90%;
+        position: r;
+        box-shadow: 1px 1px 1px 1px #0000002b;
+        box-sizing: border-box;
+        padding: 30px;
+        animation: spa 1s infinite forwards;
+        animation-iteration-count: 1;
+    }
+
+    @keyframes spa {
+        0% {
+            left: 100%;
+            opacity: 0%;
+        }
+
+        100% {
+            left: 0%;
+            opacity: 90%;
+        }
+    }
 
     .flower {
         display: none;
     }
 
     article {
-        height: 1500px!important;
+        height: 1500px !important;
     }
 
     main {
         height: 1000000px;
     }
-        .webDesign {
-        width : 150px;
+
+    .webDesign {
+        width: 150px;
         height: 150px;
     }
 
     .leafArrow {
         left: 35%;
     }
+
     /* figure {
             height: 100px;
     }            */
     .wrap {
         display: none;
     }
-    figure{
+
+    figure {
         height: 500px;
     }
 }
 
 
 @media (min-width:401px) and (max-width:576px) {
+    .space {
+        background: white;
+        top: 30vh;
+        left: 0%;
+        width: 575px;
+        height: 375px;
+        opacity: 90%;
+        position: absolute;
+        box-shadow: 1px 1px 1px 1px #0000002b;
+        box-sizing: border-box;
+        padding: 30px;
+        animation: spa 1s infinite forwards;
+        animation-iteration-count: 1;
+    }
+
+    @keyframes spa {
+        0% {
+            left: 100%;
+            opacity: 0%;
+        }
+
+        100% {
+            left: 0%;
+            opacity: 90%;
+        }
+    }
 
     .flower {
         display: none;
     }
 
-    /* article {
-        height: 1000px;
+    article {
+        height: 1200px;
     }
+
     main {
-        height: 1000px;
-    } */
+        height: 1400px;
+    }
 
     .leafArrow {
         left: 35%;
     }
+
     .webDesign {
-            width : 150px;
-            height: 150px;
+        width: 150px;
+        height: 150px;
     }
+
     .wrap {
         display: none;
     }
 }
 
 @media (min-width:577px) and (max-width:768px) {
+    .space {
+        background: white;
+        top: 30vh;
+        left: 0%;
+        width: 575px;
+        height: 375px;
+        opacity: 90%;
+        position: absolute;
+        box-shadow: 1px 1px 1px 1px #0000002b;
+        box-sizing: border-box;
+        padding: 30px;
+        animation: spa 1s infinite forwards;
+        animation-iteration-count: 1;
+    }
 
+    @keyframes spa {
+        0% {
+            left: 100%;
+            opacity: 0%;
+        }
+
+        100% {
+            left: 0%;
+            opacity: 90%;
+        }
+    }
     .flower {
         display: none;
     }
+
     .wrap {
         display: none;
     }
 
-    /* article {
-        height: 1000px;
-    }
-    main {
+    /* 
+    article {
         height: 1000px;
     } */
+    main {
+        height: 800px;
+    }
 
     .leafArrow {
         left: 35%;
     }
-        .webDesign {
-        width : 200px;
+
+    .webDesign {
+        width: 200px;
         height: 200px;
     }
+
     .wrap {
         display: none;
     }
@@ -98,10 +185,16 @@ body {
     .flower {
         display: none;
     }
+
     .webDesign {
-        width : 200px;
+        width: 200px;
         height: 200px;
     }
+
+    main {
+        height: 700px;
+    }
+
     .wrap {
         display: none;
     }
@@ -111,13 +204,16 @@ body {
     .flower {
         display: none;
     }
+
     .webDesign {
-        width : 300px;
+        width: 300px;
         height: 300px;
     }
-        .container {
+
+    .container {
         padding-top: 50px;
     }
+
     .wrap {
         display: none;
     }
@@ -131,11 +227,12 @@ body {
 
 @media (min-width:1500px) {
     .webDesign {
-        width : 350px;
+        width: 350px;
         height: 350px;
     }
-    .container{
-        padding-top:100px;
+
+    .container {
+        padding-top: 100px;
     }
 }
 
