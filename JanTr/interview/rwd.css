@@ -16,12 +16,12 @@ body {
     }
 
     article {
-        height: 2500px;
+        height: 1500px!important;
     }
 
     main {
-        height: 1500px;
-    } */
+        height: 1000000px!important;
+    }
         .webDesign {
         width : 150px;
         height: 150px;
@@ -30,17 +30,12 @@ body {
     .leafArrow {
         left: 35%;
     }
-    .card{
-        width: 100px;
-        height: 100px;
-    }
     /* figure {
             height: 100px;
     }            */
     .card{
-        display: none !important;
+        display: none;
     }
-
 }
 
 
@@ -125,7 +120,7 @@ body {
         height: 350px;
     }
     .container{
-        padding-top:50px;
+        padding-top:100px;
     }
 }
 
