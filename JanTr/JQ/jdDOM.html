@@ -36,3 +36,27 @@
 </body>
 
 </html>
+
+<script>
+    // $(document).ready(function () { //DOM生成完畢後
+    //         console.log($("#head"));
+    //     });
+
+    docunent.getElementsTagName("button")[0].onclick = function () {
+        console.log("JS");
+    };
+    $("button").eq(1).on("click", function () {
+        console.log("JQ");
+    });
+    $("button").on("click", function () {
+        console.log("JQ ALL");
+    });
+    $("button").click(function () {
+        console.log("JQ Quick Click");
+    });
+    $("button").eq(1).on(function () {
+        console.log("JQ Quick Click");
+    });
+
+
+</script>
