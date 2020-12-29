@@ -103,16 +103,12 @@
     <div class="col-10 d-flex flex-column p-4 mx-auto" >
     <?php
 
-        if(isset($_GET['do'])){
-
-            $file=$_GET['do'].".php";
-            include $file;
-
-
-        }else{
-
-            include "main.php";
-        }
+    if(isset($_GET['do'])){
+        $file=$_GET['do'].".php";
+        include $file;
+    }else{
+        include "main.php";
+    }
 
         ?>
     </div>

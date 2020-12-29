@@ -37,45 +37,26 @@
 
 <body>
     <div class="container login">
-        R<input type="range" value="0" id="R" min="0" max="255" oninput="R(this)">
-        G<input type="range" value="0" id="G" min="0" max="255" oninput="G(this)">
-        B<input type="range" value="0" id="B" min="0" max="255" oninput="B(this)">
+        R<input type="range" value="255" id="R" min="0" max="255" oninput="bg()">
+        G<input type="range" value="255" id="G" min="0" max="255" oninput="bg()">
+        B<input type="range" value="255" id="B" min="0" max="255" oninput="bg()">
+        <input type="button" value="?">
         <!-- A<input type="range" min="0.0" max="1.0"> -->
     </div>
-
-    <p id="print"></p>
-    <p id="print2"></p>
-    <p id="print3"></p>
 </body>
 
 </html>
 <script>
-        r=0;
-        g=0;
-        b=0;
-    var bg = document.getElementById("print").innerHTML;
-        // document.body.style.background
-        bg.style.backgroundColor = color;
-     color="rgb(" + r + "," + g + "," + b + ")";
-    function R() {
+    function bg(){
         var r = document.getElementById("R").value;
-        document.getElementById("print").innerHTML=r;
-    
-        // console.log(typeof (`${r}`));
-    }
-    R();
-    function G() {
         var g = document.getElementById("G").value;
-        document.getElementById("print2").innerHTML=g;
-        // console.log(`${g}`);
-    }
-    function B() {
         var b = document.getElementById("B").value;
-        document.getElementById("print3").innerHTML=b;
-        // console.log(`${b}`);
+        document.body.style.background = "rgb(" + r + "," + g + "," + b + ")";
+        document.getElementsByClassName("contrast")
+    //console.log(r);
+    //console.log(g);
+    //console.log(b);
     }
-    function bgColor(){
-        console.log(`${bg}`);
-    }
+
 
 </script>
