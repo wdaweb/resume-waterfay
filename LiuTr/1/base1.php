@@ -18,47 +18,38 @@ class DB{
 
 
     public function all(...$arg){
-    $sql="select * from $this->table ";
+    $sql="select * from $this->table";
     if(!empty($arg[0]) && is_array($arg[0])){
-        foreach($arg[0] as $key =>$value){
-            $tmp[]=sprintf("`%s`=`%s`",$key ,$value);
+        foreach($arg[0] as $key => $value){
+            $tmp[]=sprintf("`%s`='%s'",$key,$value);
         }
-        $sql=$sql. "where" .implode( "&&" ,$tmp);
+        $sql=$sql. "where" .implode(" && " ,$tmp);
     }
-        if(!empty($arg[1])){
-            $sql= $sql.$arg[1];
-        }
+    if(!empty($arg[1])){
+        $sql=$sql . $arg[1];
+    }
     return $this->pdo->query($sql)->fetchAll();
     }
 
 
     public function find($arg){
-        $sql="select * from $this->table ";
-        if(!empty($arg[0]) && is_array($arg[0])){
-        foreach($arg[0] as $key =>$value){
-        $tmp[]=sprintf("`%s`=`%s`",$key ,$value);
+    $sql="select * from $this->table";
+    if(!empty($arg)){
+        foreach($arg as $key =>$value){
+            $tmp[]=sprintf("`%s`='%s'",$key,$value);
         }
-        $sql=$sql. "where" .implode( "&&" ,$tmp);
+        $sql=$sql. "where" .implode(" && " ,$tmp);
     }else{
-        $sql=$sql ."where `id`='$arg'";
+        $sql=$sql . "where `id`='$arg'";
     }
-    return $this->pdo->query($sql)->fetch();
+    return $this->pdo->query($arg)->fetch(PDO::FETCH_ASSOC);
     }
 
 
     public function count(...$arg){
-        $sql="select * from $this->table ";
-        if(!empty($arg[0]) && is_array($arg[0])){
-        foreach($arg[0] as $key =>$value){
-        $tmp[]=sprintf("`%s`=`%s`",$key ,$value);
-        }
-        $sql=$sql. "where" .implode( "&&" ,$tmp);
+
     }
-        if(!empty($arg[1])){
-            $sql= $sql.$arg[1];
-        }
-    return $this->pdo->query($sql)->fetchColumn();
-    }
+
     public function save($arg){
         if(!empty($arg['id'])){
             foreach($arg as $key => $value){
@@ -66,8 +57,11 @@ class DB{
                     $tmp[]=sprintf("`%s`=`%s`",$key,$value);
                 }
             }
-            $sql="update $this->table set "";
+            $sql="update $this->table set ".implode(",",$tmp)."where `id`='".$arg['id']."'";
+        }else{
+            $sql="insert into $this->table (`".implode("`,`",array_keys($arg))."`) value('".implode("','",$arg)."')";
         }
+        return $this->pdo->exec($sql);
     }
     public function del($arg){
         $sql="delete from $this->table ";
