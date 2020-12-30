@@ -5,7 +5,7 @@ date_default_timezone_set("Asia/Taipei");
 session_start();
 
 class DB{
-    private $dsn="mysql:host=localhost;charset=utf8;dbname=students";
+    private $dsn="mysql:host=localhost;charset=utf8;dbname=interview";
     private $root="root";
     private $password="";
     private $table;
