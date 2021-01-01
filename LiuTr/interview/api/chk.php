@@ -1,9 +1,9 @@
 <?php
 include_once "../base.php";
-$db=new DB("login");
-$acc=$_GET['acc'];
-$acc=$_GET['pw'];
-$user=$User->find(['acc'=>$acc]);
+
+$acc=$_POST['acc'];
+$pw=$_POST['pw'];
+$user=$User->find(['acc'=>$acc,'pw'=>$pw]);
 if(empty($user)){
     echo 0;
 }else{
