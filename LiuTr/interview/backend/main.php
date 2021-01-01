@@ -26,10 +26,9 @@ include_once "../base.php";
             margin: 0 auto;
             background: rgb(191, 202, 177);
         }
-
         .main {
             width: 1000px;
-            height: 700px;
+            height: 900px;
         }
         .login{
             width: 1000px;
@@ -49,19 +48,18 @@ include_once "../base.php";
             <h1 style="text-align: center;line-hight:5px;">WY Chen Resume Backstage</h1>
             <nav>
                 <div class="nav nav-tabs justify-content-center" id="nav-tab">
-                    <a class="nav-item nav-link text-white" id="" data-toggle="tab"
-                        href="?do=self_introduction">Self-introduction</a>
+                    <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=self_introduction">Self-introduction</a>
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="#nav-profile">Resume</a>
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="#nav-contact">Blog</a>
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="#nav-contact">Draw and
                         Design</a>
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="#nav-profile">Web Design</a>
-                    <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="#nav-contact">Botton</a>
+                    <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=bottom">Bottom</a>
                     
                     <?php
                     if(!empty($_SESSION['login'])){
                     ?>
-                        <a class='nav-item nav-link text-white' id='' data-toggle='tab' onclick="location.replace('api/logout.php')">logout</a>
+                        <a class='nav-item nav-link text-white' id='' data-toggle='tab' onclick="location.replace('../api/logout.php')">logout</a>
 
                     <?php
                     }else{

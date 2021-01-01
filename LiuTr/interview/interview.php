@@ -1,3 +1,9 @@
+<?php
+
+include_once "base.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -205,12 +211,12 @@
     }
 
     .vine {
-      top: 5vh;
-      left: 25vw;
+      top: 25vh;
+      left: 20vw;
       display: none;
       position: absolute;
-      width: 100%;
-      height: 100vh;
+      width: 120%;
+      height: 120vh;
       transform: scale(1.3, 1.2);
       transform-origin: bottom right;
       z-index: 2;
@@ -223,7 +229,7 @@
       border: 5px solid #8f997e;
       box-shadow: 0px 2px 7px 0px rgba(71, 77, 69, 0.5);
       position: absolute;
-      top: 90vh;
+      top: 110vh;
       left: 50vw;
       width: 100px;
       height: 100px;
@@ -255,7 +261,6 @@
       color: #c9ebb2 !important;
       animation: mdclose2 1s infinite alternate;
     }
-
     @keyframes mdclose1 {
       25% {
         transform-origin: center;
@@ -579,10 +584,14 @@
     <div class="lastpg">
       <i class="fas fas fa-leaf" style="font-size:45px;color:#334426;"></i>
       <br>
-      <p style="font-size: 14px;margin:0;">
-        copyright©WY Chen Resume<br>
+      <p style="font-size: 14px;margin:0;text-align:center;">
+      <?php
+                $bt=$Bottom->find(1);
+                echo $bt['bottom'];
+            ?>
+        <!-- copyright©WY Chen Resume<br>
         電話:0912-247-326<br>
-        Email:waterfay0.0@gmail.com<br>
+        Email:waterfay0.0@gmail.com<br> -->
       </p>
       <div>
         <img src="img\iconsfacebook.png" alt=""><img src="img\iconsinstagram.png" alt="">

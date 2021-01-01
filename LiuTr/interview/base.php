@@ -141,5 +141,6 @@ function to($url)
 }
 
 $User=new DB("login");
+$Bottom=new DB('bottom');
 
 ?>
