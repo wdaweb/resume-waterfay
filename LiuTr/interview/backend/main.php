@@ -15,9 +15,12 @@ include_once "../base.php";
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600&family=Prata&display=swap"
+    rel="stylesheet">
     <!--不一定會用到-->
     <style>
         body {
+            font-family: 'Prata', serif, 'Noto Serif TC', serif;
             width: 100%;
             height: 900px;
             display: flex;
