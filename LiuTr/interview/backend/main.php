@@ -52,7 +52,7 @@ include_once "../base.php";
             <nav>
                 <div class="nav nav-tabs justify-content-center" id="nav-tab">
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=self_introduction">Self-introduction</a>
-                    <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="#nav-profile">Resume</a>
+                    <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=resume">Resume</a>
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="#nav-contact">Blog</a>
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="#nav-contact">Draw and
                         Design</a>

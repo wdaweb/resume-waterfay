@@ -22,17 +22,18 @@ include_once "../base.php";
                         $sf=$SelfIntroduction->find(1);
                     ?>
             <div class="container bottom" style="border:0.5px solid white">
-            <div class="col col-12"  style="text-align:center">大頭照</div>
-            <div  class="col col-12"  style="text-align:center"><img src='../img/<?=$sf['img'];?>' style="width:300px;height:300px">
-            <form  action="../api/edit_selfIntroduction.php" method="post" enctype="multipart/form-data">
-            檔案：<input type="file" name="img" ><br>
-            <br>
+            <div class="col col-12"  style="text-align:center;">履歷表管理
             <hr>
-            <div class="col col-12">自我介紹簡介</div>
-            <div  class="col col-12"><textarea name="text" style="width:500px;height:100px;"><?=$sf['text'];?></textarea></div>
+            <div  class="col col-12">大標<textarea name="title[]" style="width:500px;height:30px;"><?=$sf['text'];?></textarea>
+            <input type="checkbox"><input type="checkbox"></div>
+            <div  class="col col-12">小標<textarea name="text[]" style="width:500px;height:30px;"><?=$sf['text'];?></textarea>
+            <input type="checkbox"><input type="checkbox"></div>
+            <div  class="col col-12">內容<textarea name="li[]" style="width:500px;height:30px;"><?=$sf['text'];?></textarea>
+            <input type="checkbox"><input type="checkbox"></div>
             <div  class="col col-12"><input type="submit" value="更新">
             <input type="reset" value="重置"></div>
             </form>
+            </div>
             </div>
         </div>
     </div>
