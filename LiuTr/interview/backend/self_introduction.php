@@ -7,7 +7,7 @@ include_once "../base.php";
     <style>
         .container .bottom{
             width: 800px;
-            height: 300px;
+            height: 500px;
             /* display: flex;
             justify-content: center;
             align-items: center; */
@@ -24,7 +24,7 @@ include_once "../base.php";
             <div class="container bottom" style="border:0.5px solid white">
             <div class="row" >
             <div class="col col-12">大頭照</div>
-            <div><img src='img/<?=$sf['img'];?>' style="width:300px;height:30px"></div>
+            <div><img src='../img/<?=$sf['img'];?>' style="width:300px;height:300px"></div>
             <form  action="../api/edit_selfIntroduction.php" method="post" enctype="multipart/form-data">
             檔案：<input type="file" name="img" ><br>
 
@@ -32,7 +32,7 @@ include_once "../base.php";
             <form method="post" action="../api/edit_bottom.php">
             <div class="row align-items-center">
             <div class="col col-12">自我介紹簡介</div>
-            <input type="text" name="text" style="width:500px;height:100px;" value="<?=$sf['text'];?>">
+            <textarea name="text" style="width:500px;height:100px;"><?=$sf['text'];?></textarea>
             <input type="submit" value="更新">
             <input type="reset" value="重置">
             </div>

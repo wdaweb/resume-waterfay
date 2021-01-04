@@ -7,7 +7,7 @@ include_once "../base.php";
 $SelfIntroduction=new DB('SelfIntroduction');
 $row=$SelfIntroduction->find(1);
 if(!empty($_FILES['img']['tmp_name'])){
-    $filename=$_FILES['img']['name'];
+    $filename=$_FILES['img']['Mugshot'];
     move_uploaded_file($_FILES['img']['tmp_name'],'../img/'.$filename);
     $row['img']=$filename;
     $SelfIntroduction->save($row);
