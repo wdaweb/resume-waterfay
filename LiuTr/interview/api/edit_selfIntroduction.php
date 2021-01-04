@@ -7,13 +7,13 @@ include_once "../base.php";
 $SelfIntroduction=new DB('SelfIntroduction');
 $row=$SelfIntroduction->find(1);
 if(!empty($_FILES['img']['tmp_name'])){
-    $filename=$_FILES['img']['Mugshot'];
+    $filename=$_FILES['img']['name'];
     move_uploaded_file($_FILES['img']['tmp_name'],'../img/'.$filename);
     $row['img']=$filename;
     $SelfIntroduction->save($row);
 }
 
 imagedestroy($im); 
-to("../main.php?do=self_introduction");
+to("../backend/main.php?do=self_introduction");
 
 ?>

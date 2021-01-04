@@ -382,7 +382,7 @@ include_once "base.php";
       <br>
       <div class="arrow"></div>
     </div>
-    <img src="./img/bamboo.jpg" style="float:right;height:780px;">
+    <img src="./img/<?=$sf['img'];?>" style="float:right;height:780px;">
     <img src="./img/flower.jpg" class="flower" style="float:left;width:500px;height:630px;">
     <div class="wrap" style="background: url('img/<?=$sf['img'];?>') no-repeat bottom center / cover;text-align: left;font-size: 6rem;float: left;-webkit-text-fill-color: transparent;-webkit-background-clip: text;
       background-clip: text;">Self-introduction</div>
