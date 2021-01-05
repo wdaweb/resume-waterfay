@@ -13,7 +13,7 @@ include_once "../base.php";
             justify-content: center;
             align-items: center; */
 
-            transform: translate(0%,5%);
+            transform: translate(0%,1%);
         }
 
         .modal{
@@ -62,9 +62,10 @@ include_once "../base.php";
                 </div>
     　　　　</div>
     </div>
-
+    <div class="container d-flex justify-content-end py-3">
+    <input type="button" onclick="op(this)" value="新增圖片">
+    </div>
             <div class="container bottom" style="border:0.5px solid white">
-            <input type="button" onclick="op(this)" value="新增圖片">
             <div class="row" >
             <div class="col col-2" style="border:0.5px solid white">標題</div>
             <div class="col col-3" style="border:0.5px solid white">圖片</div>
@@ -86,6 +87,7 @@ include_once "../base.php";
             顯示：<input type="checkbox" value="<?=$dw['id'];?>" <?=$isChk;?>>
             刪除：<input type="checkbox" value="<?=$dw['id'];?>">
             <input type="hidden" name="id[]" value="<?=$dw['id'];?>">
+            <hr>
             <input type="submit" value="修改確定"><input type="reset" value="重置"></div>
             </div>
             <?php
