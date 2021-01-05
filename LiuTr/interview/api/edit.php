@@ -3,21 +3,21 @@
 
 //請參考add.php的註解，自行讀懂下列程式碼的功能
 include_once "../base.php";
-
-$SelfIntroduction=new DB('SelfIntroduction');
-$row=$SelfIntroduction->find(1);
-$delfile='../img/'.$row['img'];
+$id=$_POST['id'];
+$row=$Draw->find($_POST['id']);
 if(!empty($_FILES['img']['tmp_name'])){
-    unlink($delfile);
     $filename=$_FILES['img']['name'];
     move_uploaded_file($_FILES['img']['tmp_name'],'../img/'.$filename);
     $row['img']=$filename;
-
-}
-if(isset($_POST['text'])){
-    $row['text']=$_POST['text'];
-    }
     $SelfIntroduction->save($row);
-to("../backend/main.php?do=self_introduction");
+}
+
+if(isset($_POST['text'])||isset($_POST['title'])||isset($_POST['sh'])){
+    $row['text']=$_POST['text'];
+    $row['text']=$_POST['title'];
+    $row['sh']=(!empty($_POST['sh']) && in_array($id,$_POST['sh']))?1:0;
+}
+$Draw->save($row);
+to("../backend/main.php?do=draw");
 
 ?>

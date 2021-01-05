@@ -16,7 +16,7 @@ include_once "../base.php";
             transform: translate(0%,1%);
         }
 
-        .modal{
+.modal{
             
             position: absolute;
             top: 55px;
@@ -30,7 +30,7 @@ include_once "../base.php";
             right:25%;
             
         }
-        .mdb{
+.mdb{
             padding:100px;
         }
         #cover
@@ -47,10 +47,11 @@ include_once "../base.php";
     </style>
 </head>  
 <body>
-<div id="cover" style="display:none;">
+<!-- <div id="cover" style="display:none;">
         <div class="modal" style="text-align:left;display:none;">
                 <div class="modlecloss" onclick="Cl(this)" style="float:right;padding:10px;">X</div>
                 <div class="mdb">
+                <form action="api/add.php" method="post" enctype="multipart/form-data">
                 <span>標題：</span>
                 <input type="text" style="width:300px;height:20px;"><br>
                 <span>圖片：</span>
@@ -59,11 +60,12 @@ include_once "../base.php";
                 <textarea name="bottom" style="width:300px;height:50px;"><?=$dw['text'];?></textarea>
                 <br>
                 <input type="submit" value="上傳"><input type="reset" value="重置">
+                <form>
                 </div>
-    　　　　</div>
-    </div>
+    　　　　</div> -->
+    <!-- </div> -->
     <div class="container d-flex justify-content-end py-3">
-    <input type="button" onclick="op(this)" value="新增圖片">
+    <input type="button" onclick="op(&#39;#cover&#39;,&#39;.modal&#39;,&#39;../modal/draw.php&#39;)" value="新增圖片">
     </div>
             <div class="container bottom" style="border:0.5px solid white">
             <div class="row" >
@@ -72,10 +74,15 @@ include_once "../base.php";
             <div class="col col-3" style="border:0.5px solid white">內容</div>
             <div class="col col-4" style="border:0.5px solid white">管理</div>
             </div>
-            <form method="post" action="../api/edit_bottom.php">
+            <form method="post" action="../api/edit.php">
             <div class="row align-items-center">
-            <?php 
-            $dws=$Draw->all();
+            <?php
+            $total = $Draw->count();
+            $num = 5;
+            $pages = ceil($total / $num);
+            $now = (!empty($_GET['p'])) ? $_GET['p'] : 1;
+            $start = ($now - 1) * $num;
+            $dws=$Draw->all([],"order by sort limit $start , $now");
             foreach($dws as $dw){
                 $isChk = ($dw['sh'] == 1) ? 'checked' : '';
                     ?>
@@ -97,7 +104,22 @@ include_once "../base.php";
             </div>
         </div>
     </div>
-
+    <?php
+                if (($now - 1) > 0) {
+            ?>
+            <a class="bl" style="font-size:30px;" href="?do=<?=$table;?>&p=<?=($now - 1);?>">&lt;&nbsp;</a>
+            <?php } ?>
+            <?php
+                for ($i = 1; $i <= $pages; $i++) {
+                    $fontsize = ($i == $now) ? '30px' : '24px';
+            ?>
+                <a class="bl" style="font-size:<?=$fontsize;?>;" href="?do=<?=$table;?>&p=<?=$i;?>"><?=$i;?></a>
+            <?php } ?>
+            <?php
+                if (($now + 1) <= $pages) {
+            ?>
+                <a class="bl" style="font-size:30px;" href="?do=<?=$table;?>&p=<?=($now + 1);?>">&nbsp;&gt;</a>
+            <?php } ?>
 </body>
 </html>
 <script>

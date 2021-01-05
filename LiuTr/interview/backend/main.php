@@ -17,6 +17,9 @@ include_once "../base.php";
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600&family=Prata&display=swap"
     rel="stylesheet">
+
+    <link href="../css/modal.css" rel="stylesheet" type="text/css">
+    <script src="../js/js.js"></script>
     <!--不一定會用到-->
     <style>
         body {
@@ -45,8 +48,10 @@ include_once "../base.php";
 </head>
 
 <body>
-
-
+<div id="cover" style="display:none;">
+<div class="modlecloss" onclick="cl('#cover')" style="color:white;z-index:9999;position:absolute; left:70%; top:15%;">X</div>
+        <div class="modal" style="text-align:left;"></div>
+    </div>
     <div class="container main">
         <div class="col col-12">
             <h1 style="text-align: center;line-hight:5px;">WY Chen Resume Backstage</h1>

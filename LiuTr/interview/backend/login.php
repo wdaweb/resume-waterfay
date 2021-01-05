@@ -20,7 +20,7 @@ include_once "../base.php";
             <div class="container login">
             <form>
                 帳號：<input type="text" name="acc" id="acc"><br>
-                密碼：<input type="text" name="pw" id="pw"><br>
+                密碼：<input type="password" name="pw" id="pw"><br>
                     <input type="submit" value="確認" onclick="login()">
                 <input type="reset" value="清除">
             </form>
