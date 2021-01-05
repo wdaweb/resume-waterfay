@@ -105,22 +105,23 @@ include_once "../base.php";
             </div>
 
         </div>
-    </div>
-    <?php
+        <?php
                 if (($now - 1) > 0) {
             ?>
-            <a class="bl" style="font-size:30px;" href="?do=<?=$table;?>&p=<?=($now - 1);?>">&lt;&nbsp;</a>
+            <a class="bl" style="font-size:30px;" href="?do=draw&p=<?=($now - 1);?>">&lt;&nbsp;</a>
             <?php } ?>
             <?php
                 for ($i = 1; $i <= $pages; $i++) {
                     $fontsize = ($i == $now) ? '30px' : '24px';
             ?>
-                <a class="bl" style="font-size:<?=$fontsize;?>;" href="?do=<?=$table;?>&p=<?=$i;?>"><?=$i;?></a>
+                <a class="bl" style="font-size:<?=$fontsize;?>;" href="?do=draw&p=<?=$i;?>"><?=$i;?></a>
             <?php } ?>
             <?php
                 if (($now + 1) <= $pages) {
             ?>
                 <a class="bl" style="font-size:30px;" href="?do=<?=$table;?>&p=<?=($now + 1);?>">&nbsp;&gt;</a>
             <?php } ?>
+    </div>
+
 </body>
 </html>
