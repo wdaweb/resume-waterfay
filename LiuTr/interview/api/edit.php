@@ -1,7 +1,6 @@
   
 <?php
 
-//請參考add.php的註解，自行讀懂下列程式碼的功能
 include_once "../base.php";
 $id=$_POST['id'];
 $row=$Draw->find($_POST['id']);

@@ -65,7 +65,7 @@ include_once "../base.php";
     　　　　</div> -->
     <!-- </div> -->
     <div class="container d-flex justify-content-end py-3">
-    <input type="button" onclick="op(&#39;#cover&#39;,&#39;.modal&#39;,&#39;../modal/draw.php&#39;)" value="新增圖片">
+    <input type="button" onclick="op('#cover','.modal','../modal/draw.php')" value="新增圖片">
     </div>
             <div class="container bottom" style="border:0.5px solid white">
             <div class="row" >
@@ -122,16 +122,3 @@ include_once "../base.php";
             <?php } ?>
 </body>
 </html>
-<script>
-      function op() {
-    $(".modal").fadeIn()
-    $("#cover").fadeIn()
-
-    
-  };
-  function Cl() {
-    $(".modal").fadeOut()
-    $("#cover").fadeOut()
-
-  };
-</script>
