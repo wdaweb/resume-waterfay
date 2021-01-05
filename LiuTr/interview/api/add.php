@@ -8,11 +8,11 @@ if(!empty($_FILES['img']['tmp_name'])){
     $row['img']=$filename;
 }
 
-// if(isset($_POST['text'])||isset($_POST['title'])||isset($_POST['sh'])){
-//     $row['text']=$_POST['text'];
-//     $row['text']=$_POST['title'];
-//     $row['sh']=(!empty($_POST['sh']) && in_array($id,$_POST['sh']))?1:0;
-// }
+    $row['text']=$_POST['text'];
+    $row['title']=$_POST['title'];
+    $row['sh']=1;
+    $row['sort']=1;
+
 $Draw->save($row);
 to("../backend/main.php?do=draw");
 

@@ -8,7 +8,7 @@ include_once "../base.php";
         .container .bottom{
             width: 800px;
             height: 600px;
-            overflow:auto;
+            overflow-y:auto;
             /* display: flex;
             justify-content: center;
             align-items: center; */
@@ -74,18 +74,19 @@ include_once "../base.php";
             <div class="col col-3" style="border:0.5px solid white">內容</div>
             <div class="col col-4" style="border:0.5px solid white">管理</div>
             </div>
-            <form method="post" action="../api/edit.php">
-            <div class="row align-items-center">
             <?php
             $total = $Draw->count();
             $num = 5;
             $pages = ceil($total / $num);
             $now = (!empty($_GET['p'])) ? $_GET['p'] : 1;
             $start = ($now - 1) * $num;
-            $dws=$Draw->all([],"order by sort limit $start , $now");
+            $dws=$Draw->all([],"order by sort limit $start , $num");
             foreach($dws as $dw){
                 $isChk = ($dw['sh'] == 1) ? 'checked' : '';
                     ?>
+            <form method="post" action="../api/edit.php">
+            <div class="row align-items-center">
+
             <div class="col col-2"><textarea name="bottom" style="width:100px;height:200px;"><?=$dw['title'];?></textarea></div>
             <div class="col col-3" ><img src='../img/<?=$dw['img'];?>' style="width:180px;height:130px"></div>
             <div class="col col-3 py-3" style="text-align:center"><textarea name="bottom" style="width:150px;height:200px;"><?=$dw['text'];?></textarea></div>
@@ -97,11 +98,12 @@ include_once "../base.php";
             <hr>
             <input type="submit" value="修改確定"><input type="reset" value="重置"></div>
             </div>
+            </form>
             <?php
             }
             ?>
-            </form>
             </div>
+
         </div>
     </div>
     <?php
