@@ -143,5 +143,6 @@ function to($url)
 $User=new DB("login");
 $Bottom=new DB('bottom');
 $SelfIntroduction=new DB('SelfIntroduction');
+$Draw=new DB('draw');
 
 ?>

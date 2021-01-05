@@ -352,7 +352,7 @@ include_once "base.php";
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="interview.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="interview.php">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#modalClose">Self-introduction</a>
@@ -476,7 +476,7 @@ include_once "base.php";
   </header>
   <article>
     <div class="container" id="blog">
-      <h1 style="text-align:center;">Blog</h1>
+      <h1 style="text-align:center;"><a href="blog.php" style="text-decoration:none;color:#5e5845;">Blog</a></h1>
       <div class="media">
         <img src="https://picsum.photos/200/200" class="mr-3">
         <div class="media-body">
@@ -502,7 +502,7 @@ include_once "base.php";
             及近年來市場變化，考驗著一位室內設計師──到老闆角色之間的轉換的彈性，以及對管理、人資、行銷、財務上可能遇上的困難...</p>
         </div>
       </div>
-      <div class="more">more...</div>
+      <div class="more"><a href="blog.php" style="text-decoration:none;color:#5e5845;">more...</a></div>
     </div>
 
     <br>
@@ -516,9 +516,8 @@ include_once "base.php";
         <div class="card bg-transparent">
           <img src="img/draw1.jpg" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
+            <h5 class="card-title">極酷衝浪VIP會員卡（正面）</h5>
+            <p class="card-text">以友善海洋與環境永續發展為形象，以藍綠色波浪為基底，打造出提醒人們愛護海洋生物的VIP卡片，讓人們在海邊衝浪之餘還能記得將垃圾帶回家。</p>
           </div>
         </div>
         <div class="card bg-transparent">
