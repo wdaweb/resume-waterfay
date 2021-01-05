@@ -53,10 +53,10 @@ include_once "../base.php";
                 <div class="nav nav-tabs justify-content-center" id="nav-tab">
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=self_introduction">Self-introduction</a>
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=resume">Resume</a>
-                    <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="#nav-contact">Blog</a>
-                    <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="#nav-contact">Draw and
+                    <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=blog">Blog</a>
+                    <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=draw">Draw and
                         Design</a>
-                    <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="#nav-profile">Web Design</a>
+                    <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=web">Web Design</a>
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=bottom">Bottom</a>
                     
                     <?php
