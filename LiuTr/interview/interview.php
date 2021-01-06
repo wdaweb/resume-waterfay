@@ -1,3 +1,9 @@
+<?php
+
+include_once "base.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,13 +69,13 @@
         padding-top: 100px;
     }
     .wrap {
-      background: url("img/bamboo.jpg") no-repeat bottom center / cover;
+      /* background: url('img/bamboo.jpg') no-repeat bottom center / cover; 
       text-align: left;
       font-size: 6rem;
-      float: left;
-      -webkit-text-fill-color: transparent;
+      float: left; */
+      /* -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
-      background-clip: text;
+      background-clip: text; */
     }
 
     .space {
@@ -205,12 +211,12 @@
     }
 
     .vine {
-      top: 5vh;
-      left: 25vw;
+      top: 25vh;
+      left: 20vw;
       display: none;
       position: absolute;
-      width: 100%;
-      height: 100vh;
+      width: 120%;
+      height: 120vh;
       transform: scale(1.3, 1.2);
       transform-origin: bottom right;
       z-index: 2;
@@ -223,7 +229,7 @@
       border: 5px solid #8f997e;
       box-shadow: 0px 2px 7px 0px rgba(71, 77, 69, 0.5);
       position: absolute;
-      top: 90vh;
+      top: 110vh;
       left: 50vw;
       width: 100px;
       height: 100px;
@@ -255,7 +261,6 @@
       color: #c9ebb2 !important;
       animation: mdclose2 1s infinite alternate;
     }
-
     @keyframes mdclose1 {
       25% {
         transform-origin: center;
@@ -347,7 +352,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="interview.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="interview.php">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#modalClose">Self-introduction</a>
@@ -363,25 +368,24 @@
           </li>
 
         </ul>
-        <button class="btn  btn-outline-light" type="button"  onclick="location.href='login.html'">login</button>
+        <a href="backend\main.php" style="text-decoration:none;color:white;"><button class="btn  btn-outline-light" type="button" >login</button></a>
       </div>
     </nav>
     <div class="space" id="Self-introduction" onclick="op(this)">
       <h3>Self-introduction</h3><br>
-      <p>一個認為在美學之下，必然與行銷商業數據得以取得平衡的人。<br><br>
-        擁有15年寫作經歷、10年繪圖經歷、8年攝影經歷，<br>
-        具藝術史學及文學背景，熟知藝文界產業溝通語言。<br><br>
-        自4年前修習廣告學課程與自學程式設計。<br>
-        對前端網頁設計與點擊率、轉換率、ROSA的關聯深感興趣，<br>
-        期盼能夠成為出眾的UI/UX設計師、前端網頁設計師，
-        提升用戶對網頁的體驗及美感視覺，也能夠創造最佳的客戶轉換率。<br>
+      <p>
+      <?php
+                $sf=$SelfIntroduction->find(1);
+                echo $sf['text'];
+            ?>
       </p>
       <br>
       <div class="arrow"></div>
     </div>
-    <img src="./img/bamboo.jpg" style="float:right;height:780px;">
+    <img src="./img/<?=$sf['img'];?>" style="float:right;height:780px;">
     <img src="./img/flower.jpg" class="flower" style="float:left;width:500px;height:630px;">
-    <div class="wrap">Self-introduction</div>
+    <div class="wrap" style="background: url('img/<?=$sf['img'];?>') no-repeat bottom center / cover;text-align: left;font-size: 6rem;float: left;-webkit-text-fill-color: transparent;-webkit-background-clip: text;
+      background-clip: text;">Self-introduction</div>
     <div class="modal">
       <div class="modalcontain">
         <div class="modalcontain1">
@@ -472,7 +476,7 @@
   </header>
   <article>
     <div class="container" id="blog">
-      <h1 style="text-align:center;">Blog</h1>
+      <h1 style="text-align:center;"><a href="blog.php" style="text-decoration:none;color:#5e5845;">Blog</a></h1>
       <div class="media">
         <img src="https://picsum.photos/200/200" class="mr-3">
         <div class="media-body">
@@ -498,7 +502,7 @@
             及近年來市場變化，考驗著一位室內設計師──到老闆角色之間的轉換的彈性，以及對管理、人資、行銷、財務上可能遇上的困難...</p>
         </div>
       </div>
-      <div class="more">more...</div>
+      <div class="more"><a href="blog.php" style="text-decoration:none;color:#5e5845;">more...</a></div>
     </div>
 
     <br>
@@ -512,9 +516,8 @@
         <div class="card bg-transparent">
           <img src="img/draw1.jpg" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
+            <h5 class="card-title">極酷衝浪VIP會員卡（正面）</h5>
+            <p class="card-text">以友善海洋與環境永續發展為形象，以藍綠色波浪為基底，打造出提醒人們愛護海洋生物的VIP卡片，讓人們在海邊衝浪之餘還能記得將垃圾帶回家。</p>
           </div>
         </div>
         <div class="card bg-transparent">
@@ -579,10 +582,14 @@
     <div class="lastpg">
       <i class="fas fas fa-leaf" style="font-size:45px;color:#334426;"></i>
       <br>
-      <p style="font-size: 14px;margin:0;">
-        copyright©WY Chen Resume<br>
+      <p style="font-size: 14px;margin:0;text-align:center;">
+      <?php
+                $bt=$Bottom->find(1);
+                echo $bt['bottom'];
+            ?>
+        <!-- copyright©WY Chen Resume<br>
         電話:0912-247-326<br>
-        Email:waterfay0.0@gmail.com<br>
+        Email:waterfay0.0@gmail.com<br> -->
       </p>
       <div>
         <img src="img\iconsfacebook.png" alt=""><img src="img\iconsinstagram.png" alt="">
