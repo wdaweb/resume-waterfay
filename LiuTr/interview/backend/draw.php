@@ -95,6 +95,7 @@ include_once "../base.php";
             顯示：<input type="checkbox" name="sh"  value="<?=$dw['id'];?>" <?=$isChk;?>>
             刪除：<input type="checkbox" name="del" value="<?=$dw['id'];?>">
             <input type="hidden" name="id" value="<?=$dw['id'];?>">
+            <input type="hidden" name="img" value="<?=$dw['img'];?>">
             <hr>
             <input type="submit" value="修改確定"><input type="reset" value="重置"></div>
             </div>

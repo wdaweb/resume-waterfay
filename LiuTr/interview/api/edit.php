@@ -3,9 +3,10 @@
 
 include_once "../base.php";
 
-
+$delfile='../img/'.$_POST['img'];
 if(!empty($_POST['del'])){
     $Draw->del($_POST['id']);
+    unlink($delfile);
     }else{
     $row=$Draw->find($_POST['id']);
     $row['title']=$_POST['title'];
