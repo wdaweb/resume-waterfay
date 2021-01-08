@@ -15,8 +15,8 @@ body {
     position: absolute;
     width:400px;
     height: 400px;
-    top: 10%;
-    left: 10%;
+    top: 9%;
+    left: 9%;
 }
 .squ3{
     border:solid rgb(108, 255, 103) 5px;
@@ -54,6 +54,6 @@ body {
     position: absolute;
     width:25px;
     height:25px;
-    top: 50%;
-    left: 50%;
+    top: 48%;
+    left: 48%;
 }
