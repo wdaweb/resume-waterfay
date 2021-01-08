@@ -65,7 +65,21 @@ include_once "../base.php";
     　　　　</div> -->
     <!-- </div> -->
     <div class="container d-flex justify-content-end py-3">
-    <input type="button" onclick="op('#cover','.modal','../modal/draw.php')" value="新增圖片">
+    <form method="post" action="../api/edit.php">
+
+    <?php
+    $table=$do;
+    $db=new DB($table);
+    $total = $db->count();
+    $num = 5;
+    $pages = ceil($total / $num);
+    $now = (!empty($_GET['p'])) ? $_GET['p'] : 1;
+    $start = ($now - 1) * $num;
+    $dws=$db->all([],"order by sort limit $start , $num");
+    echo $table;
+    ?>
+    <input type="button" onclick="op('#cover','.modal','../modal/draw.php?table=<?=$table;?>')" value="新增圖片">
+    <input type="hidden" name="table" value="<?=$table;?>">
     </div>
             <div class="container bottom" style="border:0.5px solid white">
             <div class="row" >
@@ -75,16 +89,11 @@ include_once "../base.php";
             <div class="col col-4" style="border:0.5px solid white">管理</div>
             </div>
             <?php
-            $total = $Draw->count();
-            $num = 5;
-            $pages = ceil($total / $num);
-            $now = (!empty($_GET['p'])) ? $_GET['p'] : 1;
-            $start = ($now - 1) * $num;
-            $dws=$Draw->all([],"order by sort limit $start , $num");
+
             foreach($dws as $dw){
                 $isChk = ($dw['sh'] == 1) ? 'checked' : '';
                     ?>
-            <form method="post" action="../api/edit.php">
+            
             <div class="row align-items-center">
 
             <div class="col col-2"><textarea name="title" style="width:100px;height:200px;"><?=$dw['title'];?></textarea></div>
@@ -96,6 +105,8 @@ include_once "../base.php";
             刪除：<input type="checkbox" name="del" value="<?=$dw['id'];?>">
             <input type="hidden" name="id" value="<?=$dw['id'];?>">
             <input type="hidden" name="img" value="<?=$dw['img'];?>">
+
+
             <hr>
             <input type="submit" value="修改確定"><input type="reset" value="重置"></div>
             </div>
@@ -109,13 +120,13 @@ include_once "../base.php";
         <?php
                 if (($now - 1) > 0) {
             ?>
-            <a class="bl" style="font-size:30px;" href="?do=draw&p=<?=($now - 1);?>">&lt;&nbsp;</a>
+            <a class="bl" style="font-size:30px;" href="?do=<?=$table;?>&p=<?=($now - 1);?>">&lt;&nbsp;</a>
             <?php } ?>
             <?php
                 for ($i = 1; $i <= $pages; $i++) {
                     $fontsize = ($i == $now) ? '30px' : '24px';
             ?>
-                <a class="bl" style="font-size:<?=$fontsize;?>;" href="?do=draw&p=<?=$i;?>"><?=$i;?></a>
+                <a class="bl" style="font-size:<?=$fontsize;?>;" href="?do=<?=$table;?>&p=<?=$i;?>"><?=$i;?></a>
             <?php } ?>
             <?php
                 if (($now + 1) <= $pages) {
@@ -123,6 +134,7 @@ include_once "../base.php";
                 <a class="bl" style="font-size:30px;" href="?do=<?=$table;?>&p=<?=($now + 1);?>">&nbsp;&gt;</a>
             <?php } ?>
     </div>
+    </form>
 
 </body>
 </html>

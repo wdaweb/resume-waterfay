@@ -7,6 +7,7 @@
                 <span style="">內容：</span>
                 <textarea name="bottom" style="width:300px;height:50px;"></textarea>
                 <br>
+                <input type="hidden" name="table" value="<?=$_GET['table'];?>">
                 <input type="submit" value="上傳"><input type="reset" value="重置">
                 <form>
 </div>

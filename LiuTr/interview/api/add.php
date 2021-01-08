@@ -1,6 +1,8 @@
 <?php
 
 include_once "../base.php";
+$table=$_POST['table'];
+$db=new DB($table);
 $row=[];
 if(!empty($_FILES['img']['tmp_name'])){
     $filename=$_FILES['img']['name'];
@@ -13,7 +15,7 @@ if(!empty($_FILES['img']['tmp_name'])){
     $row['sh']=1;
     $row['sort']=1;
 
-$Draw->save($row);
+$db->save($row);
 to("../backend/main.php?do=draw");
 
 // switch($table){

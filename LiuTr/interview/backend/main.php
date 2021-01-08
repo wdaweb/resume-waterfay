@@ -80,6 +80,7 @@ include_once "../base.php";
                 </div>
             </nav>
             <?php
+            $do=$_GET['do'];
             if(empty($_GET['do']) && empty($_SESSION['login'])){
                 include "login.php";
             }else if(empty($_GET['do']) && !empty($_SESSION['login'])){
