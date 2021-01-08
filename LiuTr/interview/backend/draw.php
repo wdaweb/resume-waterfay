@@ -76,7 +76,6 @@ include_once "../base.php";
     $now = (!empty($_GET['p'])) ? $_GET['p'] : 1;
     $start = ($now - 1) * $num;
     $dws=$db->all([],"order by sort limit $start , $num");
-    echo $table;
     ?>
     <input type="button" onclick="op('#cover','.modal','../modal/draw.php?table=<?=$table;?>')" value="新增圖片">
     <input type="hidden" name="table" value="<?=$table;?>">

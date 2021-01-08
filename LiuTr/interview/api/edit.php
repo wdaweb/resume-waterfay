@@ -19,6 +19,6 @@ if(!empty($_POST['del'])){
 $db->save($row);
 }
 
-// to("../backend/main.php?do=draw");
+to("../backend/main.php?do=draw");
 
 ?>

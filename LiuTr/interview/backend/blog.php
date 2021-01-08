@@ -65,7 +65,19 @@ include_once "../base.php";
     　　　　</div> -->
     <!-- </div> -->
     <div class="container d-flex justify-content-end py-3">
-    <input type="button" onclick="op('#cover','.modal','../modal/draw.php')" value="新增圖片">
+    <form method="post" action="../api/edit.php">
+    <?php
+        $table=$do;
+        $db=new DB($table);
+            $total = $db->count();
+            $num = 5;
+            $pages = ceil($total / $num);
+            $now = (!empty($_GET['p'])) ? $_GET['p'] : 1;
+            $start = ($now - 1) * $num;
+            $bgs=$db->all([],"order by sort limit $start , $num");
+
+                    ?>
+    <input type="button" onclick="op('#cover','.modal','../modal/blog.php?table=<?=$table;?>')" value="新增圖片">
     </div>
             <div class="container bottom" style="border:0.5px solid white">
             <div class="row" >
@@ -75,31 +87,24 @@ include_once "../base.php";
             <div class="col col-4" style="border:0.5px solid white">管理</div>
             </div>
             <?php
-            $total = $Draw->count();
-            $num = 5;
-            $pages = ceil($total / $num);
-            $now = (!empty($_GET['p'])) ? $_GET['p'] : 1;
-            $start = ($now - 1) * $num;
-            $dws=$Draw->all([],"order by sort limit $start , $num");
-            foreach($dws as $dw){
-                $isChk = ($dw['sh'] == 1) ? 'checked' : '';
-                    ?>
-            <form method="post" action="../api/edit.php">
+                    foreach($bgs as $bg){
+                    $isChk = ($bg['sh'] == 1) ? 'checked' : '';
+            ?>
             <div class="row align-items-center">
 
-            <div class="col col-2"><textarea name="title" style="width:100px;height:200px;"><?=$dw['title'];?></textarea></div>
-            <div class="col col-1" style="padding-left:0px;"><img src='../img/<?=$dw['img'];?>' style="width:70px;height:50px;"></div>
-            <div class="col col-5 py-3" style="text-align:center"><textarea name="text" style="width:325px;height:200px;"><?=$dw['text'];?></textarea></div>
+            <div class="col col-2"><textarea name="title" style="width:100px;height:200px;"><?=$bg['title'];?></textarea></div>
+            <div class="col col-1" style="padding-left:0px;"><img src='../img/<?=$bg['img'];?>' style="width:70px;height:50px;"></div>
+            <div class="col col-5 py-3" style="text-align:center"><textarea name="text" style="width:325px;height:200px;"><?=$bg['text'];?></textarea></div>
             <div class="col col-4" style="text-align:center">
-            排序：<input type="text" name="sort" value="<?=$dw['sort'];?>"style="width:30px;height:20px;">
-            分類 <select name="" id="">
+            排序：<input type="text" name="sort" value="<?=$bg['sort'];?>"style="width:30px;height:20px;">
+            分類 <select name="type" id="">
                 <option></option>
             </select><hr>
-            顯示：<input type="checkbox" name="sh"  value="<?=$dw['id'];?>" <?=$isChk;?>>
-            置頂：<input type="checkbox" name="del" value="<?=$dw['id'];?>">
-            刪除：<input type="checkbox" name="del" value="<?=$dw['id'];?>">
-            <input type="hidden" name="id" value="<?=$dw['id'];?>">
-            <input type="hidden" name="img" value="<?=$dw['img'];?>">
+            顯示：<input type="checkbox" name="sh"  value="<?=$bg['id'];?>" <?=$isChk;?>>
+            置頂：<input type="checkbox" name="new" value="<?=$bg['id'];?>">
+            刪除：<input type="checkbox" name="del" value="<?=$bg['id'];?>">
+            <input type="hidden" name="id" value="<?=$bg['id'];?>">
+            <input type="hidden" name="img" value="<?=$bg['img'];?>">
             <hr>
             <input type="submit" value="修改確定"><input type="reset" value="重置"></div>
             </div>
@@ -113,13 +118,13 @@ include_once "../base.php";
         <?php
                 if (($now - 1) > 0) {
             ?>
-            <a class="bl" style="font-size:30px;" href="?do=draw&p=<?=($now - 1);?>">&lt;&nbsp;</a>
+            <a class="bl" style="font-size:30px;" href="?do=<?=$table;?>&p=<?=($now - 1);?>">&lt;&nbsp;</a>
             <?php } ?>
             <?php
                 for ($i = 1; $i <= $pages; $i++) {
                     $fontsize = ($i == $now) ? '30px' : '24px';
             ?>
-                <a class="bl" style="font-size:<?=$fontsize;?>;" href="?do=draw&p=<?=$i;?>"><?=$i;?></a>
+                <a class="bl" style="font-size:<?=$fontsize;?>;" href="?do=<?=$table;?>&p=<?=$i;?>"><?=$i;?></a>
             <?php } ?>
             <?php
                 if (($now + 1) <= $pages) {
