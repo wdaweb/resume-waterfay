@@ -87,14 +87,14 @@ include_once "../base.php";
             <form method="post" action="../api/edit.php">
             <div class="row align-items-center">
 
-            <div class="col col-2"><textarea name="bottom" style="width:100px;height:200px;"><?=$dw['title'];?></textarea></div>
+            <div class="col col-2"><textarea name="title" style="width:100px;height:200px;"><?=$dw['title'];?></textarea></div>
             <div class="col col-3" ><img src='../img/<?=$dw['img'];?>' style="width:180px;height:130px"></div>
-            <div class="col col-3 py-3" style="text-align:center"><textarea name="bottom" style="width:150px;height:200px;"><?=$dw['text'];?></textarea></div>
+            <div class="col col-3 py-3" style="text-align:center"><textarea name="text" style="width:150px;height:200px;"><?=$dw['text'];?></textarea></div>
             <div class="col col-4" style="text-align:center">
-            排序：<input type="text" value="<?=$dw['sh'];?>"style="width:30px;height:20px;"><hr>
-            顯示：<input type="checkbox" value="<?=$dw['id'];?>" <?=$isChk;?>>
-            刪除：<input type="checkbox" value="<?=$dw['id'];?>">
-            <input type="hidden" name="id[]" value="<?=$dw['id'];?>">
+            排序：<input type="text" name="sort" value="<?=$dw['sort'];?>"style="width:30px;height:20px;"><hr>
+            顯示：<input type="checkbox" name="sh"  value="<?=$dw['id'];?>" <?=$isChk;?>>
+            刪除：<input type="checkbox" name="del" value="<?=$dw['id'];?>">
+            <input type="hidden" name="id" value="<?=$dw['id'];?>">
             <hr>
             <input type="submit" value="修改確定"><input type="reset" value="重置"></div>
             </div>

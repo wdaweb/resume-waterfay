@@ -1,0 +1,32 @@
+body{
+    margin:0;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    height:100vh;
+    text-align:center;
+}
+
+.container{
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items:center;
+    height:500px;
+}
+.content{
+    display:flex;
+    flex-wrap:wrap;
+    align-content:space-between;
+    justify-content: space-between;
+    width:320px;
+    height: 320px;
+    padding:10px;
+    background:rgb(245, 245, 245);
+}
+.content > img{
+    flex:0 0 100px;
+    background:rgb(255, 255, 226);
+    border-radius:5px;
+    cursor :url('Bubble-03-01.png'),pointer;
+}
