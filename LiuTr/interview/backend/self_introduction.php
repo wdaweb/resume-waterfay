@@ -29,7 +29,7 @@ include_once "../base.php";
             <br>
             <hr>
             <div class="col col-12">自我介紹簡介</div>
-            <div  class="col col-12"><textarea name="text" style="width:500px;height:100px;"><?=$sf['text'];?></textarea></div>
+            <div  class="col col-12"><textarea name="text" style="width:500px;height:100px;"><?=nl2br($sf['text']);?></textarea></div>
             <div  class="col col-12"><input type="submit" value="更新">
             <input type="reset" value="重置"></div>
             </form>

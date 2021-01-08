@@ -28,7 +28,7 @@ include_once "../base.php";
             <?php 
                         $bt=$Bottom->find(1);
                     ?>
-            <div class="col col-8 py-3" style="text-align:center"><textarea name="bottom" style="width:500px;height:100px;"><?=$bt['bottom'];?></textarea></div>
+            <div class="col col-8 py-3" style="text-align:center"><textarea name="bottom" style="width:500px;height:100px;"><?=nl2br($bt['bottom']);?></textarea></div>
             <div class="col col-4" style="text-align:center"><input type="submit" value="修改確定"><input type="reset" value="重置"></div>
             </div>
             </form>

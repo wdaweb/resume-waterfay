@@ -376,7 +376,7 @@ include_once "base.php";
       <p>
       <?php
                 $sf=$SelfIntroduction->find(1);
-                echo $sf['text'];
+                echo nl2br($sf['text']);
             ?>
       </p>
       <br>
@@ -585,7 +585,7 @@ include_once "base.php";
       <p style="font-size: 14px;margin:0;text-align:center;">
       <?php
                 $bt=$Bottom->find(1);
-                echo $bt['bottom'];
+                echo nl2br($bt['bottom']);
             ?>
         <!-- copyright©WY Chen Resume<br>
         電話:0912-247-326<br>
