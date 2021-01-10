@@ -300,7 +300,7 @@ include_once "base.php";
     padding:5px;
     color:#5e5845;
     border-radius:5%;
-    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 400ms cubic-bezier(0.19, 1, 0.22, 1);
     outline: 0px rgba(255, 255, 255,1) solid;
     outline-offset: 0px;
 
@@ -308,7 +308,7 @@ include_once "base.php";
     .blogtitle:hover{
       color:gray;
       box-shadow: inset 15px 15px 20px rgba(255, 255, 255, .2), 15px 15px 20px rgba(255, 255, 255, .2);
-      outline: 500px rgba(255, 255, 255, 0) solid;
+      outline: 200px rgba(255, 255, 255, 0) solid;
       outline-offset: 10px;
       border-radius:10%;
 
