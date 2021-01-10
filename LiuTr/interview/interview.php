@@ -35,27 +35,27 @@ include_once "base.php";
         overflow-x : hidden;
         overflow-y : auto;
     } */
-
+    /* *, *::before, *::after {
+        box-sizing: inherit!important;
+      } */
     header {
       height: 840px;
     }
 
     article {
-      height: 1000px;
+      /* height: 1000px; */
       background: rgb(226, 230, 221);
       box-sizing: border-box;
       padding: 30px;
     }
 
     main {
-      height: 900px;
       box-sizing: border-box;
       padding: 30px;
     }
 
     figure {
       width: 100%;
-      height: 1050px;
       background: url("img/flower2.jpg") repeat;
       background-attachment: fixed;
       margin: 0;
@@ -67,6 +67,7 @@ include_once "base.php";
     }
     .container {
         padding-top: 100px;
+        padding-bottom: 100px;
     }
     .wrap {
       /* background: url('img/bamboo.jpg') no-repeat bottom center / cover; 
@@ -80,11 +81,12 @@ include_once "base.php";
 
     .space {
       background: white;
-      top: 30vh;
+      top: 28vh;
       left: 20%;
-      width: 575px;
-      height: 375px;
+      width: 600px;
+      height: 400px;
       opacity: 90%;
+      font-size:16px;
       position: absolute;
       box-shadow: 1px 1px 1px 1px #0000002b;
       box-sizing: border-box;
@@ -109,7 +111,7 @@ include_once "base.php";
       width: 300px;
       height: 4px;
       z-index: 1;
-      transform: translate(76%, 0%);
+      transform: translate(85%, 300%);
       box-shadow: 0px 0px 1px 1px #00000000;
       animation: arrow 1s infinite alternate;
     }
@@ -136,12 +138,12 @@ include_once "base.php";
 
     @keyframes arrow {
       0% {
-        transform: translate(74%, 0%);
+        transform: translate(83%, 300%);
         box-shadow: 5px -10px 3px 1px #00000024;
       }
 
       50% {
-        transform: translate(70%, 0%);
+        transform: translate(80%, 300%);
       }
     }
 
@@ -295,9 +297,10 @@ include_once "base.php";
     }
 
     .leafArrow {
+      padding:10px;
       font-size: 70px;
-      position: absolute;
-      left: 45%;
+      display: flex;
+      justify-content: space-around;
       color: #8f997e;
 
     }
@@ -330,12 +333,20 @@ include_once "base.php";
     }
 
     .webDesign {
-      border: 5px solid #a1b67d70;
-      border-radius: 50px;
-      /* width: 350px;
-      height: 350px; */
       overflow: hidden;
+      margin: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     }
+    .webDesign:hover {
+      transform:translate(-2%,-2%);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  background:black;
+}
+    .row{
+      /* margin-left: 50px; */
+    }
+
   </style>
 </head>
 
@@ -382,7 +393,7 @@ include_once "base.php";
       <br>
       <div class="arrow"></div>
     </div>
-    <img src="./img/<?=$sf['img'];?>" style="float:right;height:780px;">
+    <img src="./img/<?=$sf['img'];?>" class="Mugshot" style="float:right;height:780px;">
     <img src="./img/flower.jpg" class="flower" style="float:left;width:500px;height:630px;">
     <div class="wrap" style="background: url('img/<?=$sf['img'];?>') no-repeat bottom center / cover;text-align: left;font-size: 6rem;float: left;-webkit-text-fill-color: transparent;-webkit-background-clip: text;
       background-clip: text;">Self-introduction</div>
@@ -536,41 +547,42 @@ include_once "base.php";
           </div>
         </div>
       </div>
-    </div>
-    <div class="leafArrow"><i class="fas fas fa-leaf" id="leafLeft"></i>
+      <div class="leafArrow"><i class="fas fas fa-leaf" id="leafLeft"></i>
       <i class="fas fas fa-leaf" id="leafRight"></i>
     </div>
+    </div>
+
   </main>
   <figure>
     <div class="container" id="WebDesign" >
       <h1 style="text-align:center;">Web Design</h1>
       <div class="row">
       <div>
-        <div class="webDesign"><img src="https://picsum.photos/350/350"></div>
-        <p><i class="fas fas fa-leaf" style="font-size:30px;color:#334426;"></i>網頁1</p>
+        <div class="webDesign"><span style="position:absolute;z-index:100;color:white;">網頁1</span>
+        <img src="https://picsum.photos/400/400" ></div>
       </div>
 
       <div>
-        <div class="webDesign"><img src="https://picsum.photos/350/350"></div>
+        <div class="webDesign"><img src="https://picsum.photos/400/400"></div>
         <p><i class="fas fas fa-leaf" style="font-size:30px;color:#334426;"></i>網頁1</p>
       </div>
       <div>
-        <div class="webDesign"><img src="https://picsum.photos/350/350"></div>
+        <div class="webDesign"><img src="https://picsum.photos/400/400"></div>
         <p><i class="fas fas fa-leaf" style="font-size:30px;color:#334426;"></i>網頁1</p>
       </div>
       </div>
       <div class="row">
       <div>
-        <div class="webDesign"><img src="https://picsum.photos/350/350"></div>
+        <div class="webDesign"><img src="https://picsum.photos/400/400"></div>
         <p><i class="fas fas fa-leaf" style="font-size:30px;color:#334426;"></i>網頁1</p>
       </div>
       <div>
-        <div class="webDesign"><img src="https://picsum.photos/350/350"></div>
+        <div class="webDesign"><img src="https://picsum.photos/400/400"></div>
         <p><i class="fas fas fa-leaf" style="font-size:30px;color:#334426;"></i>網頁1</p>
       </div>
       <div>
         <div>
-          <div class="webDesign"><img src="https://picsum.photos/350/350"></div>
+          <div class="webDesign"><img src="https://picsum.photos/400/400"></div>
           <p><i class="fas fas fa-leaf" style="font-size:30px;color:#334426;"></i>網頁1</p>
         </div>
       </div>
