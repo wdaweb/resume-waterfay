@@ -332,6 +332,35 @@ include_once "base.php";
       text-align: center;
     }
 
+    .card{
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    }
+    .card:hover {
+      transform:translate(-0.1%,-0.1%);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  /* background:black; */
+}
+.card::before{
+  background: #fff;
+    content: "";
+    height: 1500px;
+    left: 600%;
+    opacity: 0.2;
+    position: absolute;
+    top: -150%;
+    transform: rotate(50deg);
+    transition: all 700ms cubic-bezier(0.19, 1, 0.22, 1);
+    width:300px;
+    z-index: 5000;
+  }
+
+  .card:hover::before{
+  left: -400%;
+  transition: all 700ms cubic-bezier(0.19, 1, 0.22, 1);
+
+  }
     .webDesign {
       overflow: hidden;
       margin: 10px;
@@ -341,8 +370,27 @@ include_once "base.php";
     .webDesign:hover {
       transform:translate(-2%,-2%);
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  background:black;
+
 }
+.webDesign::before{
+  background: #fff;
+    content: "";
+    height: 1500px;
+    left: 200%;
+    opacity: 0.2;
+    position: absolute;
+    top: -110%;
+    transform: rotate(50deg);
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    width:300px;
+    z-index: 5000;
+
+  }
+
+  .webDesign:hover::before{
+  left: -500%;
+  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
     .row{
       /* margin-left: 50px; */
     }
@@ -486,7 +534,7 @@ include_once "base.php";
     </div>
   </header>
   <article>
-    <div class="container" id="blog">
+    <div class="container-fluid" id="blog">
       <h1 style="text-align:center;"><a href="blog.php" style="text-decoration:none;color:#5e5845;">Blog</a></h1>
       <div class="media">
         <img src="https://picsum.photos/200/200" class="mr-3">
