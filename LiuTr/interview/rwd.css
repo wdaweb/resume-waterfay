@@ -159,7 +159,9 @@ body {
     .Mugshot{
         height: 70vh!important;
     }
-
+    .row{
+        margin-left:50px!important;
+    }
 
 }
 @media (min-width:490px) and (max-width:559px) {
@@ -203,12 +205,6 @@ body {
     .leafArrow {
         left: 35%;
     }
-
-    .webDesign {
-        width: 300px;
-        height: 300px;
-    }
-
     .wrap {
         display: none;
     }
@@ -230,6 +226,9 @@ body {
     .Mugshot{
         height: 70vh!important;
     }
+    .row{
+        margin-left:50px!important;
+    }
 
 }
 
@@ -244,12 +243,6 @@ body {
     .leafArrow {
         left: 35%;
     }
-
-    .webDesign {
-        width: 300px;
-        height: 300px;
-    }
-
     .wrap {
         display: none;
     }
@@ -267,38 +260,43 @@ body {
         background: rgb(25, 96, 109);
         z-index: 1;
       }
-}
-
-@media (min-width:769px) and (max-width:992px) {
-    .flower {
-        display: none;
+      .row{
+        margin-left:50px!important;
     }
 
-    .webDesign {
-        width: 200px;
-        height: 200px;
+}
+
+@media (min-width:769px) and (max-width:960px) {
+    .flower {
+        display: none;
     }
     .wrap {
         display: none;
     }
-
-}
-
-@media (min-width:993px) and (max-width:1335px) {
-    .flower {
-        display: none;
-    }
-
     .webDesign {
         width: 250px;
         height: 250px;
     }
+    /* .row{
+        flex-wrap: nowrap;
+        margin-left:50px!important;
+    } */
 
+}
+
+@media (min-width:960px) and (max-width:1119px) {
+    .flower {
+        display: none;
+    }
     .wrap {
         display: none;
     }
     .row{
         flex-wrap: nowrap;
+    }
+    .webDesign {
+        width: 300px;
+        height: 300px;
     }
 
 }
@@ -312,15 +310,22 @@ body {
     }
 } */
 
-@media (max-width:1500px) {
+@media (min-width:1000px) and  (max-width:1500px) {
 
+    .row{
+        flex-wrap: nowrap;
+    }
     .wrap {
         display: none;
+    }
+    .webDesign {
+        width: 350px;
+        height: 350px;
     }
 
 }
 
-@media (min-width:1500px) {
+@media (min-width:1499px) {
     .webDesign {
         width: 350px;
         height: 350px;
@@ -331,4 +336,3 @@ body {
 
 }
 
-@media (min-height:1336px) {}
