@@ -385,12 +385,12 @@ include_once "base.php";
       height: 0;
       border-style: solid;
       border-width: 50px 50px 0 0;
-      border-color: #e5a185 transparent transparent transparent;
+      border-color: #bc8585 transparent transparent transparent;
       
     }
     .webDesign {
       font-size:45px;
-      border:10px solid #e5a185;
+      border:10px solid #bc8585;
       overflow: hidden;
       margin: 10px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);

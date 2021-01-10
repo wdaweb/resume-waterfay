@@ -46,6 +46,9 @@ body {
         position: relative;
         width: 100%!important;
     }
+    .media>img{
+        display: none;
+    }
     .webDesign {
         width: 250px;
         height: 250px;
@@ -73,8 +76,8 @@ body {
         background: rgb(25, 96, 109);
         z-index: 1;
       }
-      .row{
-        margin-left:25px!important;
+    .container{
+        padding-left:0px!important;
     }
     .Mugshot{
         height: 70vh!important;
@@ -118,6 +121,9 @@ body {
         display: block;
         position: relative;
         width: 100%!important;
+    }
+    .media>img{
+        display: none;
     }
     .webDesign {
         width: 250px;
@@ -184,6 +190,9 @@ body {
             left: 0%;
             opacity: 90%;
         }
+    }
+    .media>img{
+        display: none;
     }
     .arrow{
         display: none;
