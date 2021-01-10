@@ -296,7 +296,21 @@ include_once "base.php";
         font-size: 55px;
       }
     }
+    .blogtitle{
+    padding:5px;
+    color:#5e5845;
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    outline: 0px rgba(255, 255, 255,1) solid;
+    outline-offset: 0px;
 
+  }
+    .blogtitle:hover{
+      color:gray;
+      box-shadow: inset 15px 15px 20px rgba(255, 255, 255, .5), 15px 15px 20px rgba(255, 255, 255, .2);
+      outline: 500px rgba(255, 255, 255, 0) solid;
+      outline-offset: 10px;
+
+    }
     .leafArrow {
       padding:10px;
       font-size: 70px;
@@ -568,18 +582,18 @@ include_once "base.php";
   </header>
   <article>
     <div class="container-fluid" id="blog">
-      <h1 style="text-align:center;"><a href="blog.php" class="blogtitle" style="text-decoration:none;color:#5e5845;">Blog</a></h1>
+      <h1 style="text-align:center;"><a href="blog.php" class="blogtitle" style="text-decoration:none;">Blog</a></h1>
       <div class="media">
         <img src="https://picsum.photos/200/200" class="mr-3">
         <div class="media-body">
-          <h5 class="mt-auto"><a href="blog.php" class="blogtitle" style="text-decoration:none;color:#5e5845;">自傳</a></h5>
+          <h5 class="mt-auto"><a href="blog.php" class="blogtitle" style="text-decoration:none;">自傳</a></h5>
           二十八年前，哭鬧聲伴隨著雨都簾纖，刺骨的葭月一個嬰兒呱呱墜地，我在這樣一個平凡的朝曦誕生，卻有著不太平凡的好奇心，從小時常擔任班級教室、聖誕活動的主要設計者。
           　　熱愛學習的我，非常喜歡閱讀許多課外書，國中時期部落格正流行著，我也跟隨著潮流走進了部落格，不僅記錄了自己許多青春的煩惱...
         </div>
       </div>
       <div class="media">
         <div class="media-body">
-          <h5 class="mt-3 mb-3"><a href="blog.php" class="blogtitle" style="text-decoration:none;color:#5e5845;">葉子</a></h5>
+          <h5 class="mt-3 mb-3"><a href="blog.php" class="blogtitle" style="text-decoration:none;">葉子</a></h5>
           吹著薰風的平凡日子，恰巧平時所慣於待的咖啡廳都剛好休假，一個無法待在同一個地方寫作，就像即便多麼無趣的生活都得替它畫上一點色彩，
           我稱呼著自己為半個旅人吧！開始了半刻的流浪，儘管溽暑尚未入侵...
         </div>
@@ -588,13 +602,13 @@ include_once "base.php";
       <div class="media">
         <img src="https://picsum.photos/200/200" class="align-self-end mr-3">
         <div class="media-body">
-          <h5 class="mt-1"><a href="blog.php" class="blogtitle" style="text-decoration:none;color:#5e5845;">新生代設計二三事──在經營上可能遇到的未來挑戰</a></h5>
+          <h5 class="mt-1"><a href="blog.php" class="blogtitle" style="text-decoration:none;color:">新生代設計二三事──在經營上可能遇到的未來挑戰</a></h5>
           <p>在室內設計界，創業開立自己的工作室，是許多新生代的設計師的理想。
             大部分的人，擁有理想，卻不知道地圖從何畫起、從哪裡開始、中間會遇到什麼困難、
             及近年來市場變化，考驗著一位室內設計師──到老闆角色之間的轉換的彈性，以及對管理、人資、行銷、財務上可能遇上的困難...</p>
         </div>
       </div>
-      <div class="more"><a href="blog.php" class="blogtitle" style="text-decoration:none;color:#5e5845;">more...</a></div>
+      <div class="more"><a href="blog.php" class="blogtitle" style="text-decoration:none;color:">more...</a></div>
     </div>
 
     <br>
