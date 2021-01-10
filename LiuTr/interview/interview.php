@@ -87,6 +87,7 @@ include_once "base.php";
       height: 400px;
       opacity: 90%;
       font-size:16px;
+      padding:10px;
       position: absolute;
       box-shadow: 1px 1px 1px 1px #0000002b;
       box-sizing: border-box;
@@ -308,11 +309,13 @@ include_once "base.php";
     #leafLeft:hover {
       color: #334426;
       transition: all ease-in-out 0.5s;
+      text-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     }
 
     #leafRight:hover {
       color: #334426;
       transition: all ease-in-out 0.5s;
+      text-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     }
 
     .more {
@@ -335,15 +338,15 @@ include_once "base.php";
     .card{
       overflow: hidden;
       box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  
     }
     .card:hover {
-      transform:translate(-0.1%,-0.1%);
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  /* background:black; */
+    transform:translate(-0.1%,-0.1%);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
-.card::before{
-  background: #fff;
+  .card::before{
+    background: #fff;
     content: "";
     height: 1500px;
     left: 600%;
@@ -361,18 +364,44 @@ include_once "base.php";
   transition: all 700ms cubic-bezier(0.19, 1, 0.22, 1);
 
   }
+  /* .tri{
+        position:absolute;
+        z-index:100;
+        color:white;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 50px 50px;
+        border-color: transparent transparent #e5a185 transparent;
+    } */
+    .tribg{
+      position:absolute;
+      z-index:100;
+      color:white;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 50px 50px 0 0;
+      border-color: #e5a185 transparent transparent transparent;
+      
+    }
     .webDesign {
+      font-size:45px;
+      border:10px solid #e5a185;
       overflow: hidden;
       margin: 10px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+      filter: grayscale(80%);
     }
     .webDesign:hover {
       transform:translate(-2%,-2%);
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  filter: grayscale(0%);
+
 
 }
-.webDesign::before{
+.webDesign::after{
   background: #fff;
     content: "";
     height: 1500px;
@@ -383,17 +412,18 @@ include_once "base.php";
     transform: rotate(50deg);
     transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
     width:300px;
-    z-index: 5000;
-
+    z-index: 500;
+    filter: blur(50px);
   }
 
-  .webDesign:hover::before{
+  .webDesign:hover::after{
   left: -500%;
   transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
   }
     .row{
       /* margin-left: 50px; */
     }
+
 
   </style>
 </head>
@@ -535,18 +565,18 @@ include_once "base.php";
   </header>
   <article>
     <div class="container-fluid" id="blog">
-      <h1 style="text-align:center;"><a href="blog.php" style="text-decoration:none;color:#5e5845;">Blog</a></h1>
+      <h1 style="text-align:center;"><a href="blog.php" class="blogtitle" style="text-decoration:none;color:#5e5845;">Blog</a></h1>
       <div class="media">
         <img src="https://picsum.photos/200/200" class="mr-3">
         <div class="media-body">
-          <h5 class="mt-auto">自傳</h5>
+          <h5 class="mt-auto"><a href="blog.php" class="blogtitle" style="text-decoration:none;color:#5e5845;">自傳</a></h5>
           二十八年前，哭鬧聲伴隨著雨都簾纖，刺骨的葭月一個嬰兒呱呱墜地，我在這樣一個平凡的朝曦誕生，卻有著不太平凡的好奇心，從小時常擔任班級教室、聖誕活動的主要設計者。
           　　熱愛學習的我，非常喜歡閱讀許多課外書，國中時期部落格正流行著，我也跟隨著潮流走進了部落格，不僅記錄了自己許多青春的煩惱...
         </div>
       </div>
       <div class="media">
         <div class="media-body">
-          <h5 class="mt-3 mb-3">葉子</h5>
+          <h5 class="mt-3 mb-3"><a href="blog.php" class="blogtitle" style="text-decoration:none;color:#5e5845;">葉子</a></h5>
           吹著薰風的平凡日子，恰巧平時所慣於待的咖啡廳都剛好休假，一個無法待在同一個地方寫作，就像即便多麼無趣的生活都得替它畫上一點色彩，
           我稱呼著自己為半個旅人吧！開始了半刻的流浪，儘管溽暑尚未入侵...
         </div>
@@ -555,21 +585,20 @@ include_once "base.php";
       <div class="media">
         <img src="https://picsum.photos/200/200" class="align-self-end mr-3">
         <div class="media-body">
-          <h5 class="mt-1">新生代設計二三事──在經營上可能遇到的未來挑戰</h5>
+          <h5 class="mt-1"><a href="blog.php" class="blogtitle" style="text-decoration:none;color:#5e5845;">新生代設計二三事──在經營上可能遇到的未來挑戰</a></h5>
           <p>在室內設計界，創業開立自己的工作室，是許多新生代的設計師的理想。
             大部分的人，擁有理想，卻不知道地圖從何畫起、從哪裡開始、中間會遇到什麼困難、
             及近年來市場變化，考驗著一位室內設計師──到老闆角色之間的轉換的彈性，以及對管理、人資、行銷、財務上可能遇上的困難...</p>
         </div>
       </div>
-      <div class="more"><a href="blog.php" style="text-decoration:none;color:#5e5845;">more...</a></div>
+      <div class="more"><a href="blog.php" class="blogtitle" style="text-decoration:none;color:#5e5845;">more...</a></div>
     </div>
 
     <br>
     <hr>
   </article>
   <main>
-    <div class="container" id="design">
-
+    <div class="container-fluid p-5" id="design">
       <h1 style="text-align:center;">Draw and Design</h1>
       <div class="card-deck" >
         <div class="card bg-transparent">
@@ -606,32 +635,37 @@ include_once "base.php";
       <h1 style="text-align:center;">Web Design</h1>
       <div class="row">
       <div>
-        <div class="webDesign"><span style="position:absolute;z-index:100;color:white;">網頁1</span>
+        <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
         <img src="https://picsum.photos/400/400" ></div>
-      </div>
-
-      <div>
-        <div class="webDesign"><img src="https://picsum.photos/400/400"></div>
-        <p><i class="fas fas fa-leaf" style="font-size:30px;color:#334426;"></i>網頁1</p>
-      </div>
-      <div>
-        <div class="webDesign"><img src="https://picsum.photos/400/400"></div>
-        <p><i class="fas fas fa-leaf" style="font-size:30px;color:#334426;"></i>網頁1</p>
-      </div>
+        <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
+        </div>
+        <div>
+        <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
+        <img src="https://picsum.photos/400/400" ></div>
+        <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
+        </div>
+        <div>
+        <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
+        <img src="https://picsum.photos/400/400" ></div>
+        <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
+        </div>
       </div>
       <div class="row">
       <div>
-        <div class="webDesign"><img src="https://picsum.photos/400/400"></div>
-        <p><i class="fas fas fa-leaf" style="font-size:30px;color:#334426;"></i>網頁1</p>
-      </div>
-      <div>
-        <div class="webDesign"><img src="https://picsum.photos/400/400"></div>
-        <p><i class="fas fas fa-leaf" style="font-size:30px;color:#334426;"></i>網頁1</p>
-      </div>
-      <div>
+        <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
+        <img src="https://picsum.photos/400/400" ></div>
+        <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
+        </div>
         <div>
-          <div class="webDesign"><img src="https://picsum.photos/400/400"></div>
-          <p><i class="fas fas fa-leaf" style="font-size:30px;color:#334426;"></i>網頁1</p>
+        <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
+        <img src="https://picsum.photos/400/400" ></div>
+        <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
+        </div>
+      <div>
+      <div>
+        <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
+        <img src="https://picsum.photos/400/400" ></div>
+        <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
         </div>
       </div>
       </div>
