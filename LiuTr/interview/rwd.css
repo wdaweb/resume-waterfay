@@ -83,6 +83,7 @@ body {
         height: 70vh!important;
     }
 
+
 }
 @media (min-width:350px) and (max-width:489px) {
     .space {
@@ -229,7 +230,6 @@ body {
     .row{
         margin-left:50px!important;
     }
-
 }
 
 @media (min-width:560px) and (max-width:768px) {
@@ -263,6 +263,7 @@ body {
       .row{
         margin-left:50px!important;
     }
+
 
 }
 

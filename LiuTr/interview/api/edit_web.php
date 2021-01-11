@@ -7,7 +7,7 @@ $Web=new DB('web');
 
 $delfile='../img/'.$_POST['img'];
 if(!empty($_POST['del'])){
-    $db->del($_POST['id']);
+    $Web->del($_POST['id']);
     unlink($delfile);
     }else{
     $row=$Web->find($_POST['id']);

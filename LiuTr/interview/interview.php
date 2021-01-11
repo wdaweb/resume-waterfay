@@ -166,7 +166,7 @@ include_once "base.php";
       display: none;
       top: 55px;
       width: 100%;
-      height: 950px;
+      height: 150vh;
       opacity: 85%;
       background: rgb(25, 96, 109);
       z-index: 1;
@@ -180,8 +180,8 @@ include_once "base.php";
     }
 
     .modalcontain {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      position: relative;
+
       color: #b5f3ff;
 
     }
@@ -219,8 +219,8 @@ include_once "base.php";
       display: none;
       position: absolute;
       width: 120%;
-      height: 120vh;
-      transform: scale(1.3, 1.2);
+      height: 125vh;
+      transform: scale(1.5, 1.5);
       transform-origin: bottom right;
       z-index: 2;
       /* display: grid; */
@@ -232,7 +232,7 @@ include_once "base.php";
       border: 5px solid #8f997e;
       box-shadow: 0px 2px 7px 0px rgba(71, 77, 69, 0.5);
       position: absolute;
-      top: 110vh;
+      top: 130vh;
       left: 50vw;
       width: 100px;
       height: 100px;
@@ -496,84 +496,9 @@ include_once "base.php";
       background-clip: text;">Self-introduction</div>
     <div class="modal">
       <div class="modalcontain">
-        <div class="modalcontain1">
-          <ul>
-            <h4>學歷</h4>
-            <ul>
-              <li>國立台東大學--華語文學系(2011/9-2014/6)</li>
-              <li>國立中興大學--歷史研究所(2015/9-2019/6)</li>
-            </ul>
-          </ul>
+      <div>
 
-          <ul>
-            <h4>工作經歷</h4>
-            <ul>
-              <h5>中正紀念堂研究典藏組實習－實習生（2012/7-2012/8)</h5>
-              <li>黃克武主持，《海外蔣中正典藏資料研析》，系列出版書籍校對</li>
-              <li>圖書編碼整理</li>
-              <li>官方FB發文小編</li>
-            </ul>
-            <ul>
-              <h5>國立臺東大學圖書館－看館工讀（2013/9-2014/6）</h5>
-              <li>借還書、館際合作系統操作</li>
-              <li>讀者服務</li>
-            </ul>
-            <ul>
-              <h5>國立中興大學圖書館－美編工讀（2015/7-2017/12）</h5>
-              <li>2015、2016年圖書館週主視覺設計</li>
-              <li>2015圖書館主題牆面主視覺設計</li>
-              <li>其他文宣商品設計</li>
-              <li>官方FB發文小編</li>
-              <li>活動創意發想</li>
-            </ul>
-            <ul>
-              <h5>謬斯名人行銷－行銷企劃（2019/10-2019/12）</h5>
-              <li>Blog文章撰寫</li>
-              <li>市場調查</li>
-              <li>線上線下活動發想</li>
-            </ul>
-            <ul>
-              <h5>極酷衝浪俱樂部－美編行銷（2020/1-2020/8）</h5>
-              <li>店鋪帆布設計、VIP卡片、課程海報、等文宣產品設計。</li>
-              <li>官方FB發文小編經營，旺季時期增加約2000個讚數、IG增加200個追蹤人數、振興券活動宣傳。</li>
-              <li>線上預約及訂房流程優化、利用manychat設計回覆對話、利用修改文案內容優化SEO。</li>
-              <li>其他訂房相關例行事務。</li>
-            </ul>
-          </ul>
-        </div>
-        <div class="modalcontain2">
-          <ul>
-            <h4>社團經歷</h4>
-            <ul>
-              <h5>國立臺東大學－攝影社長（2012/9-2013/6）</h5>
-              <li>參與J-love攝影團隊助理</li>
-              <li>學期社團活動規劃與課程內容制定</li>
-              <li>臺東大學運動會攝影股股長，負責規劃拍攝流程</li>
-              <li>各社團活動合作洽談</li>
-            </ul>
-          </ul>
-          <ul>
-            <h4>技能</h4>
-            <ul>
-              <li>
-                網頁設計－前端部分：能結合Boostrap、Html、CSS、Javascript、JQuery做網頁切版及物件按鈕設計。後端部分：能理解PHP、AJAX串聯SQL資料庫，做簡易的登入、註冊系統、資料上傳、下載、更新等。
-              </li>
-              <li>設計－Photoshop、Illustrate、krita，能夠結合向量圖、電腦繪圖、照片等多元素材整合做出不同平面設計作品。</li>
-              <li>攝影－會運用單眼及機外閃、持續燈及其他設備採光環境配置等。</li>
-              <li>網路行銷－修習行銷研究所廣告學課程、參與廣告主協會競賽、經營自媒體。</li>
-              <li>手繪－在畫室學習10年，擅長風景水彩、色鉛筆。</li>
-            </ul>
-          </ul>
-          <ul>
-            <h4>其他經歷</h4>
-            <ul>
-              <li>久久點九整合行銷－接案小編</li>
-              <li>《鴻飛射馬干－東大散文選》－合作出版著作</li>
-              <li>歌林看見台灣之美－人氣獎第一名</li>
-              <li>詠春新詩比賽－佳作</li>
-            </ul>
-          </ul>
-        </div>
+      </div>
       </div>
       <object class="vine" type="image/svg+xml" data="img/vine.svg"></object>
       <div class="modalClose" onclick="Cl(this)">
