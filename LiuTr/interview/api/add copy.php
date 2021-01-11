@@ -9,24 +9,14 @@ if(!empty($_FILES['img']['tmp_name'])){
     move_uploaded_file($_FILES['img']['tmp_name'],'../img/'.$filename);
     $row['img']=$filename;
 }
-switch($table){
-    case "draw":
+    
     $row['text']=$_POST['text'];
     $row['title']=$_POST['title'];
     $row['sh']=1;
     $row['sort']=1;
-    break;
-    case "blog":
-    $row['text']=$_POST['text'];
-    $row['title']=$_POST['title'];
-    $row['sh']=0;
-    $row['sort']=1;
-    $row['type']="全部";
-    $row['new']=1;
-    break;
-}
+
 $db->save($row);
-to("../backend/main.php?do=$table");
+to("../backend/main.php?do=draw");
 
 // switch($table){
 //     case "blog":

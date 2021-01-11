@@ -65,19 +65,21 @@ include_once "../base.php";
     　　　　</div> -->
     <!-- </div> -->
     <div class="container d-flex justify-content-end py-3">
-    <form method="post" action="../api/edit.php">
+        
     <?php
         $table=$do;
+
         $db=new DB($table);
             $total = $db->count();
             $num = 5;
             $pages = ceil($total / $num);
             $now = (!empty($_GET['p'])) ? $_GET['p'] : 1;
             $start = ($now - 1) * $num;
-            $bgs=$db->all([],"order by sort limit $start , $num");
+            $bgs=$db->all([],"order by new DESC ,sort DESC limit $start , $num");
 
                     ?>
     <input type="button" onclick="op('#cover','.modal','../modal/blog.php?table=<?=$table;?>')" value="新增圖片">
+    <input type="hidden" name="table" value="<?=$table;?>">
     </div>
             <div class="container bottom" style="border:0.5px solid white">
             <div class="row" >
@@ -88,23 +90,27 @@ include_once "../base.php";
             </div>
             <?php
                     foreach($bgs as $bg){
-                    $isChk = ($bg['sh'] == 1) ? 'checked' : '';
+                    $isChk = ($bg['new'] == 1) ? 'checked' : '';
             ?>
+            <form method="post" action="../api/edit.php">
             <div class="row align-items-center">
-
             <div class="col col-2"><textarea name="title" style="width:100px;height:200px;"><?=$bg['title'];?></textarea></div>
             <div class="col col-1" style="padding-left:0px;"><img src='../img/<?=$bg['img'];?>' style="width:70px;height:50px;"></div>
             <div class="col col-5 py-3" style="text-align:center"><textarea name="text" style="width:325px;height:200px;"><?=$bg['text'];?></textarea></div>
             <div class="col col-4" style="text-align:center">
             排序：<input type="text" name="sort" value="<?=$bg['sort'];?>"style="width:30px;height:20px;">
-            分類 <select name="type" id="">
-                <option></option>
+            分類 <select name="type" value="<?=$bg['type'];?>">
+            <option value="0" <?php if($bg['type']==0) echo 'selected';?>>未分類</option>
+            <option value="1" <?php if($bg['type']==1) echo 'selected';?>>履歷</option>
+            <option value="2" <?php if($bg['type']==2) echo 'selected';?>>寫作</option>
+            <option value="3" <?php if($bg['type']==3) echo 'selected';?>>心情</option>
+            <option value="4" <?php if($bg['type']==4) echo 'selected';?>>行銷</option>
             </select><hr>
-            顯示：<input type="checkbox" name="sh"  value="<?=$bg['id'];?>" <?=$isChk;?>>
-            置頂：<input type="checkbox" name="new" value="<?=$bg['id'];?>">
+            顯示：<input type="checkbox" name="new" value="<?=$bg['id'];?>" <?=$isChk?>>
             刪除：<input type="checkbox" name="del" value="<?=$bg['id'];?>">
             <input type="hidden" name="id" value="<?=$bg['id'];?>">
             <input type="hidden" name="img" value="<?=$bg['img'];?>">
+            <input type="hidden" name="table" value="<?=$table;?>">
             <hr>
             <input type="submit" value="修改確定"><input type="reset" value="重置"></div>
             </div>

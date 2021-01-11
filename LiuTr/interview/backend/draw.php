@@ -65,7 +65,7 @@ include_once "../base.php";
     　　　　</div> -->
     <!-- </div> -->
     <div class="container d-flex justify-content-end py-3">
-    <form method="post" action="../api/edit.php">
+
 
     <?php
     $table=$do;
@@ -92,7 +92,7 @@ include_once "../base.php";
             foreach($dws as $dw){
                 $isChk = ($dw['sh'] == 1) ? 'checked' : '';
                     ?>
-            
+                <form method="post" action="../api/edit.php">
             <div class="row align-items-center">
 
             <div class="col col-2"><textarea name="title" style="width:100px;height:200px;"><?=$dw['title'];?></textarea></div>
@@ -104,7 +104,7 @@ include_once "../base.php";
             刪除：<input type="checkbox" name="del" value="<?=$dw['id'];?>">
             <input type="hidden" name="id" value="<?=$dw['id'];?>">
             <input type="hidden" name="img" value="<?=$dw['img'];?>">
-
+            <input type="hidden" name="table" value="<?=$table;?>">
 
             <hr>
             <input type="submit" value="修改確定"><input type="reset" value="重置"></div>
