@@ -48,7 +48,7 @@ include_once "../base.php";
 </head>  
 <body>
     <div class="container d-flex justify-content-end py-3">
-    <form method="post" action="../api/edit_web.php">
+
 
     <?php
     // $web=new DB("web");
@@ -59,13 +59,13 @@ include_once "../base.php";
     $start = ($now - 1) * $num;
     $webs=$Web->all([],"order by sort limit $start , $num");
     ?>
-    <input type="button" onclick="op('#cover','.modal','../modal/web.php')" value="新增圖片">
+    <input type="button" onclick="op('#cover','.modal','../modal/web.php')" value="新增">
     </div>
             <div class="container bottom" style="border:0.5px solid white">
             <div class="row" >
-            <div class="col col-2" style="border:0.5px solid white">標題</div>
+            <div class="col col-2" style="border:0.5px solid white">名稱</div>
             <div class="col col-3" style="border:0.5px solid white">圖片</div>
-            <div class="col col-3" style="border:0.5px solid white">內容</div>
+            <div class="col col-3" style="border:0.5px solid white">網址</div>
             <div class="col col-4" style="border:0.5px solid white">管理</div>
             </div>
             <?php
@@ -73,7 +73,7 @@ include_once "../base.php";
             foreach($webs as $web){
                 $isChk = ($web['sh'] == 1) ? 'checked' : '';
                     ?>
-            
+            <form method="post" action="../api/edit_web.php">
             <div class="row align-items-center">
 
             <div class="col col-2"><textarea name="title" style="width:100px;height:200px;"><?=$web['title'];?></textarea></div>

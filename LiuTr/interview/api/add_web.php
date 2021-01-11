@@ -1,8 +1,8 @@
 <?php
 
 include_once "../base.php";
-$table=$_POST['table'];
-$db=new DB($table);
+$Web=new DB('web');
+
 $row=[];
 if(!empty($_FILES['img']['tmp_name'])){
     $filename=$_FILES['img']['name'];
@@ -12,7 +12,7 @@ if(!empty($_FILES['img']['tmp_name'])){
     
     $row['text']=$_POST['text'];
     $row['title']=$_POST['title'];
-    $row['sh']=1;
+    $row['sh']=0;
     $row['sort']=1;
 
 $db->save($row);

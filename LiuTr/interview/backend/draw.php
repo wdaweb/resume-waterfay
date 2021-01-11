@@ -77,7 +77,7 @@ include_once "../base.php";
     $start = ($now - 1) * $num;
     $dws=$db->all([],"order by sort limit $start , $num");
     ?>
-    <input type="button" onclick="op('#cover','.modal','../modal/draw.php?table=<?=$table;?>')" value="新增圖片">
+    <input type="button" onclick="op('#cover','.modal','../modal/draw.php?table=<?=$table;?>')" value="新增">
     <input type="hidden" name="table" value="<?=$table;?>">
     </div>
             <div class="container bottom" style="border:0.5px solid white">

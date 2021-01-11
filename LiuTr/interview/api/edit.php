@@ -16,19 +16,19 @@ if(!empty($_POST['del'])){
     $row['title']=$_POST['title'];
     $row['text']=$_POST['text'];
     $row['sort']=$_POST['sort'];
-    $row['sh']=$_POST['sh'];
+    $row['sh']=($_POST['sh'])?1:0;
     $row['sort']=$_POST['sort'];
     case "blog":
     $row['title']=$_POST['title'];
     $row['text']=$_POST['text'];
     $row['sort']=$_POST['sort'];
-    $row['new']=($id==$_POST['new'])?1:0;
+    $row['new']=($_POST['new'])?1:0;
     $row['type']=$_POST['type'];
     $row['new']=$_POST['new'];
     }
 $db->save($row);
 }
 
-to("../backend/main.php?do=blog");
+to("../backend/main.php?do=$table");
 
 ?>

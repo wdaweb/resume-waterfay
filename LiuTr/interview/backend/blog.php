@@ -78,7 +78,7 @@ include_once "../base.php";
             $bgs=$db->all([],"order by new DESC ,sort DESC limit $start , $num");
 
                     ?>
-    <input type="button" onclick="op('#cover','.modal','../modal/blog.php?table=<?=$table;?>')" value="新增圖片">
+    <input type="button" onclick="op('#cover','.modal','../modal/blog.php?table=<?=$table;?>')" value="新增">
     <input type="hidden" name="table" value="<?=$table;?>">
     </div>
             <div class="container bottom" style="border:0.5px solid white">
