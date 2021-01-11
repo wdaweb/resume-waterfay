@@ -641,29 +641,29 @@ include_once "base.php";
       <div class="row" id="webRow">
       <div>
         <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
-        <img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></div>
+        <a href="" class="webHr"><img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></a></div>
         <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
         </div>
         <div>
         <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
-        <img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></div>
+        <a href="" class="webHr"><img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></a></div>
         <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
         </div>
         <div>
         <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
-        <img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></div>
+        <a href="" class="webHr"><img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></a></div>
         <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
         </div>
       </div>
       <div class="row" id="webRow">
       <div>
         <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
-        <img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></div>
+        <a href="" class="webHr"><img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></a></div>
         <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
         </div>
         <div>
         <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
-        <img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></div>
+        <a href="" class="webHr"><img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></a></div>
         <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
         </div>
       <div>
