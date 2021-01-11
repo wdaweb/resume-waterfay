@@ -196,6 +196,7 @@ include_once "base.php";
     .text{
       font-size:18px;
       line-height:30px;
+      text-indent:2rem;
     }
 
 
@@ -687,7 +688,9 @@ include_once "base.php";
         Email:waterfay0.0@gmail.com<br> -->
       </p>
       <div>
-        <img src="img\iconsfacebook.png" alt=""><img src="img\iconsinstagram.png" alt="">
+        <a href="https://www.facebook.com/wy.chen.7923"><img src="img\fb.png" alt=""></a>
+        <a href="https://www.instagram.com/zax_5600/"><img src="img\ig.png" alt=""></a>
+        <a href="https://codepen.io/wy-chen"><img src="img\codepan.png" alt=""></a>
       </div>
     </div>
   </footer>
