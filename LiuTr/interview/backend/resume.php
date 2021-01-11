@@ -68,17 +68,14 @@ include_once "../base.php";
                     ?>
             <form method="post" action="../api/edit_web.php">
             <div class="row align-items-center">
-            <div class="col col-8 py-3" style="text-align:center"><textarea name="text" style="width:500px;height:50px;"><?=$web['text'];?></textarea></div>
+            <div class="col col-8 py-3" style="text-align:center"><textarea name="text[]" style="width:500px;height:50px;"><?=$web['text'];?></textarea></div>
             <div class="col col-4" style="text-align:center">
-            排序：<input type="text" name="sort" value="<?=$web['sort'];?>"style="width:30px;height:20px;"><hr>
-            顯示：<input type="checkbox" name="sh"  value="<?=$web['id'];?>" <?=$isChk;?>>
-            刪除：<input type="checkbox" name="del" value="<?=$web['id'];?>">
-            <input type="hidden" name="id" value="<?=$web['id'];?>">
-            <input type="hidden" name="img" value="<?=$web['img'];?>">
-
-
+            排序：<input type="text" name="sort[]" value="<?=$web['sort'];?>"style="width:30px;height:20px;"><hr>
+            顯示：<input type="checkbox" name="sh[]"  value="<?=$web['id'];?>" <?=$isChk;?>>
+            刪除：<input type="checkbox" name="del[]" value="<?=$web['id'];?>">
+            <input type="hidden" name="id[]" value="<?=$web['id'];?>">
             <hr>
-            <input type="submit" value="修改確定"><input type="reset" value="重置"></div>
+            
             </div>
             </form>
             <?php
@@ -87,6 +84,10 @@ include_once "../base.php";
             </div>
 
         </div>
+
+    </div>
+    <div class="container mt-5"  style="text-align:center;">
+    <input type="submit" value="修改確定"><input type="reset" value="重置">
     </div>
     </form>
 
