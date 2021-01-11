@@ -385,19 +385,21 @@ include_once "base.php";
         border-color: transparent transparent #e5a185 transparent;
     } */
     .tribg{
+      /* top:-2%;
+      left:-1%; */
       position:absolute;
-      z-index:100;
-      color:white;
+      z-index:100000;
       width: 0;
       height: 0;
       border-style: solid;
-      border-width: 50px 50px 0 0;
+      border-width: 75px 75px 0 0;
       border-color: #bc8585 transparent transparent transparent;
+      /* transform:translate(-2%,-2%),scale(1.1,1.1); */
       
     }
     .webDesign {
       font-size:45px;
-      border:10px solid #bc8585;
+      /* border:10px solid #bc8585; */
       overflow: hidden;
       margin: 10px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -640,36 +642,35 @@ include_once "base.php";
       <h1 style="text-align:center;">Web Design</h1>
       <div class="row" id="webRow">
       <div>
-        <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
-        <a href="" class="webHr"><img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></a></div>
+      <div class="webDesign"><a href="" class="webHr"><span class="tribg"></span>
+      <img src="https://picsum.photos/400/400" style="width:351px;height:351px;"></a></div>
         <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
         </div>
         <div>
-        <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
-        <a href="" class="webHr"><img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></a></div>
+        <div class="webDesign"><a href="" class="webHr"><span class="tribg"></span>
+        <img src="https://picsum.photos/400/400" style="width:351px;height:351px;"></a></div>
         <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
         </div>
         <div>
-        <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
-        <a href="" class="webHr"><img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></a></div>
+        <div class="webDesign"><a href="" class="webHr"><span class="tribg"></span>
+        <img src="https://picsum.photos/400/400" style="width:351px;height:351px;"></a></div>
         <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
         </div>
       </div>
       <div class="row" id="webRow">
       <div>
-        <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
-        <a href="" class="webHr"><img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></a></div>
+      <div class="webDesign"><a href="" class="webHr"><span class="tribg"></span>
+        <img src="https://picsum.photos/400/400" style="width:351px;height:351px;"></a></div>
         <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
         </div>
         <div>
-        <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
-        <a href="" class="webHr"><img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></a></div>
+        <div class="webDesign"><a href="" class="webHr"><span class="tribg"></span>
+        <img src="https://picsum.photos/400/400" style="width:351px;height:351px;"></a></div>
         <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
         </div>
-      <div>
-      <div>
-        <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
-        <img src="https://picsum.photos/400/400" style="width:350px;height350px"></div>
+        <div>
+        <div class="webDesign"><a href="" class="webHr"><span class="tribg"></span><span class="tri"></span>
+        <img src="https://picsum.photos/400/400" style="width:351px;height:351px;"></a></div>
         <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
         </div>
       </div>
