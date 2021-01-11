@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,27 +30,27 @@
         overflow-x : hidden;
         overflow-y : auto;
     } */
-
+    /* *, *::before, *::after {
+        box-sizing: inherit!important;
+      } */
     header {
       height: 840px;
     }
 
     article {
-      height: 1000px;
+      /* height: 1000px; */
       background: rgb(226, 230, 221);
       box-sizing: border-box;
       padding: 30px;
     }
 
     main {
-      height: 900px;
       box-sizing: border-box;
       padding: 30px;
     }
 
     figure {
       width: 100%;
-      height: 1050px;
       background: url("img/flower2.jpg") repeat;
       background-attachment: fixed;
       margin: 0;
@@ -61,24 +62,27 @@
     }
     .container {
         padding-top: 100px;
+        padding-bottom: 100px;
     }
     .wrap {
-      background: url("img/bamboo.jpg") no-repeat bottom center / cover;
+      /* background: url('img/bamboo.jpg') no-repeat bottom center / cover; 
       text-align: left;
       font-size: 6rem;
-      float: left;
-      -webkit-text-fill-color: transparent;
+      float: left; */
+      /* -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
-      background-clip: text;
+      background-clip: text; */
     }
 
     .space {
       background: white;
-      top: 30vh;
+      top: 28vh;
       left: 20%;
-      width: 575px;
-      height: 375px;
+      width: 600px;
+      height: 400px;
       opacity: 90%;
+      font-size:16px;
+      padding:10px;
       position: absolute;
       box-shadow: 1px 1px 1px 1px #0000002b;
       box-sizing: border-box;
@@ -103,7 +107,7 @@
       width: 300px;
       height: 4px;
       z-index: 1;
-      transform: translate(76%, 0%);
+      transform: translate(85%, 300%);
       box-shadow: 0px 0px 1px 1px #00000000;
       animation: arrow 1s infinite alternate;
     }
@@ -130,12 +134,12 @@
 
     @keyframes arrow {
       0% {
-        transform: translate(74%, 0%);
+        transform: translate(83%, 300%);
         box-shadow: 5px -10px 3px 1px #00000024;
       }
 
       50% {
-        transform: translate(70%, 0%);
+        transform: translate(80%, 300%);
       }
     }
 
@@ -205,12 +209,12 @@
     }
 
     .vine {
-      top: 5vh;
-      left: 25vw;
+      top: 25vh;
+      left: 20vw;
       display: none;
       position: absolute;
-      width: 100%;
-      height: 100vh;
+      width: 120%;
+      height: 120vh;
       transform: scale(1.3, 1.2);
       transform-origin: bottom right;
       z-index: 2;
@@ -223,7 +227,7 @@
       border: 5px solid #8f997e;
       box-shadow: 0px 2px 7px 0px rgba(71, 77, 69, 0.5);
       position: absolute;
-      top: 90vh;
+      top: 110vh;
       left: 50vw;
       width: 100px;
       height: 100px;
@@ -255,7 +259,6 @@
       color: #c9ebb2 !important;
       animation: mdclose2 1s infinite alternate;
     }
-
     @keyframes mdclose1 {
       25% {
         transform-origin: center;
@@ -288,23 +291,45 @@
         font-size: 55px;
       }
     }
+    .blogtitle{
+    padding:5px;
+    color:#5e5845;
+    border-radius:5%;
+    transition: all 400ms cubic-bezier(0.19, 1, 0.22, 1);
+    outline: 0px rgba(255, 255, 255,1) solid;
+    outline-offset: 0px;
 
+  }
+    .blogtitle:hover{
+      color:gray;
+      box-shadow: inset 15px 15px 20px rgba(255, 255, 255, .2), 15px 15px 20px rgba(255, 255, 255, .2);
+      outline: 200px rgba(255, 255, 255, 0) solid;
+      outline-offset: 10px;
+      border-radius:10%;
+
+    }
     .leafArrow {
+      padding:10px;
       font-size: 70px;
-      position: absolute;
-      left: 45%;
+      display: flex;
+      justify-content: space-around;
       color: #8f997e;
 
     }
-
+    .space:hover{
+      transition: all ease-in-out 0.5s;
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
     #leafLeft:hover {
       color: #334426;
       transition: all ease-in-out 0.5s;
+      text-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     }
 
     #leafRight:hover {
       color: #334426;
       transition: all ease-in-out 0.5s;
+      text-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     }
 
     .more {
@@ -324,13 +349,96 @@
       text-align: center;
     }
 
-    .webDesign {
-      border: 5px solid #a1b67d70;
-      border-radius: 50px;
-      /* width: 350px;
-      height: 350px; */
+    .card{
       overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  
     }
+    .card:hover {
+    transform:translate(-0.1%,-0.1%);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+  .card::before{
+    background: #fff;
+    content: "";
+    height: 1500px;
+    left: 600%;
+    opacity: 0.2;
+    position: absolute;
+    top: -150%;
+    transform: rotate(50deg);
+    transition: all 700ms cubic-bezier(0.19, 1, 0.22, 1);
+    width:300px;
+    z-index: 5000;
+  }
+
+  .card:hover::before{
+  left: -400%;
+  transition: all 700ms cubic-bezier(0.19, 1, 0.22, 1);
+
+  }
+  /* .tri{
+        position:absolute;
+        z-index:100;
+        color:white;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 50px 50px;
+        border-color: transparent transparent #e5a185 transparent;
+    } */
+    .tribg{
+      position:absolute;
+      z-index:100;
+      color:white;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 50px 50px 0 0;
+      border-color: #bc8585 transparent transparent transparent;
+      
+    }
+    .webDesign {
+      font-size:45px;
+      border:10px solid #bc8585;
+      overflow: hidden;
+      margin: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+      filter: grayscale(80%);
+    }
+    .webDesign:hover {
+      transform:translate(-2%,-2%);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  filter: grayscale(0%);
+
+
+}
+.webDesign::after{
+  background: #fff;
+    content: "";
+    height: 1500px;
+    left: 200%;
+    opacity: 0.2;
+    position: absolute;
+    top: -110%;
+    transform: rotate(50deg);
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    width:300px;
+    z-index: 500;
+    filter: blur(50px);
+  }
+
+  .webDesign:hover::after{
+  left: -500%;
+  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+    .row{
+      /* margin-left: 50px; */
+    }
+
+
   </style>
 </head>
 
@@ -347,7 +455,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="interview.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="interview.php">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#modalClose">Self-introduction</a>
@@ -363,25 +471,27 @@
           </li>
 
         </ul>
-        <button class="btn  btn-outline-light" type="button"  onclick="location.href='login.html'">login</button>
+        <a href="login.html" style="text-decoration:none;color:white;"><button class="btn  btn-outline-light" type="button" >login</button></a>
       </div>
     </nav>
     <div class="space" id="Self-introduction" onclick="op(this)">
       <h3>Self-introduction</h3><br>
-      <p>一個認為在美學之下，必然與行銷商業數據得以取得平衡的人。<br><br>
-        擁有15年寫作經歷、10年繪圖經歷、8年攝影經歷，<br>
-        具藝術史學及文學背景，熟知藝文界產業溝通語言。<br><br>
-        自4年前修習廣告學課程與自學程式設計。<br>
-        對前端網頁設計與點擊率、轉換率、ROSA的關聯深感興趣，<br>
-        期盼能夠成為出眾的UI/UX設計師、前端網頁設計師，
-        提升用戶對網頁的體驗及美感視覺，也能夠創造最佳的客戶轉換率。<br>
+      <p>
+        一個認為在美學之下，必然與行銷商業數據得以取得平衡的人。<br />
+        <br />
+        擁有15年寫作經歷、10年繪圖經歷、8年攝影經歷，<br />
+        具藝術史學及文學背景，熟知藝文界產業溝通語言。<br />
+        自4年前修習廣告學課程與自學程式設計。<br />
+        對前端網頁設計與點擊率、轉換率、ROSA的關聯深感興趣，<br />
+        期盼能夠成為出眾的UI/UX設計師、前端網頁設計師，提升用戶對網頁的體驗及美感視覺，也能夠創造最佳的客戶轉換率。
       </p>
       <br>
       <div class="arrow"></div>
     </div>
-    <img src="./img/bamboo.jpg" style="float:right;height:780px;">
+    <img src="./img/bamboo.jpg" class="Mugshot" style="float:right;height:780px;">
     <img src="./img/flower.jpg" class="flower" style="float:left;width:500px;height:630px;">
-    <div class="wrap">Self-introduction</div>
+    <div class="wrap" style="background: url('./img/bamboo.jpg') no-repeat bottom center / cover;text-align: left;font-size: 6rem;float: left;-webkit-text-fill-color: transparent;-webkit-background-clip: text;
+      background-clip: text;">Self-introduction</div>
     <div class="modal">
       <div class="modalcontain">
         <div class="modalcontain1">
@@ -471,19 +581,19 @@
     </div>
   </header>
   <article>
-    <div class="container" id="blog">
-      <h1 style="text-align:center;">Blog</h1>
+    <div class="container-fluid" id="blog">
+      <h1 style="text-align:center;"><a href="" class="blogtitle" style="text-decoration:none;">Blog</a></h1>
       <div class="media">
         <img src="https://picsum.photos/200/200" class="mr-3">
         <div class="media-body">
-          <h5 class="mt-auto">自傳</h5>
+          <h5 class="mt-auto"><a href="" class="blogtitle" style="text-decoration:none;">自傳</a></h5>
           二十八年前，哭鬧聲伴隨著雨都簾纖，刺骨的葭月一個嬰兒呱呱墜地，我在這樣一個平凡的朝曦誕生，卻有著不太平凡的好奇心，從小時常擔任班級教室、聖誕活動的主要設計者。
           　　熱愛學習的我，非常喜歡閱讀許多課外書，國中時期部落格正流行著，我也跟隨著潮流走進了部落格，不僅記錄了自己許多青春的煩惱...
         </div>
       </div>
       <div class="media">
         <div class="media-body">
-          <h5 class="mt-3 mb-3">葉子</h5>
+          <h5 class="mt-3 mb-3"><a href="" class="blogtitle" style="text-decoration:none;">葉子</a></h5>
           吹著薰風的平凡日子，恰巧平時所慣於待的咖啡廳都剛好休假，一個無法待在同一個地方寫作，就像即便多麼無趣的生活都得替它畫上一點色彩，
           我稱呼著自己為半個旅人吧！開始了半刻的流浪，儘管溽暑尚未入侵...
         </div>
@@ -492,29 +602,27 @@
       <div class="media">
         <img src="https://picsum.photos/200/200" class="align-self-end mr-3">
         <div class="media-body">
-          <h5 class="mt-1">新生代設計二三事──在經營上可能遇到的未來挑戰</h5>
+          <h5 class="mt-1"><a href="" class="blogtitle" style="text-decoration:none;">新生代設計二三事──在經營上可能遇到的未來挑戰</a></h5>
           <p>在室內設計界，創業開立自己的工作室，是許多新生代的設計師的理想。
             大部分的人，擁有理想，卻不知道地圖從何畫起、從哪裡開始、中間會遇到什麼困難、
             及近年來市場變化，考驗著一位室內設計師──到老闆角色之間的轉換的彈性，以及對管理、人資、行銷、財務上可能遇上的困難...</p>
         </div>
       </div>
-      <div class="more">more...</div>
+      <div class="more"><a href="" class="blogtitle" style="text-decoration:none;">more...</a></div>
     </div>
 
     <br>
     <hr>
   </article>
   <main>
-    <div class="container" id="design">
-
+    <div class="container-fluid p-5" id="design">
       <h1 style="text-align:center;">Draw and Design</h1>
       <div class="card-deck" >
         <div class="card bg-transparent">
           <img src="img/draw1.jpg" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
+            <h5 class="card-title">極酷衝浪VIP會員卡（正面）</h5>
+            <p class="card-text">以友善海洋與環境永續發展為形象，以藍綠色波浪為基底，打造出提醒人們愛護海洋生物的VIP卡片，讓人們在海邊衝浪之餘還能記得將垃圾帶回家。</p>
           </div>
         </div>
         <div class="card bg-transparent">
@@ -533,42 +641,48 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="leafArrow"><i class="fas fas fa-leaf" id="leafLeft"></i>
+      <div class="leafArrow"><i class="fas fas fa-leaf" id="leafLeft"></i>
       <i class="fas fas fa-leaf" id="leafRight"></i>
     </div>
+    </div>
+
   </main>
   <figure>
     <div class="container" id="WebDesign" >
       <h1 style="text-align:center;">Web Design</h1>
       <div class="row">
       <div>
-        <div class="webDesign"><img src="https://picsum.photos/350/350"></div>
-        <p><i class="fas fas fa-leaf" style="font-size:30px;color:#334426;"></i>網頁1</p>
-      </div>
-
-      <div>
-        <div class="webDesign"><img src="https://picsum.photos/350/350"></div>
-        <p><i class="fas fas fa-leaf" style="font-size:30px;color:#334426;"></i>網頁1</p>
-      </div>
-      <div>
-        <div class="webDesign"><img src="https://picsum.photos/350/350"></div>
-        <p><i class="fas fas fa-leaf" style="font-size:30px;color:#334426;"></i>網頁1</p>
-      </div>
+        <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
+        <img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></div>
+        <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
+        </div>
+        <div>
+        <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
+        <img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></div>
+        <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
+        </div>
+        <div>
+        <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
+        <img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></div>
+        <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
+        </div>
       </div>
       <div class="row">
       <div>
-        <div class="webDesign"><img src="https://picsum.photos/350/350"></div>
-        <p><i class="fas fas fa-leaf" style="font-size:30px;color:#334426;"></i>網頁1</p>
-      </div>
-      <div>
-        <div class="webDesign"><img src="https://picsum.photos/350/350"></div>
-        <p><i class="fas fas fa-leaf" style="font-size:30px;color:#334426;"></i>網頁1</p>
-      </div>
-      <div>
+        <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
+        <img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></div>
+        <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
+        </div>
         <div>
-          <div class="webDesign"><img src="https://picsum.photos/350/350"></div>
-          <p><i class="fas fas fa-leaf" style="font-size:30px;color:#334426;"></i>網頁1</p>
+        <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
+        <img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></div>
+        <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
+        </div>
+      <div>
+      <div>
+        <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
+        <img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></div>
+        <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
         </div>
       </div>
       </div>
@@ -579,7 +693,7 @@
     <div class="lastpg">
       <i class="fas fas fa-leaf" style="font-size:45px;color:#334426;"></i>
       <br>
-      <p style="font-size: 14px;margin:0;">
+      <p style="font-size: 14px;margin:0;text-align:center;">
         copyright©WY Chen Resume<br>
         電話:0912-247-326<br>
         Email:waterfay0.0@gmail.com<br>

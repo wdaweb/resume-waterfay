@@ -15,8 +15,8 @@ if(!empty($_FILES['img']['tmp_name'])){
     $row['sh']=0;
     $row['sort']=1;
 
-$db->save($row);
-to("../backend/main.php?do=draw");
+$Web->save($row);
+to("../backend/main.php?do=web");
 
 // switch($table){
 //     case "blog":

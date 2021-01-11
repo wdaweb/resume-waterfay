@@ -13,9 +13,10 @@ body {
         background: white;
         top: 0vh!important;
         left: 0%!important;
-        width: 380px!important;
+        width: 100%!important;
         height: 500px!important;
         opacity: 90%;
+        font-size:14px!important;
         position: relative!important;
         box-shadow: 1px 1px 1px 1px #0000002b;
         box-sizing: border-box;
@@ -41,22 +42,16 @@ body {
         display: none;
     }
     .flower {
-        display: none;
-    }
-
-    article {
-        height: 1550px !important;
+        display: block;
+        position: relative;
+        width: 100%!important;
     }
     .media>img{
         display: none;
     }
-    main {
-        height: 1500px !important;
-    }
-
     .webDesign {
-        width: 150px;
-        height: 150px;
+        width: 250px;
+        height: 250px;
     }
 
     .leafArrow {
@@ -81,6 +76,12 @@ body {
         background: rgb(25, 96, 109);
         z-index: 1;
       }
+    .container{
+        padding-left:0px!important;
+    }
+    .Mugshot{
+        height: 70vh!important;
+    }
 
 }
 @media (min-width:350px) and (max-width:489px) {
@@ -88,9 +89,10 @@ body {
         background: white;
         top: 0vh!important;
         left: 0%!important;
-        width: 380px!important;
+        width: 100%!important;
         height: 500px!important;
         opacity: 90%;
+        font-size:14px!important;
         position: relative!important;
         box-shadow: 1px 1px 1px 1px #0000002b;
         box-sizing: border-box;
@@ -116,31 +118,24 @@ body {
         display: none;
     }
     .flower {
-        display: none;
-    }
-
-    article {
-        height: 1550px !important;
+        display: block;
+        position: relative;
+        width: 100%!important;
     }
     .media>img{
         display: none;
     }
-    main {
-        height: 1500px !important;
+    .webDesign {
+        width: 250px;
+        height: 250px;
     }
 
-    .webDesign {
-        width: 150px;
-        height: 150px;
-    }
 
     .leafArrow {
         left: 35%;
+        display: flex;
+        justify-content: space-around;
     }
-
-    /* figure {
-            height: 100px;
-    }            */
     h5{
         font-size:14px;
     }
@@ -149,7 +144,6 @@ body {
     }
     .modalcontain1{
         padding: 0px!important;
-        /* margin-left: 0px; */
         font-size: 12px;
     }
     .modal {
@@ -162,13 +156,20 @@ body {
         background: rgb(25, 96, 109);
         z-index: 1;
       }
+    .Mugshot{
+        height: 70vh!important;
+    }
+    .row{
+        margin-left:50px!important;
+    }
+
 }
 @media (min-width:490px) and (max-width:559px) {
     .space {
         background: white;
         top: 0vh!important;
         left: 0%!important;
-        width: 500px!important;
+        width: 100%!important;
         height: 480px!important;
         opacity: 90%;
         position: relative!important;
@@ -197,26 +198,13 @@ body {
         display: none;
     }
     .flower {
-        display: none;
+        display: block;
+        position: relative;
+        width: 100%!important;
     }
-
-    article {
-        height: 1300px!important;;
-    }
-
-    main {
-        height: 1600px!important;;
-    }
-
     .leafArrow {
         left: 35%;
     }
-
-    .webDesign {
-        width: 150px;
-        height: 150px;
-    }
-
     .wrap {
         display: none;
     }
@@ -235,6 +223,13 @@ body {
         background: rgb(25, 96, 109);
         z-index: 1;
       }
+    .Mugshot{
+        height: 70vh!important;
+    }
+    .row{
+        margin-left:50px!important;
+    }
+
 }
 
 @media (min-width:560px) and (max-width:768px) {
@@ -245,24 +240,9 @@ body {
     .wrap {
         display: none;
     }
-
-    /* 
-    article {
-        height: 1000px;
-    } */
-    main {
-        height: 800px;
-    }
-
     .leafArrow {
         left: 35%;
     }
-
-    .webDesign {
-        width: 200px;
-        height: 200px;
-    }
-
     .wrap {
         display: none;
     }
@@ -280,40 +260,43 @@ body {
         background: rgb(25, 96, 109);
         z-index: 1;
       }
+      .row{
+        margin-left:50px!important;
+    }
+
 }
 
-@media (min-width:769px) and (max-width:992px) {
+@media (min-width:769px) and (max-width:960px) {
     .flower {
         display: none;
     }
-
-    .webDesign {
-        width: 200px;
-        height: 200px;
-    }
-
-    main {
-        height: 700px;
-    }
-
     .wrap {
         display: none;
     }
+    .webDesign {
+        width: 250px;
+        height: 250px;
+    }
+    /* .row{
+        flex-wrap: nowrap;
+        margin-left:50px!important;
+    } */
 
 }
 
-@media (min-width:993px) and (max-width:1335px) {
+@media (min-width:960px) and (max-width:1119px) {
     .flower {
         display: none;
     }
-
+    .wrap {
+        display: none;
+    }
+    .row{
+        flex-wrap: nowrap;
+    }
     .webDesign {
         width: 300px;
         height: 300px;
-    }
-
-    .wrap {
-        display: none;
     }
 
 }
@@ -327,15 +310,14 @@ body {
     }
 } */
 
-@media (max-width:1500px) {
+@media (min-width:1000px) and  (max-width:1500px) {
 
+    .row{
+        flex-wrap: nowrap;
+    }
     .wrap {
         display: none;
     }
-
-}
-
-@media (min-width:1500px) {
     .webDesign {
         width: 350px;
         height: 350px;
@@ -343,4 +325,14 @@ body {
 
 }
 
-@media (min-height:1336px) {}
+@media (min-width:1499px) {
+    .webDesign {
+        width: 350px;
+        height: 350px;
+    }
+    .row{
+        flex-wrap: nowrap;
+    }
+
+}
+
