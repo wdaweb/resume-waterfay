@@ -144,5 +144,6 @@ $User=new DB("login");
 $Bottom=new DB('bottom');
 $Web=new DB('web');
 $SelfIntroduction=new DB('SelfIntroduction');
+$R_img=new DB('img');
 
 ?>

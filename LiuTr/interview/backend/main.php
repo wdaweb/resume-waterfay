@@ -17,39 +17,41 @@ include_once "../base.php";
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600&family=Prata&display=swap"
     rel="stylesheet">
-
     <link href="../css/modal.css" rel="stylesheet" type="text/css">
     <script src="../js/js.js"></script>
     <!--不一定會用到-->
     <style>
-        body {
-            font-family: 'Prata', serif, 'Noto Serif TC', serif;
-            width: 100%;
-            height: 900px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto;
-            background: rgb(191, 202, 177);
-        }
-        .main {
-            width: 1000px;
-            height: 900px;
-        }
-        .login{
-            width: 1000px;
-            height: 500px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transform: translate(-5%,-5%);
-        }
+    body {
+        font-family: 'Prata', serif, 'Noto Serif TC', serif;
+        width: 100%;
+        height: 900px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        background: rgb(191, 202, 177);
+    }
+
+    .main {
+        width: 1000px;
+        height: 900px;
+    }
+
+    .login {
+        width: 1000px;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-5%, -5%);
+    }
     </style>
 </head>
 
 <body>
-<div id="cover" style="display:none;">
-<div class="modlecloss" onclick="cl('#cover')" style="color:white;z-index:9999;position:absolute; left:70%; top:15%;">X</div>
+    <div id="cover" style="display:none;">
+        <div class="modlecloss" onclick="cl('#cover')"
+            style="color:white;z-index:9999;position:absolute; left:70%; top:15%;">X</div>
         <div class="modal" style="text-align:left;"></div>
     </div>
     <div class="container main">
@@ -58,22 +60,26 @@ include_once "../base.php";
             <nav>
                 <div class="nav nav-tabs justify-content-center" id="nav-tab">
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=self_introduction">Self-introduction</a>
-                    <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=resume">Resume</a>
+                    <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume">Resume-work</a>
+                    <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume_img">Resume-img</a>
+                    <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume">Resume-edu</a>
+                    <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume">Resume-skill</a>
+                    <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume">Resume-other</a>
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=blog">Blog</a>
-                    <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=draw">Draw and
-                        Design</a>
+                    <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=draw">Draw and Design</a>
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=web">Web Design</a>
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=bottom">Bottom</a>
-                    
+
                     <?php
                     if(!empty($_SESSION['login'])){
                     ?>
-                        <a class='nav-item nav-link text-white' id='' data-toggle='tab' onclick="location.replace('../api/logout.php')">logout</a>
+                    <a class='nav-item nav-link text-white' id='' data-toggle='tab'
+                        onclick="location.replace('../api/logout.php')">logout</a>
 
                     <?php
                     }else{
                     ?>
-                        <!-- <a class='nav-item nav-link text-white' id='' data-toggle='tab' onclick="location.replace('main.php')">login</a> -->
+                    <!-- <a class='nav-item nav-link text-white' id='' data-toggle='tab' onclick="location.replace('main.php')">login</a> -->
                     <?php
                     }
                     ?>
@@ -83,6 +89,7 @@ include_once "../base.php";
             $do=$_GET['do'];
             if(empty($_GET['do']) && empty($_SESSION['login'])){
                 include "login.php";
+                $do="login";
             }else if(empty($_GET['do']) && !empty($_SESSION['login'])){
                 include "self_introduction.php";
             }else{
@@ -93,4 +100,5 @@ include_once "../base.php";
         </div>
     </div>
 </body>
+
 </html>
