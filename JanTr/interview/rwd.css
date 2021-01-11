@@ -38,6 +38,10 @@ body {
             opacity: 90%;
         }
     }
+    #webRow{
+        margin-left:20px!important;
+        
+    }
     .arrow{
         display: none;
     }
@@ -62,10 +66,6 @@ body {
     .wrap {
         display: none;
     }
-    .modalcontain1{
-        padding: 0px!important;
-        font-size: 12px;
-    }
 
     .container{
         padding-left:0px!important;
@@ -73,12 +73,30 @@ body {
     .Mugshot{
         height: 70vh!important;
     }
-    .vine {
-        top: 70vh!important;
+    .bigTitle{
+        font-size:20px!important;
+      }
+      .title{
+        font-size:14px!important;
+      }
+      .text{
+        font-size:12px!important;
+        line-height:20px!important;
+      }
+      .vine {
+        top: 340vh!important;
     }
     .modal{
-        height:800vh!important;
+        height:400vh!important;
     }
+    .modalClose{
+        top:370vh!important;
+    }
+    #img{
+        padding-left:10px!important;
+    }
+
+
 }
 @media (min-width:350px) and (max-width:489px) {
     .space {
@@ -138,16 +156,32 @@ body {
     .wrap {
         display: none;
     }
-    .modalcontain1{
-        padding: 0px!important;
-        font-size: 12px;
-    }
 
     .Mugshot{
         height: 70vh!important;
     }
     #webRow{
         margin-left:50px!important;
+        
+    }
+    .bigTitle{
+        font-size:20px!important;
+      }
+      .title{
+        font-size:14px!important;
+      }
+      .text{
+        font-size:12px!important;
+        line-height:20px!important;
+      }
+      .vine {
+        top: 220vh!important;
+    }
+    .modal{
+        height:300vh!important;
+    }
+    .modalClose{
+        top:280vh!important;
     }
 
 }
@@ -195,11 +229,6 @@ body {
     .wrap {
         display: none;
     }
-    .modalcontain1{
-        padding: 0px!important;
-        margin-left: 0px;
-        font-size: 12px;
-    }
 
     .Mugshot{
         height: 70vh!important;
@@ -207,7 +236,19 @@ body {
     #webRow{
         margin-left:50px!important;
     }
+    .vine {
+        top: 250vh!important;
+    }
+    .modal{
+        height:350vh!important;
+    }
+    .modalClose{
+        top:330vh!important;
+    }
 
+
+
+  
 }
 
 @media (min-width:560px) and (max-width:768px) {
@@ -224,14 +265,20 @@ body {
     .wrap {
         display: none;
     }
-    .modalcontain1{
-        margin-left: 0px;
-        font-size: 12px;
-    }
 
       #webRow{
         margin-left:50px!important;
     }
+    .vine {
+        top: 200vh!important;
+    }
+    .modal{
+        height:310vh!important;
+    }
+    .modalClose{
+        top:290vh!important;
+    }
+
 
 
 }
@@ -251,6 +298,16 @@ body {
         flex-wrap: nowrap;
         margin-left:50px!important;
     } */
+    .vine {
+        top: 70vh!important;
+    }
+    .modal{
+        height:190vh!important;
+    }
+    .modalClose{
+        top:170vh!important;
+    }
+
 
 }
 
@@ -282,7 +339,7 @@ body {
 
 @media (min-width:1000px) and  (max-width:1500px) {
 
-    .row{
+    #webRow{
         flex-wrap: nowrap;
     }
     .wrap {

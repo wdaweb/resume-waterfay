@@ -497,28 +497,28 @@ include_once "base.php";
         
         <div class="col-12 col-md-6 col-lg-5" id="work">
             <div class="bigTitle">工作經歷</div>
-            <div class="title">中正紀念堂研究典藏組實習－實習生（2012/7-2012/8)</div class=“title”>
+            <div class="title">中正紀念堂研究典藏組實習－實習生（2012/7-2012/8)</div>
             <div class="text">黃克武主持，《海外蔣中正典藏資料研析》，系列出版書籍校對</div>
             <div class="text">圖書編碼整理</div>
             <div class="text">官方FB發文小編</div>
 
-            <div class="title">國立臺東大學圖書館－看館工讀（2013/9-2014/6）</div class=“title”>
+            <div class="title">國立臺東大學圖書館－看館工讀（2013/9-2014/6）</div>
             <div class="text">借還書、館際合作系統操作</div>
             <div class="text">讀者服務</div>
 
-            <div class="title">國立中興大學圖書館－美編工讀（2015/7-2017/12）</div class=“title”>
+            <div class="title">國立中興大學圖書館－美編工讀（2015/7-2017/12）</div>
             <div class="text">2015、2016年圖書館週主視覺設計</div>
             <div class="text">2015圖書館主題牆面主視覺設計</div>
             <div class="text">其他文宣商品設計</div>
             <div class="text">官方FB發文小編</div>
             <div class="text">活動創意發想</div>
 
-            <div class="title">謬斯名人行銷－行銷企劃（2019/10-2019/12）</div class=“title”>
+            <div class="title">謬斯名人行銷－行銷企劃（2019/10-2019/12）</div >
             <div class="text">Blog文章撰寫</div>
             <div class="text">市場調查</div>
             <div class="text">線上線下活動發想</div>
 
-            <div class="title">極酷衝浪俱樂部－美編行銷（2020/1-2020/8）</div class=“title”>
+            <div class="title">極酷衝浪俱樂部－美編行銷（2020/1-2020/8）</div>
             <div class="text">店鋪帆布設計、VIP卡片、課程海報、等文宣產品設計。</div>
             <div class="text">官方FB發文小編經營，旺季時期增加約2000個讚數、IG增加200個追蹤人數、振興券活動宣傳。</div>
             <div class="text">線上預約及訂房流程優化、利用manychat設計回覆對話、利用修改文案內容優化SEO。</div>
@@ -641,29 +641,29 @@ include_once "base.php";
       <div class="row" id="webRow">
       <div>
         <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
-        <img src="https://picsum.photos/400/400" style="width:350px;height350px"></div>
+        <img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></div>
         <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
         </div>
         <div>
         <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
-        <img src="https://picsum.photos/400/400" style="width:350px;height350px"></div>
+        <img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></div>
         <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
         </div>
         <div>
         <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
-        <img src="https://picsum.photos/400/400" style="width:350px;height350px"></div>
+        <img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></div>
         <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
         </div>
       </div>
       <div class="row" id="webRow">
       <div>
         <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
-        <img src="https://picsum.photos/400/400" style="width:350px;height350px"></div>
+        <img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></div>
         <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
         </div>
         <div>
         <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
-        <img src="https://picsum.photos/400/400" style="width:350px;height350px"></div>
+        <img src="https://picsum.photos/400/400" style="width:350px;height:350px;"></div>
         <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
         </div>
       <div>
