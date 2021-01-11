@@ -179,39 +179,26 @@ include_once "base.php";
 
     }
 
-    .modalcontain {
+    #modalcontain {
       position: relative;
-
       color: #b5f3ff;
-
+      line-height:35px;
     }
 
-    .modalcontain1 {
-      margin-top: 10px;
-      margin-left: 10px;
-      display: none;
-      box-sizing: border-box;
-      padding: 10px;
-      z-index: 10;
+    .bigTitle{
+      font-size:40px;
+      line-height:55px;
+    }
+    .title{
+      font-size:25px;
+      line-height:40px;
+    }
+    .text{
+      font-size:18px;
+      line-height:30px;
     }
 
-    .modalcontain2 {
-      margin-top: 10px;
-      margin-left: 10px;
-      display: none;
-      box-sizing: border-box;
-      padding: 10px;
-      z-index: 10;
-    }
 
-    ul {
-      float: left;
-      width: 600px;
-    }
-
-    li {
-      list-style-type: circle;
-    }
 
     .vine {
       top: 25vh;
@@ -495,10 +482,80 @@ include_once "base.php";
     <div class="wrap" style="background: url('img/<?=$sf['img'];?>') no-repeat bottom center / cover;text-align: left;font-size: 6rem;float: left;-webkit-text-fill-color: transparent;-webkit-background-clip: text;
       background-clip: text;">Self-introduction</div>
     <div class="modal">
-      <div class="modalcontain">
-      <div>
+      <div class="container-fluid  p-5" id="modalcontain">
 
-      </div>
+
+      <div class="row justify-content-center">
+
+      <div class="col-12 col-md-12 col-lg-3" id="work" style="padding-left:50px;">
+        <img src="./img/flower.jpg" style="width:300px;height:400px;">
+        </div>
+        
+        <div class="col-12 col-md-6 col-lg-5" id="work" style="padding-right:50px;">
+            <div class="bigTitle">工作經歷</div>
+            <div class="title">中正紀念堂研究典藏組實習－實習生（2012/7-2012/8)</div class=“title”>
+            <div class="text">黃克武主持，《海外蔣中正典藏資料研析》，系列出版書籍校對</div>
+            <div class="text">圖書編碼整理</div>
+            <div class="text">官方FB發文小編</div>
+
+            <div class="title">國立臺東大學圖書館－看館工讀（2013/9-2014/6）</div class=“title”>
+            <div class="text">借還書、館際合作系統操作</div>
+            <div class="text">讀者服務</div>
+
+            <div class="title">國立中興大學圖書館－美編工讀（2015/7-2017/12）</div class=“title”>
+            <div class="text">2015、2016年圖書館週主視覺設計</div>
+            <div class="text">2015圖書館主題牆面主視覺設計</div>
+            <div class="text">其他文宣商品設計</div>
+            <div class="text">官方FB發文小編</div>
+            <div class="text">活動創意發想</div>
+
+            <div class="title">謬斯名人行銷－行銷企劃（2019/10-2019/12）</div class=“title”>
+            <div class="text">Blog文章撰寫</div>
+            <div class="text">市場調查</div>
+            <div class="text">線上線下活動發想</div>
+
+            <div class="title">極酷衝浪俱樂部－美編行銷（2020/1-2020/8）</div class=“title”>
+            <div class="text">店鋪帆布設計、VIP卡片、課程海報、等文宣產品設計。</div>
+            <div class="text">官方FB發文小編經營，旺季時期增加約2000個讚數、IG增加200個追蹤人數、振興券活動宣傳。</div>
+            <div class="text">線上預約及訂房流程優化、利用manychat設計回覆對話、利用修改文案內容優化SEO。</div>
+            <div class="text">其他訂房相關例行事務。</div>
+        </div>
+
+      <div class="col-12  col-md-6 col-lg-4"  style="padding-right:50px;">
+        <div id="edu">
+            <div class="bigTitle">學歷</div>
+            <div class="text">國立台東大學--華語文學系(2011/9-2014/6)</div>
+            <div class="text">國立中興大學--歷史研究所(2015/9-2019/6)</div>
+        </div>
+
+        <div id="skill">
+            <div class="bigTitle">技能</div>
+            <div class="text">
+                網頁設計－前端部分：能結合Boostrap、Html、CSS、Javascript、JQuery做網頁切版及物件按鈕設計。後端部分：能理解PHP、AJAX串聯SQL資料庫，做簡易的登入、註冊系統、資料上傳、下載、更新等。
+            </div>
+            <div class="text">設計－Photoshop、Illustrate、krita，能夠結合向量圖、電腦繪圖、照片等多元素材整合做出不同平面設計作品。</div>
+            <div class="text">攝影－會運用單眼及機外閃、持續燈及其他設備採光環境配置等。</div>
+            <div class="text">網路行銷－修習行銷研究所廣告學課程、參與廣告主協會競賽、經營自媒體。</div>
+            <div class="text">手繪－在畫室學習10年，擅長風景水彩、色鉛筆。</div>
+        </div>
+
+
+        <div id="other">
+            <div class="bigTitle">其他經歷</div>
+            <div class="text">久久點九整合行銷－接案小編</div>
+            <div class="text">國立臺東大學－攝影社長（2012/9-2013/6）</div>
+            <div class="text">《鴻飛射馬干－東大散文選》－合作出版著作</div>
+            <div class="text">歌林看見台灣之美－人氣獎第一名</div>
+            <div class="text">詠春新詩比賽－佳作</div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
       </div>
       <object class="vine" type="image/svg+xml" data="img/vine.svg"></object>
       <div class="modalClose" onclick="Cl(this)">
@@ -577,7 +634,7 @@ include_once "base.php";
   <figure>
     <div class="container" id="WebDesign" >
       <h1 style="text-align:center;">Web Design</h1>
-      <div class="row">
+      <div class="row" id="webRow">
       <div>
         <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
         <img src="https://picsum.photos/400/400" style="width:350px;height350px"></div>
@@ -594,7 +651,7 @@ include_once "base.php";
         <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
         </div>
       </div>
-      <div class="row">
+      <div class="row" id="webRow">
       <div>
         <div class="webDesign"><span class="tribg"></span><span class="tri"></span>
         <img src="https://picsum.photos/400/400" style="width:350px;height350px"></div>
@@ -659,10 +716,17 @@ include_once "base.php";
     if (top >= 1010) {
       $("#design").fadeIn(2000, "easeInSine");
     }
-    if (top >= 780) {
-      $(".modal").hide();
-    }
+
+    // if (top >= 1100) {
+    //   $(".modal").hide();
+    // }
+
   })
+
+  $(window).resize(function() {//開始監聽視窗寬度
+      var  wdth=$(window).width();
+      console.log(wdth)//視窗寬度
+    });
 
   // $(window).scroll(function () {   //開始監聽滾動條
   //   var top = $(document).scrollTop();  //滾動條距離頂部的高度
