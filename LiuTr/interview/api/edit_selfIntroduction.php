@@ -12,8 +12,8 @@ if(!empty($_FILES['img']['tmp_name'])){
     $filename=$_FILES['img']['name'];
     move_uploaded_file($_FILES['img']['tmp_name'],'../img/'.$filename);
     $row['img']=$filename;
-
 }
+
 if(isset($_POST['text'])){
     $row['text']=$_POST['text'];
     }

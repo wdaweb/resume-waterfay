@@ -182,22 +182,25 @@ include_once "base.php";
     #modalcontain {
       position: relative;
       color: #b5f3ff;
-      line-height:35px;
     }
 
     .bigTitle{
-      font-size:40px;
-      line-height:55px;
-    }
-    .title{
       font-size:25px;
       line-height:40px;
     }
-    .text{
-      font-size:18px;
-      line-height:30px;
-      text-indent:2rem;
+    .title{
+      font-size:20px;
+      line-height:40px;
+      margin-left: 1rem; 
     }
+    .text{
+      font-size:16px;
+      line-height:30px;
+      margin-left: 2rem;
+      border-left:2px groove;
+      padding-left:10px;
+    }
+
 
 
 
@@ -210,7 +213,7 @@ include_once "base.php";
       height: 125vh;
       transform: scale(1.5, 1.5);
       transform-origin: bottom right;
-      z-index: 2;
+      z-index: -1;
       /* display: grid; */
       /* align-items: center; */
       /* justify-content: right; */
@@ -488,11 +491,11 @@ include_once "base.php";
 
       <div class="row justify-content-center">
 
-      <div class="col-12 col-md-12 col-lg-3" id="work" style="padding-left:50px;">
-        <img src="./img/flower.jpg" style="width:300px;height:400px;">
+      <div class="col-12 col-md-12 col-lg-3 mb-5" id="img" style="padding-left:50px;">
+        <img src="./img/Mugshot1.jpg" style="width:230px;height:300px;opacity:1;">
         </div>
         
-        <div class="col-12 col-md-6 col-lg-5" id="work" style="padding-right:50px;">
+        <div class="col-12 col-md-6 col-lg-5" id="work">
             <div class="bigTitle">工作經歷</div>
             <div class="title">中正紀念堂研究典藏組實習－實習生（2012/7-2012/8)</div class=“title”>
             <div class="text">黃克武主持，《海外蔣中正典藏資料研析》，系列出版書籍校對</div>
@@ -522,7 +525,7 @@ include_once "base.php";
             <div class="text">其他訂房相關例行事務。</div>
         </div>
 
-      <div class="col-12  col-md-6 col-lg-4"  style="padding-right:50px;">
+      <div class="col-12  col-md-6 col-lg-4">
         <div id="edu">
             <div class="bigTitle">學歷</div>
             <div class="text">國立台東大學--華語文學系(2011/9-2014/6)</div>
