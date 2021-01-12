@@ -371,7 +371,7 @@ include_once "base.php";
     .card::before {
         background: #fff;
         content: "";
-        height: 1500px;
+        height: 3000px;
         left: 600%;
         opacity: 0.2;
         position: absolute;
@@ -696,7 +696,7 @@ include_once "base.php";
                         $(".card").hide()
                         for (s = 0; s <= 2; s++) {
                             t = s * 1 + nowpage * 1;
-                            $("#ssaa" + t).show()
+                            $("#ssaa" + t).fadeIn()
                         }
                     }
                     pp(1)
