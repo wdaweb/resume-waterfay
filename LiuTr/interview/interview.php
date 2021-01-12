@@ -509,9 +509,11 @@ include_once "base.php";
 
 
                 <div class="row justify-content-center">
-
+                <?php
+                $rimg=$R_img->find(1);
+                ?>
                     <div class="col-12 col-md-12 col-lg-3 mb-5" id="img" style="padding-left:50px;">
-                        <img src="./img/Mugshot1.jpg" style="width:230px;height:300px;opacity:1;">
+                        <img src="./img/<?=$rimg['img'];?>" style="width:230px;height:300px;opacity:1;">
                     </div>
 
                     <div class="col-12 col-md-6 col-lg-5" id="work">
@@ -707,13 +709,13 @@ include_once "base.php";
             <h1 style="text-align:center;">Web Design</h1>
             <div class="row" id="webRow">
                 <div>
-                    <div class="webDesign"><a href="" class="webHr"><span class="tribg"></span>
-                            <img src="https://picsum.photos/400/400" style="width:351px;height:351px;"></a></div>
-                    <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
+                    <div class="webDesign"><a href="http://220.128.133.15/s1090418/calenderwork/" class="webHr"><span class="tribg"></span>
+                            <img src="./img/calender.jpg" style="width:351px;height:351px;"></a></div>
+                    <p class="webtitle" style="text-align:center;font-size:20px;">萬年曆</p>
                 </div>
                 <div>
-                    <div class="webDesign"><a href="" class="webHr"><span class="tribg"></span>
-                            <img src="https://picsum.photos/400/400" style="width:351px;height:351px;"></a></div>
+                    <div class="webDesign"><a href="http://220.128.133.15/s1090418/invoicework/" class="webHr"><span class="tribg"></span>
+                            <img src="./img/invoice.jpg"  style="width:351px;height:351px;"></a></div>
                     <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
                 </div>
                 <div>
