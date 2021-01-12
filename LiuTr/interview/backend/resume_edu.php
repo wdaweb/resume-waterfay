@@ -65,7 +65,7 @@ include_once "../base.php";
             <input type="button" value="新增" onclick="more()">
             <div class="container bottom" style="border:0.5px solid white">
             <div class="row" >
-            <div class="col col-8" style="border:0.5px solid white">網址</div>
+            <div class="col col-8" style="border:0.5px solid white">內容</div>
             <div class="col col-4" style="border:0.5px solid white">管理</div>
             </div>
             <div class="row align-items-center" id="opts">

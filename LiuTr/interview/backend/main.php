@@ -60,11 +60,11 @@ include_once "../base.php";
             <nav>
                 <div class="nav nav-tabs justify-content-center" id="nav-tab">
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=self_introduction">Self-introduction</a>
-                    <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume">Resume-work</a>
+                    <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume_work">Resume-work</a>
                     <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume_img">Resume-img</a>
-                    <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume">Resume-edu</a>
-                    <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume">Resume-skill</a>
-                    <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume">Resume-other</a>
+                    <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume_edu">Resume-edu</a>
+                    <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume_skill">Resume-skill</a>
+                    <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume_other">Resume-other</a>
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=blog">Blog</a>
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=draw">Draw and Design</a>
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=web">Web Design</a>
