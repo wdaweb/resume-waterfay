@@ -145,5 +145,6 @@ $Bottom=new DB('bottom');
 $Web=new DB('web');
 $SelfIntroduction=new DB('SelfIntroduction');
 $R_img=new DB('img');
+$R_edu=new DB('edu');
 
 ?>

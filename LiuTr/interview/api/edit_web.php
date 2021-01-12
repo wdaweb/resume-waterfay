@@ -14,8 +14,7 @@ if(!empty($_POST['del'])){
     $row['title']=$_POST['title'];
     $row['text']=$_POST['text'];
     $row['sort']=$_POST['sort'];
-    $row['sh']=$row['sh']=($_POST['sh'])?1:0;
-    $row['sort']=$_POST['sort'];
+    $row['sh']=($_POST['sh'])?1:0;
     $Web->save($row);
 }
 

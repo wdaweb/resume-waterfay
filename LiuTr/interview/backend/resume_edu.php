@@ -61,7 +61,7 @@ include_once "../base.php";
             foreach($webs as $web){
                 $isChk = ($web['sh'] == 1) ? 'checked' : '';
                     ?>
-            <form method="post" action="../api/edit_web.php">
+            <form method="post" action="../api/edit_resume_edu.php">
             <input type="button" value="新增" onclick="more()">
             <div class="container bottom" style="border:0.5px solid white">
             <div class="row" >
