@@ -705,19 +705,44 @@ include_once "base.php";
                     </script>
     </main>
     <figure>
+    
         <div class="container" id="WebDesign">
             <h1 style="text-align:center;">Web Design</h1>
+            <?php
+            if(($webds %3) == 0){
+                echo " <div class='row' id='webRow'>";
+            }
+            ?>
+
+
             <div class="row" id="webRow">
+            <?php
+                $Web=new DB('web');
+                $webds=$Web->all(['sh'=>1],"order by sort desc limit 6");
+                foreach($webds as $webd){
+                    
+            ?>
+                <div>
+                    <div class="webDesign"><a href="<?=$webd['text']?>" class="webHr"><span class="tribg"></span>
+                            <img src="./img/<?=$webd['img']?>" style="width:351px;height:351px;"></a></div>
+                    <p class="webtitle" style="text-align:center;font-size:20px;"><?=$webd['title']?></p>
+                </div>
+            <?php
+                }
+            ?>
+
                 <div>
                     <div class="webDesign"><a href="http://220.128.133.15/s1090418/calenderwork/" class="webHr"><span class="tribg"></span>
                             <img src="./img/calender.jpg" style="width:351px;height:351px;"></a></div>
                     <p class="webtitle" style="text-align:center;font-size:20px;">萬年曆</p>
                 </div>
+
                 <div>
                     <div class="webDesign"><a href="http://220.128.133.15/s1090418/invoicework/" class="webHr"><span class="tribg"></span>
                             <img src="./img/invoice.jpg"  style="width:351px;height:351px;"></a></div>
                     <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
                 </div>
+
                 <div>
                     <div class="webDesign"><a href="" class="webHr"><span class="tribg"></span>
                             <img src="https://picsum.photos/400/400" style="width:351px;height:351px;"></a></div>
