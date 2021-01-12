@@ -52,22 +52,23 @@ include_once "../base.php";
 
     <?php
 
-    $webs=$Web->all([],"order by sort");
+    $webs=$Web->all([],"order by sort desc");
     ?>
-    <input type="button" onclick="op('#cover','.modal','../modal/web.php')" value="新增">
     </div>
-            <div class="container bottom" style="border:0.5px solid white">
-            <div class="row" >
-            <div class="col col-8" style="border:0.5px solid white">網址</div>
-            <div class="col col-4" style="border:0.5px solid white">管理</div>
-            </div>
+            
             <?php
 
             foreach($webs as $web){
                 $isChk = ($web['sh'] == 1) ? 'checked' : '';
                     ?>
             <form method="post" action="../api/edit_web.php">
-            <div class="row align-items-center">
+            <input type="button" value="新增" onclick="more()">
+            <div class="container bottom" style="border:0.5px solid white">
+            <div class="row" >
+            <div class="col col-8" style="border:0.5px solid white">網址</div>
+            <div class="col col-4" style="border:0.5px solid white">管理</div>
+            </div>
+            <div class="row align-items-center" id="opts">
             <div class="col col-8 py-3" style="text-align:center"><textarea name="text[]" style="width:500px;height:50px;"><?=$web['text'];?></textarea></div>
             <div class="col col-4" style="text-align:center">
             排序：<input type="text" name="sort[]" value="<?=$web['sort'];?>"style="width:30px;height:20px;"><hr>
@@ -93,3 +94,18 @@ include_once "../base.php";
 
 </body>
 </html>
+<script>
+    function more(){
+        let str=`
+            <div class="col col-8 py-3" style="text-align:center"><textarea name="text[]" style="width:500px;height:50px;"><?=$web['text'];?></textarea></div>
+            <div class="col col-4" style="text-align:center">
+            排序：<input type="text" name="sort[]" value="<?=$web['sort'];?>"style="width:30px;height:20px;"><hr>
+            顯示：<input type="checkbox" name="sh[]"  value="<?=$web['id'];?>" <?=$isChk;?>>
+            刪除：<input type="checkbox" name="del[]" value="<?=$web['id'];?>">
+            <input type="hidden" name="id[]" value="<?=$web['id'];?>">
+            <hr>
+            
+            </div>`
+        $("#opts").prepend(str)
+    }
+</script>
