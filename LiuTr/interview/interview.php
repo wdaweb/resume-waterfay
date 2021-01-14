@@ -708,17 +708,18 @@ include_once "base.php";
     
         <div class="container" id="WebDesign">
             <h1 style="text-align:center;">Web Design</h1>
-            <?php
-            if(($webds %3) == 0){
-                echo " <div class='row' id='webRow'>";
-            }
-            ?>
 
 
-            <div class="row" id="webRow">
+
+            <!-- <div class="row" id="webRow"> -->
             <?php
                 $Web=new DB('web');
+                $webcount=$Web->count(['sh'=>1],"order by sort desc limit 6");
                 $webds=$Web->all(['sh'=>1],"order by sort desc limit 6");
+                for($i=0;$i<($webcount/3);$i++){
+                    if($webcount>=1 || ($webcount>4 && $webcount%3 == 0)){
+                    echo " <div class='row' id='webRow'>";
+                }
                 foreach($webds as $webd){
                     
             ?>
@@ -729,8 +730,10 @@ include_once "base.php";
                 </div>
             <?php
                 }
+                echo"</div>";
+            }
             ?>
-
+<!-- 
                 <div>
                     <div class="webDesign"><a href="http://220.128.133.15/s1090418/calenderwork/" class="webHr"><span class="tribg"></span>
                             <img src="./img/calender.jpg" style="width:351px;height:351px;"></a></div>
@@ -741,9 +744,9 @@ include_once "base.php";
                     <div class="webDesign"><a href="http://220.128.133.15/s1090418/invoicework/" class="webHr"><span class="tribg"></span>
                             <img src="./img/invoice.jpg"  style="width:351px;height:351px;"></a></div>
                     <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
-                </div>
+                </div> -->
 
-                <div>
+                <!-- <div>
                     <div class="webDesign"><a href="" class="webHr"><span class="tribg"></span>
                             <img src="https://picsum.photos/400/400" style="width:351px;height:351px;"></a></div>
                     <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
@@ -766,7 +769,7 @@ include_once "base.php";
                     <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
                 </div>
             </div>
-        </div>
+        </div> -->
         </div>
     </figure>
 
