@@ -143,9 +143,12 @@ function to($url)
 $User=new DB("login");
 $Bottom=new DB('bottom');
 $Web=new DB('web');
+$Draw=new DB('draw');
+$Blog=new DB('blog');
 $SelfIntroduction=new DB('SelfIntroduction');
 $R_img=new DB('img');
 $R_edu=new DB('edu');
-
+$Work=new DB('work');
+// $R_edus
 ?>
 

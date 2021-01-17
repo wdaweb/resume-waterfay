@@ -1,3 +1,9 @@
+<?php
+
+include_once "base.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,51 +38,81 @@
 <div class="container" id="blog">
       <h1 style="text-align:center;">Blog</h1>
       <hr>
-      <div class="more">分類：</div>
+
+      <div class="more">分類： &emsp; &emsp;<a href="blog.php?type=0" style="text-decoration:none;color:#5e5845;">未分類</a> &emsp; &emsp;<a href="blog.php?type=1" style="text-decoration:none;color:#5e5845;">履歷</a> &emsp; &emsp;<a href="blog.php?type=2" style="text-decoration:none;color:#5e5845;">寫作</a> &emsp; &emsp;<a href="blog.php?type=3" style="text-decoration:none;color:#5e5845;">心情</a> &emsp; &emsp;<a href="blog.php?type=4" style="text-decoration:none;color:#5e5845;">行銷</a><a href="interview.php" style="text-decoration:none;color:#5e5845;float:right;">回首頁</a></div>
       <hr>
-      <div class="media">
-        <img src="https://picsum.photos/200/200" class="mr-3">
-        <div class="media-body">
-          <h5 class="mt-auto">自傳</h5>
-          二十八年前，哭鬧聲伴隨著雨都簾纖，刺骨的葭月一個嬰兒呱呱墜地，我在這樣一個平凡的朝曦誕生，卻有著不太平凡的好奇心，從小時常擔任班級教室、聖誕活動的主要設計者。
-          　　熱愛學習的我，非常喜歡閱讀許多課外書，國中時期部落格正流行著，我也跟隨著潮流走進了部落格，不僅記錄了自己許多青春的煩惱...
-        </div>
+
+      <?php
+          $total = $Blog->count();
+          $num = 5;
+          $pages = ceil($total / $num);
+          $now = (!empty($_GET['p'])) ? $_GET['p'] : 1;
+          $start = ($now - 1) * $num;
+                // for($i=0;$i<3;$i++){
+                $bgcount=$Blog->count(['new'=>1]);
+                // echo $bgcount;
+                // $blogs=$Blog->all(['new'=>1],"order by sort limit $i , 1");
+                if(!empty($_GET['type'])){
+                  $blogs=$Blog->all(['new'=>1,'type'=>($_GET['type'])],"order by sort limit $start , $num");
+                }else{
+                  $blogs=$Blog->all(['new'=>1],"order by sort limit $start , $num");
+                }
+
+                foreach($blogs as $key => $blog){ 
+                if($key%2==0){          
+            ?>
+            <div class="media">
+                <div class="media-body">
+                    <h5 class="mt-auto"><a href="contain.php?id=<?=$blog['id']?>" class="blogtitle"
+                            style="text-decoration:none;color:#5e5845;"><?=$blog['title'];?></a></h5>
+                    <?=mb_substr($blog['text'],0,150,'utf8');?>......
+                </div>
+                <img src="img/<?=$blog['img']?>" class="mr-3" style="width:200px;height:200px;">
+            </div>
+            <?php
+                }else{
+            ?>
+            <div class="media">
+                <img src="img/<?=$blog['img']?>" class="mr-3" style="width:200px;height:200px;">
+                <div class="media-body">
+                    <h5 class="mt-auto"><a href="contain.php?id=<?=$blog['id']?>" class="blogtitle"
+                            style="text-decoration:none;color:#5e5845;"><?=$blog['title'];?></a></h5>
+                    <?=mb_substr($blog['text'],0,150,'utf8');?>......
+                </div>
+            </div>
+            <?php
+        }
+    }
+        ?>
+
       </div>
-      <div class="media">
-        <div class="media-body">
-          <h5 class="mt-3 mb-3">葉子</h5>
-          吹著薰風的平凡日子，恰巧平時所慣於待的咖啡廳都剛好休假，一個無法待在同一個地方寫作，就像即便多麼無趣的生活都得替它畫上一點色彩，
-          我稱呼著自己為半個旅人吧！開始了半刻的流浪，儘管溽暑尚未入侵...
-        </div>
-        <img src="https://picsum.photos/200/200" class="ml-3">
-      </div>
-      <div class="media">
-        <img src="https://picsum.photos/200/200" class="align-self-end mr-3">
-        <div class="media-body">
-          <h5 class="mt-1">新生代設計二三事──在經營上可能遇到的未來挑戰</h5>
-          <p>在室內設計界，創業開立自己的工作室，是許多新生代的設計師的理想。
-            大部分的人，擁有理想，卻不知道地圖從何畫起、從哪裡開始、中間會遇到什麼困難、
-            及近年來市場變化，考驗著一位室內設計師──到老闆角色之間的轉換的彈性，以及對管理、人資、行銷、財務上可能遇上的困難...</p>
-        </div>
-      </div>
-      <div class="media">
-        <div class="media-body">
-          <h5 class="mt-3 mb-3">葉子</h5>
-          吹著薰風的平凡日子，恰巧平時所慣於待的咖啡廳都剛好休假，一個無法待在同一個地方寫作，就像即便多麼無趣的生活都得替它畫上一點色彩，
-          我稱呼著自己為半個旅人吧！開始了半刻的流浪，儘管溽暑尚未入侵...
-        </div>
-        <img src="https://picsum.photos/200/200" class="ml-3">
-      </div>
-      <div class="media">
-        <img src="https://picsum.photos/200/200" class="align-self-end mr-3">
-        <div class="media-body">
-          <h5 class="mt-1">新生代設計二三事──在經營上可能遇到的未來挑戰</h5>
-          <p>在室內設計界，創業開立自己的工作室，是許多新生代的設計師的理想。
-            大部分的人，擁有理想，卻不知道地圖從何畫起、從哪裡開始、中間會遇到什麼困難、
-            及近年來市場變化，考驗著一位室內設計師──到老闆角色之間的轉換的彈性，以及對管理、人資、行銷、財務上可能遇上的困難...</p>
-        </div>
-      </div>
-      <div class="more">分頁</div>     
+      <nav aria-label="Page navigation example ">
+            <ul class="pagination justify-content-center mt-5">
+        <?php
+                if (($now - 1) > 0) {
+            ?>
+             <li class="page-item">
+            <a class="page-link bg-success" aria-label="Previous" style="text-decoration:none;color:white;" href="?do=web&p=<?=($now - 1);?>">
+            <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+            <?php } ?>
+            <?php
+                for ($i = 1; $i <= $pages; $i++) {
+            ?>
+                <li class="page-item "><a class="page-link bg-success" style="text-decoration:none;color:white;" href="?do=web&p=<?=$i;?>"><?=$i;?></a></li>
+            <?php } ?>
+            <?php
+                if (($now + 1) <= $pages) {
+            ?>
+            <li class="page-item ">
+                <a class="page-link bg-success" style="text-decoration:none;color:white;"  href="?do=web&p=<?=($now + 1);?>">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+                </li>
+            <?php } ?>
+            </ul>
+        </nav>    
     </div>
 </body>
 </html>

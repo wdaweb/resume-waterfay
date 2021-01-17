@@ -1,7 +1,7 @@
 <?php
 
 include_once "../base.php";
-
+ini_set('display_errors','off'); 
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +33,7 @@ include_once "../base.php";
     }
 
     .main {
-        width: 1000px;
+        width: 1500px;
         height: 900px;
     }
 
@@ -62,9 +62,7 @@ include_once "../base.php";
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=self_introduction">Self-introduction</a>
                     <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume_work">Resume-work</a>
                     <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume_img">Resume-img</a>
-                    <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume_edu">Resume-edu</a>
-                    <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume_skill">Resume-skill</a>
-                    <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume_other">Resume-other</a>
+                    <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume_m">Resume-m</a>
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=blog">Blog</a>
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=draw">Draw and Design</a>
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=web">Web Design</a>

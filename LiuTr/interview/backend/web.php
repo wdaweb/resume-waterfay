@@ -97,24 +97,37 @@ include_once "../base.php";
             </div>
 
         </div>
+        <nav aria-label="Page navigation example ">
+            <ul class="pagination justify-content-center mt-5">
         <?php
                 if (($now - 1) > 0) {
             ?>
-            <a class="bl" style="font-size:30px;" href="?do=web&p=<?=($now - 1);?>">&lt;&nbsp;</a>
+             <li class="page-item">
+            <a class="page-link bg-success" aria-label="Previous" style="text-decoration:none;color:white;" href="?do=web&p=<?=($now - 1);?>">
+            <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
             <?php } ?>
             <?php
                 for ($i = 1; $i <= $pages; $i++) {
-                    $fontsize = ($i == $now) ? '30px' : '24px';
             ?>
-                <a class="bl" style="font-size:<?=$fontsize;?>;" href="?do=web&p=<?=$i;?>"><?=$i;?></a>
+                <li class="page-item "><a class="page-link bg-success" style="text-decoration:none;color:white;" href="?do=web&p=<?=$i;?>"><?=$i;?></a></li>
             <?php } ?>
             <?php
                 if (($now + 1) <= $pages) {
             ?>
-                <a class="bl" style="font-size:30px;" href="?do=web&p=<?=($now + 1);?>">&nbsp;&gt;</a>
+            <li class="page-item ">
+                <a class="page-link bg-success" style="text-decoration:none;color:white;"  href="?do=web&p=<?=($now + 1);?>">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+                </li>
             <?php } ?>
+            </ul>
+        </nav>
     </div>
     </form>
 
 </body>
 </html>
+
+

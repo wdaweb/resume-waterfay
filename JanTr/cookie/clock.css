@@ -3,57 +3,219 @@ body {
     background: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
+    font-family: 'Potta One',cursive;
+
   }
 .squ1{
     border:solid rgb(255, 108, 108) 5px;
     position: absolute;
     width:500px;
     height: 500px;
+    top: 20%;
+    left: 35%;
+    box-shadow: 0px 0px 50px 10px rgb(255, 108, 108);
+    box-shadow: 0px 0px 50px 20px rgb(255, 108, 108);
+    box-shadow: 0px 0px 50px 30px rgb(255, 108, 108);
+    animation: squ3 60s linear infinite;
+    /* animation: light1 5s linear infinite; */
+}
+.squ1:after{
+    content: "";
+    position: absolute;
+    width   :500px;
+    height  : 500px;
+    animation: light1 5s linear infinite;
 }
 .squ2{
     border:solid rgb(92, 136, 255) 5px;
     position: absolute;
     width:400px;
     height: 400px;
-    top: 9%;
-    left: 9%;
+    left: 37.5%;
+    top: 25%;
+    animation: squ2 3600s linear infinite;
+    box-shadow: 0px 0px 50px 10px rgb(92, 136, 255);
+    box-shadow: 0px 0px 50px 20px rgb(92, 136, 255);
+    box-shadow: 0px 0px 50px 30px rgb(92, 136, 255);
+    /* animation: light2 5s linear infinite; */
+}
+.squ2:after {
+    content  : "";
+    position : absolute;
+    width:400px;
+    height: 400px;
+    animation: light2 5s linear infinite;
 }
 .squ3{
     border:solid rgb(108, 255, 103) 5px;
     position: absolute;
     width:280px;
     height: 280px;
-    top: 13%;
-    left: 13%;
-
+    top: 33%;
+    left: 41%;
+    animation: squ1 43200s linear infinite;
+    /* animation: light3 5s linear infinite; */
+    box-shadow: 0px 0px 50px 10px rgb(108, 255, 103);
+    box-shadow: 0px 0px 50px 20px rgb(108, 255, 103);
+    box-shadow: 0px 0px 50px 30px rgb(108, 255, 103);
+}
+.squ3:after {
+    content  : "";
+    position : absolute;
+    width:280px;
+    height: 280px;
+    animation: light3 5s linear infinite;
 }
 .cir1{
-    background: rgb(255, 108, 108);
+    background:  rgb(167, 94, 94);
+    color:white;
     border-radius: 50%;
     position: absolute;
     width:50px;
     height:50px;
+    animation: cri 4s linear infinite;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    /* box-shadow: 0px 0px 50px 10px rgb(255, 108, 108);
+    box-shadow: 0px 0px 50px 20px rgb(255, 108, 108);
+    box-shadow: 0px 0px 50px 30px rgb(255, 108, 108); */
 }
 .cir2{
-    background: rgb(92, 136, 255);
+    background: rgb(67, 92, 158);
+    color:white;
     border-radius: 50%;
     position: absolute;
     width:50px;
     height:50px;
+    animation: cri 3s linear infinite;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    /* box-shadow: 0px 0px 50px 10px rgb(92, 136, 255);
+    box-shadow: 0px 0px 50px 20px rgb(92, 136, 255);
+    box-shadow: 0px 0px 50px 30px rgb(92, 136, 255); */
 }
 .cir3{
-    background: rgb(108, 255, 103);
+    background: rgb(87, 165, 85);
+    color:white;
     border-radius: 50%;
     position: absolute;
     width:50px;
     height:50px;
+    animation: cri 5s linear infinite;
+    display        :flex;
+    justify-content: center;
+    align-items    : center;
+    font-size: 35px;
+    /* box-shadow: 0px 0px 50px 10px rgb(108, 255, 103);
+    box-shadow: 0px 0px 50px 20px rgb(108, 255, 103);
+    box-shadow: 0px 0px 50px 30px rgb(108, 255, 103); */
 }
 .cir4{
-    background: rgb(75, 75, 75);
+    background: rgb(250, 255, 206);
     border-radius: 50%;
     position: absolute;
     width:25px;
     height:25px;
     top: 48%;
     left: 48%;
+    box-shadow: 0px 0px 50px 5px rgb(250, 255, 206);
+    box-shadow: 0px 0px 50px 10px rgb(250, 255, 206);
+    box-shadow: 0px 0px 50px 20px rgb(250, 255, 206);
+}
+
+@keyframes light3 {
+    0% {
+    box-shadow: 0px 0px 50px 5px rgb(108, 255, 103);
+    box-shadow: 0px 0px 50px 10px rgb(108, 255, 103);
+    box-shadow: 0px 0px 50px 15px rgb(108, 255, 103);
+    }
+    25%{
+    box-shadow: 0px 0px 50px 10px rgb(216, 255, 215);
+    box-shadow: 0px 0px 50px 20px rgb(216, 255, 215);
+    box-shadow: 0px 0px 50px 30px rgb(216, 255, 215);
+    }
+
+    50% {
+    box-shadow: 0px 0px 50px 5px rgb(108, 255, 103);
+    box-shadow: 0px 0px 50px 10px rgb(108, 255, 103);
+    box-shadow: 0px 0px 50px 15px rgb(108, 255, 103);
+    }
+    75%{
+    box-shadow: 0px 0px 50px 10px rgb(216, 255, 215);
+    box-shadow: 0px 0px 50px 20px rgb(216, 255, 215);
+    box-shadow: 0px 0px 50px 30px rgb(216, 255, 215);
+    }
+    100%{
+    box-shadow: 0px 0px 50px 5px rgb(108, 255, 103);
+    box-shadow: 0px 0px 50px 10px rgb(108, 255, 103);
+    box-shadow: 0px 0px 50px 15px rgb(108, 255, 103);
+    }
+}
+
+@keyframes light2 {
+    0% {
+        box-shadow: 0px 0px 50px 5px rgb(92, 136, 255);
+        box-shadow: 0px 0px 50px 10px rgb(92, 136, 255);
+        box-shadow: 0px 0px 50px 15px rgb(92, 136, 255);
+    }
+
+    25% {
+        box-shadow: 0px 0px 50px 10px rgb(211, 225, 255);
+        box-shadow: 0px 0px 50px 20px rgb(211, 225, 255);
+        box-shadow: 0px 0px 50px 30px rgb(211, 225, 255);
+    }
+
+    50% {
+        box-shadow: 0px 0px 50px 5px rgb(92, 136, 255);
+        box-shadow: 0px 0px 50px 10px rgb(92, 136, 255);
+        box-shadow: 0px 0px 50px 15px rgb(92, 136, 255);
+    }
+
+    75% {
+        box-shadow: 0px 0px 50px 10px rgb(211, 225, 255);
+        box-shadow: 0px 0px 50px 20px rgb(211, 225, 255);
+        box-shadow: 0px 0px 50px 30px rgb(211, 225, 255);
+    }
+
+    100% {
+        box-shadow: 0px 0px 50px 5px rgb(92, 136, 255);
+        box-shadow: 0px 0px 50px 10px rgb(92, 136, 255);
+        box-shadow: 0px 0px 50px 15px rgb(92, 136, 255);
+    }
+}
+
+@keyframes light1 {
+    0% {
+        box-shadow: 0px 0px 50px 5px rgb(255, 108, 108);
+        box-shadow: 0px 0px 50px 10px rgb(255, 108, 108);
+        box-shadow: 0px 0px 50px 15px rgb(255, 108, 108);
+    }
+
+    25% {
+        box-shadow: 0px 0px 50px 10px rgb(255, 230, 230);
+        box-shadow: 0px 0px 50px 20px  rgb(255, 230, 230);
+        box-shadow: 0px 0px 50px 30px  rgb(255, 230, 230);
+    }
+
+    50% {
+        box-shadow: 0px 0px 50px 5px rgb(255, 108, 108);
+        box-shadow: 0px 0px 50px 10px rgb(255, 108, 108);
+        box-shadow: 0px 0px 50px 15px rgb(255, 108, 108);
+    }
+
+    75% {
+        box-shadow: 0px 0px 50px 10px rgb(255, 230, 230);
+        box-shadow: 0px 0px 50px 20px  rgb(255, 230, 230);
+        box-shadow: 0px 0px 50px 30px  rgb(255, 230, 230);
+    }
+
+    100% {
+        box-shadow: 0px 0px 50px 5px rgb(255, 108, 108);
+        box-shadow: 0px 0px 50px 10px rgb(255, 108, 108);
+        box-shadow: 0px 0px 50px 15px rgb(255, 108, 108);
+    }
 }

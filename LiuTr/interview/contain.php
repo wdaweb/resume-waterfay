@@ -1,3 +1,9 @@
+<?php
+
+include_once "base.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,18 +37,37 @@
 </head>
 <body>
 <div class="container" id="blog">
-      <h1 style="text-align:center;">文章標題</h1>
+<?php
+        $b=$Blog->find($_GET['id']);
+// echo ($_GET['id']);
+// print_r ($b);
+?>
+      <h1 style="text-align:center;"><?=$b['title'];?></h1>
       <hr>
       <div class="more"><a href="blog.php" style="text-decoration:none;color:#5e5845;">回Blog頁面</a></div>
       <hr>
-      <div class="media">
+      <!-- <div class="media">
         <img src="https://picsum.photos/200/200" class="mr-3">
         <div class="media-body">
+
           <h5 class="mt-auto">自傳</h5>
           二十八年前，哭鬧聲伴隨著雨都簾纖，刺骨的葭月一個嬰兒呱呱墜地，我在這樣一個平凡的朝曦誕生，卻有著不太平凡的好奇心，從小時常擔任班級教室、聖誕活動的主要設計者。
           　　熱愛學習的我，非常喜歡閱讀許多課外書，國中時期部落格正流行著，我也跟隨著潮流走進了部落格，不僅記錄了自己許多青春的煩惱...
         </div>
       </div>
-    </div>
+    </div> -->
+    <?php
+        $b=$Blog->find($_GET['id']);
+// echo ($_GET['id']);
+// print_r ($b);
+?>
+
+<div class="media">
+                <img src="img/<?=$b['img']?>" class="mr-3" style="width:40%;height:40%;">
+                <div class="media-body">
+                    <h5 class="mt-auto"><?=$b['title'];?></h5>
+                    <?=nl2br($b['text']);?>
+                </div>
+            </div>
 </body>
 </html>

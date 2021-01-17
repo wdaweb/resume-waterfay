@@ -1,0 +1,30 @@
+body{
+    background:url('media/03D04.png');
+    width:540px;
+    height:370px;
+    box-sizing:border-box;
+    padding:19px 112px 11px;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+.box>label{
+    flex:0 0 20%;
+    height:85px;
+    display:flex;
+    flex-flow:column nowrap;
+    /* justify-content: center; */
+    align-items: center;
+    cursor: pointer;
+    margin: 0 auto;
+    color: whitesmoke;
+    font-weight:bolder;
+    text-shadow:0 1px 2px black;
+    padding: 10px auto ;
+    box-sizing:border-box;
+}
+label>input[type="checkbox"]{
+    align-self:flex-end;
+    margin-right:8px;
+}

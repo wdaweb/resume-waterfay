@@ -62,7 +62,7 @@ include_once "base.php";
     }
 
     footer {
-        height: 225px;
+        height: 275px;
         background: rgb(191, 202, 177);
     }
 
@@ -509,7 +509,7 @@ include_once "base.php";
 
 
                 <div class="row justify-content-center">
-                <?php
+                    <?php
                 $rimg=$R_img->find(1);
                 ?>
                     <div class="col-12 col-md-12 col-lg-3 mb-5" id="img" style="padding-left:50px;">
@@ -518,12 +518,28 @@ include_once "base.php";
 
                     <div class="col-12 col-md-6 col-lg-5" id="work">
                         <div class="bigTitle">工作經歷</div>
-                        <div class="title">中正紀念堂研究典藏組實習－實習生（2012/7-2012/8)</div>
-                        <div class="text">黃克武主持，《海外蔣中正典藏資料研析》，系列出版書籍校對</div>
-                        <div class="text">圖書編碼整理</div>
-                        <div class="text">官方FB發文小編</div>
 
-                        <div class="title">國立臺東大學圖書館－看館工讀（2013/9-2014/6）</div>
+                        <?php
+                        $wcount=$Work->count(['title'=>1]);
+                for($j=0;$j<=$wcount;$j++){
+                $ws=$Work->all(['sh'=>1,'title'=>0,'club'=>$j]," order by sort");
+                $wts=$Work->all(['sh'=>1,'title'=>1,'club'=>$j]," order by sort");
+                foreach($wts as $wt){
+                    ?>
+                    <div class="title"><?=$wt['text']?></div>
+                    <?php
+                }
+                    foreach($ws as $w){
+                    ?>
+
+                        <div class="text"><?=$w['text']?></div>
+                        <?php
+                        }
+                    }
+            
+                    ?>
+
+                        <!-- <div class="title">國立臺東大學圖書館－看館工讀（2013/9-2014/6）</div>
                         <div class="text">借還書、館際合作系統操作</div>
                         <div class="text">讀者服務</div>
 
@@ -543,44 +559,51 @@ include_once "base.php";
                         <div class="text">店鋪帆布設計、VIP卡片、課程海報、等文宣產品設計。</div>
                         <div class="text">官方FB發文小編經營，旺季時期增加約2000個讚數、IG增加200個追蹤人數、振興券活動宣傳。</div>
                         <div class="text">線上預約及訂房流程優化、利用manychat設計回覆對話、利用修改文案內容優化SEO。</div>
-                        <div class="text">其他訂房相關例行事務。</div>
+                        <div class="text">其他訂房相關例行事務。</div> -->
                     </div>
 
                     <div class="col-12  col-md-6 col-lg-4">
                         <div id="edu">
                             <div class="bigTitle">學歷</div>
-                            <div class="text">國立台東大學--華語文學系(2011/9-2014/6)</div>
-                            <div class="text">國立中興大學--歷史研究所(2015/9-2019/6)</div>
+                            <?php
+
+                            $redus=$R_edu->all(['sh'=>1,'club'=>1]," order by sort");
+                            foreach($redus as $redu){
+                                ?>
+                            <div class="text"><?=$redu['text']?></div>
+                            <?php
+                                }
+                                ?>
                         </div>
 
                         <div id="skill">
                             <div class="bigTitle">技能</div>
-                            <div class="text">
-                                網頁設計－前端部分：能結合Boostrap、Html、CSS、Javascript、JQuery做網頁切版及物件按鈕設計。後端部分：能理解PHP、AJAX串聯SQL資料庫，做簡易的登入、註冊系統、資料上傳、下載、更新等。
-                            </div>
-                            <div class="text">設計－Photoshop、Illustrate、krita，能夠結合向量圖、電腦繪圖、照片等多元素材整合做出不同平面設計作品。</div>
-                            <div class="text">攝影－會運用單眼及機外閃、持續燈及其他設備採光環境配置等。</div>
-                            <div class="text">網路行銷－修習行銷研究所廣告學課程、參與廣告主協會競賽、經營自媒體。</div>
-                            <div class="text">手繪－在畫室學習10年，擅長風景水彩、色鉛筆。</div>
+                            <?php
+
+                            $redus=$R_edu->all(['sh'=>1,'club'=>0]," order by sort");
+                            foreach($redus as $redu){
+                            ?>
+                            <div class="text"><?=$redu['text']?></div>
+                            <?php
+                            }
+                            ?>
                         </div>
 
 
                         <div id="other">
                             <div class="bigTitle">其他經歷</div>
-                            <div class="text">久久點九整合行銷－接案小編</div>
-                            <div class="text">國立臺東大學－攝影社長（2012/9-2013/6）</div>
-                            <div class="text">《鴻飛射馬干－東大散文選》－合作出版著作</div>
-                            <div class="text">歌林看見台灣之美－人氣獎第一名</div>
-                            <div class="text">詠春新詩比賽－佳作</div>
+                            <?php
+
+                            $redus=$R_edu->all(['sh'=>1,'club'=>2]," order by sort");
+                            foreach($redus as $redu){
+                            ?>
+                            <div class="text"><?=$redu['text']?></div>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
             </div>
             <object class="vine" type="image/svg+xml" data="img/vine.svg"></object>
             <div class="modalClose" onclick="Cl(this)">
@@ -593,33 +616,40 @@ include_once "base.php";
         <div class="container-fluid" id="blog">
             <h1 style="text-align:center;"><a href="blog.php" class="blogtitle" style="text-decoration:none;">Blog</a>
             </h1>
+            <?php
+                // for($i=0;$i<3;$i++){
+                $bgcount=$Blog->count(['new'=>1]);
+                // echo $bgcount;
+                // $blogs=$Blog->all(['new'=>1],"order by sort limit $i , 1");
+                $blogs=$Blog->all(['new'=>1],"order by sort limit 0 , 3");
+                foreach($blogs as $key => $blog){ 
+                if($key%2==0){          
+            ?>
             <div class="media">
-                <img src="https://picsum.photos/200/200" class="mr-3">
                 <div class="media-body">
-                    <h5 class="mt-auto"><a href="blog.php" class="blogtitle" style="text-decoration:none;">自傳</a></h5>
-                    二十八年前，哭鬧聲伴隨著雨都簾纖，刺骨的葭月一個嬰兒呱呱墜地，我在這樣一個平凡的朝曦誕生，卻有著不太平凡的好奇心，從小時常擔任班級教室、聖誕活動的主要設計者。
-                    　　熱愛學習的我，非常喜歡閱讀許多課外書，國中時期部落格正流行著，我也跟隨著潮流走進了部落格，不僅記錄了自己許多青春的煩惱...
+                    <h5 class="mt-auto"><a href="contain.php?id=<?=$blog['id']?>" class="blogtitle"
+                            style="text-decoration:none;"><?=$blog['title'];?></a></h5>
+                    <?=mb_substr($blog['text'],0,150,'utf8');?>......
+                </div>
+                <img src="img/<?=$blog['img']?>" class="mr-3" style="width:200px;height:200px;">
+            </div>
+            <?php
+                }else{
+            ?>
+            <div class="media">
+                <img src="img/<?=$blog['img']?>" class="mr-3" style="width:200px;height:200px;">
+                <div class="media-body">
+                    <h5 class="mt-auto"><a href="contain.php?id=<?=$blog['id']?>" class="blogtitle"
+                            style="text-decoration:none;"><?=$blog['title'];?></a></h5>
+                    <?=mb_substr($blog['text'],0,150,'utf8');?>......
                 </div>
             </div>
-            <div class="media">
-                <div class="media-body">
-                    <h5 class="mt-3 mb-3"><a href="blog.php" class="blogtitle" style="text-decoration:none;">葉子</a></h5>
-                    吹著薰風的平凡日子，恰巧平時所慣於待的咖啡廳都剛好休假，一個無法待在同一個地方寫作，就像即便多麼無趣的生活都得替它畫上一點色彩，
-                    我稱呼著自己為半個旅人吧！開始了半刻的流浪，儘管溽暑尚未入侵...
-                </div>
-                <img src="https://picsum.photos/200/200" class="ml-3">
-            </div>
-            <div class="media">
-                <img src="https://picsum.photos/200/200" class="align-self-end mr-3">
-                <div class="media-body">
-                    <h5 class="mt-1"><a href="blog.php" class="blogtitle"
-                            style="text-decoration:none;color:">新生代設計二三事──在經營上可能遇到的未來挑戰</a></h5>
-                    <p>在室內設計界，創業開立自己的工作室，是許多新生代的設計師的理想。
-                        大部分的人，擁有理想，卻不知道地圖從何畫起、從哪裡開始、中間會遇到什麼困難、
-                        及近年來市場變化，考驗著一位室內設計師──到老闆角色之間的轉換的彈性，以及對管理、人資、行銷、財務上可能遇上的困難...</p>
-                </div>
-            </div>
-            <div class="more"><a href="blog.php" class="blogtitle" style="text-decoration:none;color:">more...</a></div>
+            <?php
+        }
+    }
+        ?>
+        </div>
+        <div class="more"><a href="blog.php" class="blogtitle" style="text-decoration:none;color:">more...</a></div>
         </div>
 
         <br>
@@ -630,19 +660,18 @@ include_once "base.php";
             <h1 style="text-align:center;">Draw and Design</h1>
             <div class="card-deck">
                 <?php
-                        //撈出校園映像圖並依題意加上相應的動作及html內容
                         $Draw=new DB("draw");
-                        $draws=$Draw->all(['sh'=>1],"order by sort desc");
+                        $draws=$Draw->all(['sh'=>1],"order by sort ");
                         foreach($draws as $key => $idr){
-                          ?>
+                        ?>
                 <div class="card bg-transparent" id="ssaa<?=$key?>">
-                    <img src="img/<?=$idr['img']?>" class="card-img-top" >
+                    <img src="img/<?=$idr['img']?>" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title"><?=$idr['title']?></h5>
                         <p class="card-text"><?=$idr['text']?></p>
                     </div>
                 </div>
-<?php
+                <?php
                 }
 ?>
                 <!-- <div class="card bg-transparent">
@@ -680,32 +709,32 @@ include_once "base.php";
             </div>
         </div>
         <script>
-                    var nowpage = 0, //現在的頁數
-                        
-                        //計算被設定為要顯示的校園映像圖片數量
-                        num = <?=$Draw->count(['sh' => 1]); ?>; //圖片的數量
-                    function pp(x) {
-                        var s, t;
-                        if (x == 1 && nowpage - 1 >= 0) {
-                            nowpage--;
-                        }
+        var nowpage = 0, //現在的頁數
 
-                        //素材的js程式有點小bug，建議略做修改如下
-                        if (x == 2 && nowpage + 1 <= num - 3) {
-                            nowpage++;
-                        }
+            //計算被設定為要顯示的校園映像圖片數量
+            num = <?=$Draw->count(['sh' => 1]); ?>; //圖片的數量
+        function pp(x) {
+            var s, t;
+            if (x == 1 && nowpage - 1 >= 0) {
+                nowpage--;
+            }
 
-                        $(".card").hide()
-                        for (s = 0; s <= 2; s++) {
-                            t = s * 1 + nowpage * 1;
-                            $("#ssaa" + t).fadeIn()
-                        }
-                    }
-                    pp(1)
-                    </script>
+            //素材的js程式有點小bug，建議略做修改如下
+            if (x == 2 && nowpage + 1 <= num - 5) {
+                nowpage++;
+            }
+
+            $(".card").hide()
+            for (s = 0; s <= 2; s++) {
+                t = s * 1 + nowpage * 3;
+                $("#ssaa" + t).fadeIn()
+            }
+        }
+        pp(1)
+        </script>
     </main>
     <figure>
-    
+
         <div class="container" id="WebDesign">
             <h1 style="text-align:center;">Web Design</h1>
 
@@ -723,17 +752,17 @@ include_once "base.php";
                 foreach($webds as $webd){
                     
             ?>
-                <div>
-                    <div class="webDesign"><a href="<?=$webd['text']?>" class="webHr"><span class="tribg"></span>
-                            <img src="./img/<?=$webd['img']?>" style="width:351px;height:351px;"></a></div>
-                    <p class="webtitle" style="text-align:center;font-size:20px;"><?=$webd['title']?></p>
-                </div>
+            <div>
+                <div class="webDesign"><a href="<?=$webd['text']?>" class="webHr"><span class="tribg"></span>
+                        <img src="./img/<?=$webd['img']?>" style="width:351px;height:351px;"></a></div>
+                <p class="webtitle" style="text-align:center;font-size:20px;"><?=$webd['title']?></p>
+            </div>
             <?php
                 }
                 echo"</div>";
             }
             ?>
-<!-- 
+            <!-- 
                 <div>
                     <div class="webDesign"><a href="http://220.128.133.15/s1090418/calenderwork/" class="webHr"><span class="tribg"></span>
                             <img src="./img/calender.jpg" style="width:351px;height:351px;"></a></div>
@@ -746,30 +775,6 @@ include_once "base.php";
                     <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
                 </div> -->
 
-                <!-- <div>
-                    <div class="webDesign"><a href="" class="webHr"><span class="tribg"></span>
-                            <img src="https://picsum.photos/400/400" style="width:351px;height:351px;"></a></div>
-                    <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
-                </div>
-            </div>
-            <div class="row" id="webRow">
-                <div>
-                    <div class="webDesign"><a href="" class="webHr"><span class="tribg"></span>
-                            <img src="https://picsum.photos/400/400" style="width:351px;height:351px;"></a></div>
-                    <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
-                </div>
-                <div>
-                    <div class="webDesign"><a href="" class="webHr"><span class="tribg"></span>
-                            <img src="https://picsum.photos/400/400" style="width:351px;height:351px;"></a></div>
-                    <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
-                </div>
-                <div>
-                    <div class="webDesign"><a href="" class="webHr"><span class="tribg"></span><span class="tri"></span>
-                            <img src="https://picsum.photos/400/400" style="width:351px;height:351px;"></a></div>
-                    <p class="webtitle" style="text-align:center;font-size:20px;">發票兌獎系統</p>
-                </div>
-            </div>
-        </div> -->
         </div>
     </figure>
 
@@ -787,6 +792,7 @@ include_once "base.php";
         Email:waterfay0.0@gmail.com<br> -->
             </p>
             <div>
+                <br>
                 <a href="https://www.facebook.com/wy.chen.7923"><img src="img\fb.png" alt=""></a>
                 <a href="https://www.instagram.com/zax_5600/"><img src="img\ig.png" alt=""></a>
                 <a href="https://codepen.io/wy-chen"><img src="img\codepan.png" alt=""></a>
@@ -798,11 +804,10 @@ include_once "base.php";
 </html>
 
 <script>
-function op() {
+function op(obj) {
     $(".modal").slideToggle(1000)
     $(".vine").delay(1200).fadeIn(2500)
-    $(".modalcontain1").delay(1700).fadeIn(2000);
-    $(".modalcontain2").delay(2200).fadeIn(2000);
+    $("#modalcontain").delay(1700).fadeIn(2000);
 };
 
 function Cl() {
@@ -820,9 +825,9 @@ $(window).scroll(function() { //開始監聽滾動條
         $("#design").fadeIn(2000, "easeInSine");
     }
 
-    // if (top >= 1100) {
-    //   $(".modal").hide();
-    // }
+    if (top >= 1500) {
+        $(".modal").hide();
+    }
 
 })
 
@@ -839,5 +844,4 @@ $(window).resize(function() { //開始監聽視窗寬度
 //   //   $(window).unbind("scroll");
 //   // }
 // })
-
 </script>

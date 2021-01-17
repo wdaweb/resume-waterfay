@@ -19,9 +19,8 @@ switch($table){
     case "blog":
     $row['text']=$_POST['text'];
     $row['title']=$_POST['title'];
-    $row['sh']=0;
     $row['sort']=1;
-    $row['type']="全部";
+    $row['type']=0;
     $row['new']=1;
     break;
 }

@@ -5,8 +5,8 @@ let combo = document.getElementById("combo"); //dom combo
 let sec = 0, count = 0;
 let btn = document.getElementsByTagName("button")[0]; //button
 btn.addEventListener('click', gamestrat);
-
 document.onkeydown = keyboard;
+let redBeYellow=new Array();
 
 function gamestrat() {
     sec = 60;
@@ -46,17 +46,27 @@ function showIt(where, delay, item) { //觸發紅色狀態處理
         }, 100);
 
     } else { //可以塞紅，因為他是黃色狀態
-        animal[where].src = "shark/red.png";
+        animal[where].src = "Bubble-01.png";
         animal[where].style.backgroundColor = "red";
         animal[where].alt = item;
 
         setTimeout(() => {
-            animal[where].src = "shark/yellow.png";
+            animal[where].src = "Bubble-02-01.png";
             animal[where].style.backgroundColor = null;
             animal[where].alt = null;
         }, delay * 1000);
     }
 }
+//滑鼠事件
+for(let i=0;i<animal.length;i++){
+    //console.log(i,animal[i]);
+    //fail=> animal[i]addEventListener('click' , getCombo(i));//不能放指令，只能放函式名稱
+    animal[i].addEventListener("click",()=>{
+        getCombo(i);
+    });
+}
+
+//鍵盤事件
 function keyboard() {
     // console.log(event.keyCode);
     switch (event.keyCode) {
@@ -92,11 +102,20 @@ function keyboard() {
 function getCombo(item) { // 得分，只有在紅色狀態時給分
     // console.log(item);
     if (animal[item].style.backgroundColor == "red") {
-        animal[item].src = "shark/green.png";
+        animal[item].src = "Bubble-03-01.png";
         animal[item].style.backgroundColor = "green";
 
         count++;
         combo.textContent = count;
+        const theID=animal[item].alt;
+        console.log(theID);
+        clearTimeout(redYellow[theID]);
+
+        setTimeout(() =>{
+            animal[item].scr ="Bubble-01.png";
+            animal[item].style.backgroundColor = null;
+            animal[item].alt = null;
+        },1000);
     }
 
 }
