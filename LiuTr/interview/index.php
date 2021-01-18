@@ -383,7 +383,7 @@ include_once "base.php";
     }
 
     .card:hover::before {
-        left: -400%;
+        left: -600%;
         transition: all 700ms cubic-bezier(0.19, 1, 0.22, 1);
 
     }
@@ -627,8 +627,8 @@ include_once "base.php";
             ?>
             <div class="media">
                 <div class="media-body">
-                    <h5 class="mt-auto"><a href="contain.php?id=<?=$blog['id']?>" class="blogtitle"
-                            style="text-decoration:none;"><?=$blog['title'];?></a></h5>
+                    <h5 class="mt-auto"><a  href="contain.php?id=<?=$blog['id']?>" class="blogtitle"
+                            style="text-decoration:none;font-size:25px;"><?=$blog['title'];?></a></h5>
                     <?=mb_substr($blog['text'],0,150,'utf8');?>......
                 </div>
                 <img src="img/<?=$blog['img']?>" class="mr-3" style="width:200px;height:200px;">
@@ -640,7 +640,7 @@ include_once "base.php";
                 <img src="img/<?=$blog['img']?>" class="mr-3" style="width:200px;height:200px;">
                 <div class="media-body">
                     <h5 class="mt-auto"><a href="contain.php?id=<?=$blog['id']?>" class="blogtitle"
-                            style="text-decoration:none;"><?=$blog['title'];?></a></h5>
+                            style="text-decoration:none;font-size:25px;"><?=$blog['title'];?></a></h5>
                     <?=mb_substr($blog['text'],0,150,'utf8');?>......
                 </div>
             </div>
@@ -660,7 +660,7 @@ include_once "base.php";
             <h1 style="text-align:center;">Draw and Design</h1>
             <div class="card-deck">
                 <?php
-                        $Draw=new DB("draw");
+                        $Draw=new DB("myweb_draw");
                         $draws=$Draw->all(['sh'=>1],"order by sort ");
                         foreach($draws as $key => $idr){
                         ?>
@@ -742,7 +742,7 @@ include_once "base.php";
 
             <!-- <div class="row" id="webRow"> -->
             <?php
-                $Web=new DB('web');
+                $Web=new DB('myweb_web');
                 $webcount=$Web->count(['sh'=>1],"order by sort desc limit 6");
                 $webds=$Web->all(['sh'=>1],"order by sort desc limit 6");
                 for($i=0;$i<($webcount/3);$i++){
@@ -754,7 +754,7 @@ include_once "base.php";
             ?>
             <div>
                 <div class="webDesign"><a href="<?=$webd['text']?>" class="webHr"><span class="tribg"></span>
-                        <img src="./img/<?=$webd['img']?>" style="width:351px;height:351px;"></a></div>
+                        <img class="webimg" src="./img/<?=$webd['img']?>" style="width:351px;height:351px;"></a></div>
                 <p class="webtitle" style="text-align:center;font-size:20px;"><?=$webd['title']?></p>
             </div>
             <?php
@@ -825,7 +825,7 @@ $(window).scroll(function() { //開始監聽滾動條
         $("#design").fadeIn(2000, "easeInSine");
     }
 
-    if (top >= 1500) {
+    if (top >= 2000) {
         $(".modal").hide();
     }
 

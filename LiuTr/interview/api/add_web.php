@@ -1,7 +1,7 @@
 <?php
 
 include_once "../base.php";
-$Web=new DB('web');
+$Web=new DB('myweb_web');
 
 $row=[];
 if(!empty($_FILES['img']['tmp_name'])){

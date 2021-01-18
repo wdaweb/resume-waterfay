@@ -2,7 +2,7 @@
 <?php
 
 include_once "../base.php";
-$Web=new DB('web');
+$Web=new DB('myweb_web');
 
 
 $delfile='../img/'.$_POST['img'];

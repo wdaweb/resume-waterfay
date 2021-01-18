@@ -5,9 +5,9 @@ session_start();
 class DB
 {
 
-    private $dsn = "mysql:host=localhost;charset=utf8;dbname=interview";
-    private $root = "root";
-    private $password = "";
+    private $dsn = "mysql:localhost=220.128.133.15;charset=utf8;dbname=s1090418";
+    private $root = "s1090418";
+    private $password = "s1090418";
     private $table;
     private $pdo;
 
@@ -140,15 +140,15 @@ function to($url)
     header("location:" . $url);
 }
 
-$User=new DB("login");
-$Bottom=new DB('bottom');
-$Web=new DB('web');
-$Draw=new DB('draw');
-$Blog=new DB('blog');
-$SelfIntroduction=new DB('SelfIntroduction');
-$R_img=new DB('img');
-$R_edu=new DB('edu');
-$Work=new DB('work');
+$User=new DB("myweb_login");
+$Bottom=new DB('myweb_bottom');
+$Web=new DB('myweb_web');
+$Draw=new DB('myweb_draw');
+$Blog=new DB('myweb_blog');
+$SelfIntroduction=new DB('myweb_selfintroduction');
+$R_img=new DB('myweb_img');
+$R_edu=new DB('myweb_edu');
+$Work=new DB('myweb_work');
 // $R_edus
 ?>
 

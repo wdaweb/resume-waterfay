@@ -2,7 +2,7 @@
 <?php
 
 include_once "../base.php";
-$R_edu=new DB('edu');
+$R_edu=new DB('myweb_edu');
 
 if(!empty($_POST['del'])){
     $R_edu->del($_POST['id']);

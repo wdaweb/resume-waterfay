@@ -10,13 +10,13 @@ if(!empty($_FILES['img']['tmp_name'])){
     $row['img']=$filename;
 }
 switch($table){
-    case "draw":
+    case "myweb_draw":
     $row['text']=$_POST['text'];
     $row['title']=$_POST['title'];
     $row['sh']=1;
     $row['sort']=1;
     break;
-    case "blog":
+    case "myweb_blog":
     $row['text']=$_POST['text'];
     $row['title']=$_POST['title'];
     $row['sort']=1;

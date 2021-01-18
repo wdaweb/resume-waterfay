@@ -4,7 +4,7 @@
 //請參考add.php的註解，自行讀懂下列程式碼的功能
 include_once "../base.php";
 
-$SelfIntroduction=new DB('SelfIntroduction');
+$SelfIntroduction=new DB('myweb_SelfIntroduction');
 $row=$SelfIntroduction->find(1);
 $delfile='../img/'.$row['img'];
 if(!empty($_FILES['img']['tmp_name'])){

@@ -36,13 +36,13 @@ include_once "base.php";
     </style>
 </head>
 <body>
-<div class="container" id="blog">
+<div class="container ml-1 mr-1 " id="blog">
 <?php
         $b=$Blog->find($_GET['id']);
 // echo ($_GET['id']);
 // print_r ($b);
 ?>
-      <h1 style="text-align:center;"><?=$b['title'];?></h1>
+      <h1  class="mt-3" style="text-align:center;"><?=$b['title'];?></h1>
       <hr>
       <div class="more"><a href="blog.php" style="text-decoration:none;color:#5e5845;">回Blog頁面</a></div>
       <hr>

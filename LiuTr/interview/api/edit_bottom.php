@@ -1,6 +1,6 @@
 <?php 
 include_once '../base.php';
-$Bottom=new DB('bottom');
+$Bottom=new DB('myweb_bottom');
 $row=$Bottom->find(1);
 if(isset($_POST['bottom'])){
 $row['bottom']=$_POST['bottom'];

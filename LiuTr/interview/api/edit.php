@@ -12,13 +12,13 @@ if(!empty($_POST['del'])){
     }else{
     $row=$db->find($_POST['id']);
     switch($table){
-    case "draw":
+    case "myweb_draw":
     $row['title']=$_POST['title'];
     $row['text']=$_POST['text'];
     $row['sort']=$_POST['sort'];
     $row['sh']=($_POST['sh'])?1:0;
     $row['sort']=$_POST['sort'];
-    case "blog":
+    case "myweb_blog":
     $row['title']=$_POST['title'];
     $row['text']=$_POST['text'];
     $row['sort']=$_POST['sort'];

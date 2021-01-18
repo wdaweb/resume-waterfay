@@ -35,11 +35,11 @@ include_once "base.php";
     </style>
 </head>
 <body>
-<div class="container" id="blog">
-      <h1 style="text-align:center;">Blog</h1>
+<div class="container ml-1 mr-1" id="blog">
+      <h1 class="mt-3" style="text-align:center;">Blog</h1>
       <hr>
 
-      <div class="more">分類： &emsp; &emsp;<a href="blog.php?type=0" style="text-decoration:none;color:#5e5845;">未分類</a> &emsp; &emsp;<a href="blog.php?type=1" style="text-decoration:none;color:#5e5845;">履歷</a> &emsp; &emsp;<a href="blog.php?type=2" style="text-decoration:none;color:#5e5845;">寫作</a> &emsp; &emsp;<a href="blog.php?type=3" style="text-decoration:none;color:#5e5845;">心情</a> &emsp; &emsp;<a href="blog.php?type=4" style="text-decoration:none;color:#5e5845;">行銷</a><a href="interview.php" style="text-decoration:none;color:#5e5845;float:right;">回首頁</a></div>
+      <div class="more">分類： &emsp; &emsp;<a href="blog.php?type=0" style="text-decoration:none;color:#5e5845;">未分類</a> &emsp; &emsp;<a href="blog.php?type=1" style="text-decoration:none;color:#5e5845;">履歷</a> &emsp; &emsp;<a href="blog.php?type=2" style="text-decoration:none;color:#5e5845;">寫作</a> &emsp; &emsp;<a href="blog.php?type=3" style="text-decoration:none;color:#5e5845;">心情</a> &emsp; &emsp;<a href="blog.php?type=4" style="text-decoration:none;color:#5e5845;">行銷</a><a href="index.php" style="text-decoration:none;color:#5e5845;float:right;">回首頁</a></div>
       <hr>
 
       <?php

@@ -63,8 +63,8 @@ ini_set('display_errors','off');
                     <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume_work">Resume-work</a>
                     <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume_img">Resume-img</a>
                     <a class="nav-item nav-link text-white " id="" data-toggle="tab" href="?do=resume_m">Resume-m</a>
-                    <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=blog">Blog</a>
-                    <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=draw">Draw and Design</a>
+                    <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=myweb_blog">Blog</a>
+                    <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=myweb_draw">Draw and Design</a>
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=web">Web Design</a>
                     <a class="nav-item nav-link text-white" id="" data-toggle="tab" href="?do=bottom">Bottom</a>
 
